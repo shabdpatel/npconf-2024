@@ -3,62 +3,52 @@ import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from 'emailjs-com';
+import faqsData from './faqs.json';
 
 const FAQ = () => {
+    const [faqs] = useState(faqsData);
     const [activeIndex, setActiveIndex] = useState(null);
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true });
+    const [formData, setFormData] = useState({
+        to_name: '',
+        from_name: '',
+        message: ''
+    });
+    const [loading, setLoading] = useState(false);
 
     const toggleFAQ = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
-    const faqs = [
-        {
-            question: "What is the purpose of physics conference?",
-            answer: "The purpose of a physics conference is to bring together scientists, researchers, and students to share their latest research findings, discuss current issues in the field, and network with peers."
-        },
-        {
-            question: "How often are physics conferences held?",
-            answer: "Physics conferences are typically held annually or biannually, depending on the organizing body and the specific field of study."
-        },
-        {
-            question: "Who can attend physics conferences?",
-            answer: "Physics conferences are generally open to scientists, researchers, students, and sometimes the general public, depending on the conference's scope and objectives."
-        },
-        {
-            question: "What are the benefits of attending a physics conference?",
-            answer: "Attending a physics conference provides opportunities for networking, professional development, staying updated with the latest research, and sharing your own work with the community."
-        },
-        {
-            question: "How can I submit my research to a physics conference?",
-            answer: "Research submissions are typically handled through the conference's official website, where you can find guidelines and deadlines for abstract or full paper submissions."
-        },
-        {
-            question: "Are there any virtual physics conferences?",
-            answer: "Yes, many organizations have started hosting virtual physics conferences to accommodate participants who cannot travel, offering the same benefits as in-person events."
-        },
-        {
-            question: "What should I prepare before attending a physics conference?",
-            answer: "Before attending a physics conference, you should prepare your research presentation, bring business cards, and review the conference schedule to plan which sessions to attend."
-        },
-        {
-            question: "Can I network effectively at virtual conferences?",
-            answer: "Yes, virtual conferences often provide networking opportunities through chat rooms, discussion forums, and virtual meeting spaces."
-        },
-        {
-            question: "How do I find upcoming physics conferences?",
-            answer: "You can find upcoming physics conferences by searching online, checking with professional organizations, and subscribing to academic journals and newsletters."
-        },
-        {
-            question: "Are there any costs associated with attending physics conferences?",
-            answer: "Yes, attending physics conferences typically involves registration fees, and if the conference is in-person, travel and accommodation costs as well."
-        }
-    ];
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        emailjs.sendForm('service_7wjwhjz', 'template_c4vix68', e.target, 'k0Pzk-CjxMe24DpZY')
+            .then((result) => {
+                setLoading(false);
+                alert('Message sent successfully!');
+                setFormData({
+                    to_name: '',
+                    from_name: '',
+                    message: ''
+                });
+            }, (error) => {
+                setLoading(false);
+                console.error(error.text);
+                alert('An error occurred, please try again.');
+            });
+    };
 
     const containerVariants = {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
+        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.05 } }
     };
 
     const itemVariants = {
@@ -81,7 +71,7 @@ const FAQ = () => {
             >
                 {/* FAQ Section */}
                 <div className="md:w-1/2 md:pr-4 h-112 overflow-y-auto">
-                    <h1 className="text-3xl font-bold mb-6 text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4">
+                    <h1 className="text-3xl font-bold mb-6 text-center text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4">
                         Frequently Asked Questions
                     </h1>
                     {faqs.map((faq, index) => (
@@ -91,7 +81,7 @@ const FAQ = () => {
                             variants={itemVariants}
                         >
                             <div
-                                className="cursor-pointer bg-gray-700 p-4 rounded-lg flex justify-between items-center"
+                                className="cursor-pointer bg-gray-700 p-3 rounded-lg flex justify-between items-center"
                                 onClick={() => toggleFAQ(index)}
                             >
                                 <h3 className="font-semibold">{faq.question}</h3>
@@ -111,18 +101,74 @@ const FAQ = () => {
                     className="md:w-1/2 md:pl-4 mt-6 md:mt-0 flex flex-col items-center justify-center"
                     variants={itemVariants}
                 >
-                    <h1 className="text-4xl font-bold mb-8 text-slate-300 text-center">Contact Us</h1>
-                    <div className="flex space-x-8">
+                    <h1 className="text-4xl font-bold text-slate-300 text-center">Contact Us</h1>
+
+                    <form className="w-full max-w-lg mt-4 bg-gray-700 p-6 rounded-lg" onSubmit={handleSubmit}>
+                        <div className="mb-4">
+                            <label className="block text-slate-300 text-sm font-bold mb-2" htmlFor="to_name">
+                                Name
+                            </label>
+                            <input
+                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                type="text"
+                                id="to_name"
+                                name="to_name"
+                                value={formData.to_name}
+                                onChange={handleChange}
+                                placeholder="Your Name"
+                                required
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-slate-300 text-sm font-bold mb-2" htmlFor="from_name">
+                                Email
+                            </label>
+                            <input
+                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                type="email"
+                                id="from_name"
+                                name="from_name"
+                                value={formData.from_name}
+                                onChange={handleChange}
+                                placeholder="Your Email"
+                                required
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-slate-300 text-sm font-bold mb-2" htmlFor="message">
+                                Message
+                            </label>
+                            <textarea
+                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                id="message"
+                                name="message"
+                                rows="4"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Your Message"
+                                required
+                            ></textarea>
+                        </div>
+                        <div className="flex items-center justify-between">
+                            <button
+                                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="submit"
+                            >
+                                {loading ? "Sending..." : "Send"}
+                            </button>
+                        </div>
+                    </form>
+                    <div className="flex space-x-8 mt-4">
                         <a href="https://www.linkedin.com/in/physteo-nith-34a405255/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-600 hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaLinkedin />
                         </a>
-                        <a href="https://github.com/physteo-nith/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-gray-700 transition-colors duration-300 icon-hover">
+                        <a href="https://github.com/physteo-nith/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaGithub />
                         </a>
-                        <a href="https://www.instagram.com/physteo?igsh=enh1NWFucDJ5NGc4/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-pink-800 transition-colors duration-300 icon-hover">
+                        <a href="https://www.instagram.com/physteo?igsh=enh1NWFucDJ5NGc4/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaInstagram />
                         </a>
-                        <a href="https://x.com/physteo?t=_nhVeLqYEwVic5EQpb4BvQ&s=09/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-500 hover:text-blue-700 transition-colors duration-300 icon-hover">
+                        <a href="https://x.com/physteo?t=_nhVeLqYEwVic5EQpb4BvQ&s=09/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-500 hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaTwitter />
                         </a>
                     </div>
