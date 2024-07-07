@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 const Socialwall = () => {
+    const [twitterError, setTwitterError] = useState(false);
+
     useEffect(() => {
         // Load Twitter widgets script
         const script = document.createElement('script');
         script.src = "https://platform.twitter.com/widgets.js";
         script.async = true;
+        script.onload = () => setTwitterError(false);
+        script.onerror = () => setTwitterError(true);
         document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
     }, []);
 
     return (
@@ -17,14 +25,18 @@ const Socialwall = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white shadow-md rounded-lg p-4">
                     {/* Twitter section */}
-                    <TwitterTweetEmbed tweetId="1806178714134176000" />
+                    {twitterError ? (
+                        <p className="text-center text-red-500">Failed to load Twitter content.</p>
+                    ) : (
+                        <TwitterTweetEmbed tweetId="1806178714134176000" />
+                    )}
                 </div>
                 <div className="bg-white shadow-md rounded-lg p-4">
-
+                    {/* LinkedIn section */}
                     <iframe
                         src="https://www.linkedin.com/embed/feed/update/urn:li:share:7211943110178684928"
-                        height="900"
-                        width="550"
+                        height="1047"
+                        width="504"
                         frameBorder="0"
                         allowFullScreen=""
                         title="Embedded LinkedIn post">
