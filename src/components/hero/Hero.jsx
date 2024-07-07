@@ -49,8 +49,8 @@ const Hero = () => {
                             Immerse yourself in the world of physics at our Annual Physics Conference. Engage with leading experts, delve into cutting-edge research, and explore the vast mysteries of the universe. Connect with like-minded individuals, share insights, and ignite your passion for scientific discovery. From quantum mechanics to astrophysics, our conference covers diverse topics, offering a platform for groundbreaking discussions and innovative ideas. Join us as we push the boundaries of knowledge and shape the future of physics together.
                         </motion.h2>
                         <div className="space-y-4 md:space-x-10 md:space-y-0 mt-12 md:mt-0 flex flex-col md:flex-row justify-center">
-                            <motion.a variants={textVariants} href="#Speakers" className="bg-gray-700 text-white px-7 py-3 rounded hover:bg-gray-600 hover:text-white md:mr-4 mt-4 md:mt-0">SPEAKERS</motion.a>
-                            <motion.a variants={textVariants} href="#" className="bg-gray-700 text-white px-7 py-3 rounded hover:bg-gray-600 hover:text-white mt-4 md:mt-0">BUY TICKETS</motion.a>
+                            <motion.a variants={textVariants} href="#Sponsors" className="bg-gray-900 text-white px-7 py-3 rounded hover:bg-gray-600 hover:text-white md:mr-4 mt-4 md:mt-0">Sponsor Us</motion.a>
+                            <motion.a variants={textVariants} href="#" className="bg-gray-900 text-white px-7 py-3 rounded hover:bg-gray-600 hover:text-white mt-4 md:mt-0">BUY TICKETS</motion.a>
                         </div>
                     </motion.div>
                 </div>

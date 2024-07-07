@@ -71,7 +71,7 @@ const FAQ = () => {
             >
                 {/* FAQ Section */}
                 <div className="md:w-1/2 md:pr-4 h-112 overflow-y-auto">
-                    <h1 className="text-3xl font-bold mb-6 text-center text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4">
+                    <h1 className="text-3xl font-bold mb-6 text-center text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4" style={{ zIndex: 10 }}>
                         Frequently Asked Questions
                     </h1>
                     {faqs.map((faq, index) => (

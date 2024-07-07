@@ -32,10 +32,18 @@ const Navbar = () => {
     }, [lastScrollTop]);
 
     useEffect(() => {
-        if (location.pathname === '/Team') {
-            setActiveSection('Team');
-        } else if (location.pathname === '/') {
-            setActiveSection('Home');
+        switch (location.pathname) {
+            case '/':
+                setActiveSection('Home');
+                break;
+            case '/Team':
+                setActiveSection('Team');
+                break;
+            case '/Paper_call':
+                setActiveSection('Paper_call');
+                break;
+            default:
+                setActiveSection('');
         }
     }, [location]);
 
@@ -66,7 +74,7 @@ const Navbar = () => {
     return (
         <div id='Navbar'>
             <nav
-                className={`bg-gray-800 dark:bg-gray-900 fixed w-full z-20  top-0 start-0 border-b border-gray-200 dark:border-gray-600 transition-transform duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
+                className={`bg-gray-800 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 transition-transform duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
                     }`}
             >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-around mx-auto p-4">
@@ -128,7 +136,7 @@ const Navbar = () => {
                         className={`items-center justify-between ${isMenuOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto md:order-1`}
                         id="navbar-sticky"
                     >
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
+                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
                             <li>
                                 <Link
                                     to="/"
@@ -155,6 +163,24 @@ const Navbar = () => {
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Speakers
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Socialwall"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Socialwall' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Social Wall
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/Paper_call"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Paper_call' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Call for Papers
                                 </Link>
                             </li>
                             <li>

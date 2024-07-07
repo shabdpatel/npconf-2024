@@ -9,6 +9,9 @@ import Speaker from './components/speaker/Speaker';
 import Sponsor from './components/sponsor/Sponsor';
 import Team from './components/team/Team';
 import About from './components/about/About';
+import Paper_call from './components/paper_call/Paper_call';
+import Footer from './components/footer/Footer';
+import Socialwall from './components/socialwall/Socialwall';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -54,15 +57,22 @@ function App() {
             <section id='Speakers'>
               <Speaker />
             </section>
+            <section id='Socialwall'>
+              <Socialwall />
+            </section>
             <section id='Sponsors'>
               <Sponsor />
             </section>
             <section id='FAQ'>
               <FAQ />
             </section>
+            <section id='Footer'>
+              <Footer />
+            </section>
           </>
         } />
         <Route path="/Team" element={<Team />} />
+        <Route path="/Paper_call" element={<Paper_call />} />
       </Routes>
     </Router>
   );
