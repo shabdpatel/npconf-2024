@@ -109,7 +109,7 @@ const FAQ = () => {
                                 Name
                             </label>
                             <input
-                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                className="w-full p-2 bg-slate-800 text-slate-50 rounded-lg focus:outline-none"
                                 type="text"
                                 id="to_name"
                                 name="to_name"
@@ -124,7 +124,7 @@ const FAQ = () => {
                                 Email
                             </label>
                             <input
-                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                className="w-full p-2 bg-slate-800 text-slate-50 rounded-lg focus:outline-none"
                                 type="email"
                                 id="from_name"
                                 name="from_name"
@@ -139,7 +139,7 @@ const FAQ = () => {
                                 Message
                             </label>
                             <textarea
-                                className="w-full p-2 text-slate-50 rounded-lg focus:outline-none"
+                                className="w-full p-2 bg-slate-800 text-slate-50 rounded-lg focus:outline-none"
                                 id="message"
                                 name="message"
                                 rows="4"
