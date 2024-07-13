@@ -18,8 +18,7 @@ const Socialwall = () => {
                 </span></h2>
             <p className="text-center text-gray-300 text-xl md:text-2xl mb-6 md:mb-8">Get updated on our latest events and workshops</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <div className="bg-white shadow-md rounded-lg p-2 md:p-4">
-                    {/* Twitter section */}
+                {/* <div className="bg-white shadow-md rounded-lg p-2 md:p-4">
                     <TwitterTweetEmbed tweetId="1806178714134176000" options={{ height: '250px' }} />
                 </div>
                 <div className="bg-white shadow-md rounded-lg p-2 md:p-4 hidden md:block">
@@ -30,7 +29,7 @@ const Socialwall = () => {
                         allowFullScreen=""
                         title="Embedded LinkedIn post">
                     </iframe>
-                </div>
+                </div> */}
             </div>
         </div>
     );
