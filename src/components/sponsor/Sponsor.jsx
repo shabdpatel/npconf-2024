@@ -42,7 +42,9 @@ const Sponsor = () => {
                 className="text-5xl font-bold text-white mb-14 text-center md:text-left"
                 variants={itemVariants}
             >
-                Event Sponsors
+                Event <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                    Sponsors
+                </span>
             </motion.h1>
             <motion.div
                 className="w-full max-w-4xl bg-neutral-400 bg-opacity-30 p-6 rounded-lg shadow-md mb-8"

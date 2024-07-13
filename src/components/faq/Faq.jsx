@@ -72,7 +72,9 @@ const FAQ = () => {
                 {/* FAQ Section */}
                 <div className="md:w-1/2 md:pr-4 h-112 overflow-y-auto">
                     <h1 className="text-3xl font-bold mb-6 text-center text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4" style={{ zIndex: 10 }}>
-                        Frequently Asked Questions
+                        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                            Frequently Asked Questions
+                        </span>
                     </h1>
                     {faqs.map((faq, index) => (
                         <motion.div
@@ -101,7 +103,9 @@ const FAQ = () => {
                     className="md:w-1/2 md:pl-4 mt-6 md:mt-0 flex flex-col items-center justify-center"
                     variants={itemVariants}
                 >
-                    <h1 className="text-4xl font-bold text-slate-300 text-center">Contact Us</h1>
+                    <h1 className="text-4xl font-bold text-slate-300 text-center"> <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                        Contact Us
+                    </span></h1>
 
                     <form className="w-full max-w-lg mt-4 bg-gray-700 p-6 rounded-lg" onSubmit={handleSubmit}>
                         <div className="mb-4">

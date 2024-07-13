@@ -2,64 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SpeakerCard from './SpeakerCard';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-const speakers = [
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    {
-        photo: '/shabd.jpeg',
-        name: 'Shabd Patel',
-        position: 'Research Scientist',
-        description: 'Shabd specializes in quantum mechanics and has published numerous papers.'
-    },
-    // Add more speaker data as needed
-];
+import speakersData from './Speakers.json'; // Adjust the path based on your project structure
 
 const Speakers = () => {
     const [visibleCards, setVisibleCards] = useState(3);
@@ -102,19 +45,24 @@ const Speakers = () => {
 
     const cardWidth = window.innerWidth < 768 ? window.innerWidth - 32 : 320;
     const dragConstraintsRight = 0;
-    const dragConstraintsLeft = -(speakers.length - visibleCards) * (cardWidth + 16);
+    const dragConstraintsLeft = -(speakersData.length - visibleCards) * (cardWidth + 16);
 
     return (
         <motion.div
             ref={ref}
-            className="min-h-screen bg-black flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 w-full max-w-xs md:max-w-screen-md lg:max-w-screen-lg mx-auto" // Adjusted width for mobile view
+            className="min-h-screen bg-black flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 w-full max-w-xs md:max-w-screen-md lg:max-w-screen-lg mx-auto"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={containerVariants}
         >
             <motion.h1 className="text-4xl md:text-5xl font-bold text-white mb-10 md:mb-14" variants={cardVariants}>
-                Our Speakers
+                Our{" "} <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                    Speakers
+                </span>
             </motion.h1>
+            <motion.p className="text-center text-gray-300 text-xl mb-6 md:mb-8" variants={cardVariants}>
+                Meet the experts who will be sharing their knowledge and insights with us.
+            </motion.p>
             <div className="w-full overflow-x-auto overflow-y-hidden rounded-lg hide-scrollbar">
                 <motion.div
                     className="flex space-x-4 md:space-x-3 lg:space-x-4"
@@ -122,7 +70,7 @@ const Speakers = () => {
                     dragConstraints={{ right: dragConstraintsRight, left: dragConstraintsLeft }}
                     variants={containerVariants}
                 >
-                    {speakers.map((speaker, index) => (
+                    {speakersData.map((speaker, index) => (
                         <motion.div key={index} variants={cardVariants} className="flex-shrink-0 w-64 md:w-80">
                             <SpeakerCard
                                 photo={speaker.photo}

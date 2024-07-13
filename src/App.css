@@ -84,6 +84,8 @@ body {
   color: lightgray;
 }
 
+
+
 #Navbar {
   height: 10vh;
 }
@@ -92,10 +94,23 @@ body {
   height: 60vh;
 }
 
+@media (max-width: 768px) {
+  #Footer {
+    height: 80vh;
+    /* Adjust this value as needed for mobile view */
+  }
+}
+
 #Socialwall {
   height: 170vh;
 }
 
+@media (max-width: 768px) {
+  #Socialwall {
+    height: 120vh;
+    /* Adjust this value as needed for mobile view */
+  }
+}
 
 #Team {
   height: 290vh;
