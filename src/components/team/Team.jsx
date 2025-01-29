@@ -8,12 +8,12 @@ import Starfield from '../star/Starfield'; // Adjust the path according to your 
 const Team = () => {
     const controls = useAnimation();
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-    const [visibleCards, setVisibleCards] = useState(window.innerWidth < 768 ? 1 : 3);
+    const [visibleCards, setVisibleCards] = useState(window.innerWidth < 968 ? 1 : 3);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
-            setVisibleCards(window.innerWidth < 768 ? 1 : 3);
+            setVisibleCards(window.innerWidth < 968 ? 1 : 3);
         };
 
         window.addEventListener('resize', handleResize);
@@ -88,7 +88,7 @@ const Team = () => {
             }}
         >
             <Starfield
-                starCount={5000}
+                starCount={6000}
                 starColor={[255, 255, 255]}
                 speedFactor={0.15}
                 backgroundColor="black"
@@ -96,7 +96,9 @@ const Team = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 md:mb-14">Our{" "}<span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
                 Team Members
             </span> </h1>
-            {renderTeamSection('Head Members')}
+            {renderTeamSection('Club-Coordinators')}
+            {renderTeamSection('Our Alumni')}
+            {renderTeamSection('Final-Year')}
             {renderTeamSection('Coordinators')}
             {renderTeamSection('Executives')}
             {renderTeamSection('Volunteers')}

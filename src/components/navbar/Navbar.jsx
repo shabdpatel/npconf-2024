@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -32,96 +32,185 @@ const Navbar = () => {
     }, [lastScrollTop]);
 
     useEffect(() => {
-        const paths = {
-            '/': 'Home',
-            '/Team': 'Team',
-            '/Paper_call': 'Paper_call'
-        };
-        setActiveSection(paths[location.pathname] || '');
+        switch (location.pathname) {
+            case '/':
+                setActiveSection('Home');
+                break;
+            case '/Team':
+                setActiveSection('Team');
+                break;
+            case '/Paper_call':
+                setActiveSection('Paper_call');
+                break;
+            default:
+                setActiveSection('');
+        }
     }, [location]);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    useEffect(() => {
+        const ticketImage = document.getElementById('ticketImage');
+        if (ticketImage) {
+            const handleMouseOver = () => {
+                ticketImage.src = '/ticket.png';
+            };
+            const handleMouseOut = () => {
+                ticketImage.src = '/ticket1.png';
+            };
+
+            ticketImage.addEventListener('mouseover', handleMouseOver);
+            ticketImage.addEventListener('mouseout', handleMouseOut);
+
+            return () => {
+                ticketImage.removeEventListener('mouseover', handleMouseOver);
+                ticketImage.removeEventListener('mouseout', handleMouseOut);
+            };
+        }
+    }, []);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
-        <div id='Navbar' className="relative">
-            <div className="fixed top-0 left-0 w-full h-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/30 via-gray-900/30 to-black/30 blur-2xl -z-10" />
+        <div id='Navbar'>
             <nav
-                className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 backdrop-blur-md bg-black/20 border-b border-white/10 ${
-                    isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
-                }`}
+                className={`bg-gray-800 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 transition-transform duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
+                    }`}
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-20">
-                        <Link to="/" className="flex items-center space-x-3">
-                            <img src="/abraxas.jpeg" className="h-10 w-10 rounded-full ring-2 ring-purple-500/50" alt="Abraxas Logo" />
-                            <span className="text-xl font-semibold text-white tracking-wider">
-                                Abraxas
-                            </span>
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-around mx-auto p-4">
+                    <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="/physteo.jpeg" className="h-12 rounded-full" alt="Physteo Logo" />
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 dark:text-white">
+                            Physteo
+                        </span>
+                    </Link>
+                    <div className="flex md:order-2 h-12 space-x-3 md:space-x-0 rtl:space-x-reverse ">
+                        <Link to="/" className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
+                            <img id="ticketImage" src="/ticket1.png" className="h-20 w-22" alt="Physteo Logo" />
                         </Link>
-
-                        {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center space-x-8">
-                            {['Home', 'About', 'Projects', 'Work', 'Gallery', 'Timeline', 'Team', 'Contact'].map((item) => (
-                                <Link
-                                    key={item}
-                                    to={item === 'Home' ? '/' : `/${item === 'Contact' ? 'FAQ' : item}`}
-                                    className={`relative px-3 py-2 text-sm transition-colors duration-200 ${
-                                        activeSection === item 
-                                            ? 'text-purple-400'
-                                            : 'text-gray-300 hover:text-white'
-                                    } group`}
-                                >
-                                    {item}
-                                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 transform origin-left transition-transform duration-200 ${
-                                        activeSection === item ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                                    }`} />
-                                </Link>
-                            ))}
-                        </div>
-
-                        {/* Mobile Menu Button */}
                         <button
+                            data-collapse-toggle="navbar-sticky"
+                            type="button"
+                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky"
+                            aria-expanded={isMenuOpen}
                             onClick={toggleMenu}
-                            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white focus:outline-none"
                         >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                {isMenuOpen ? (
-                                    <path d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
+                            <span className="sr-only">Open main menu</span>
+                            {isMenuOpen ? (
+                                <svg
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 17 14"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h15M1 7h15M1 13h15"
+                                    />
+                                </svg>
+                            )}
                         </button>
                     </div>
-
-                    {/* Mobile Menu */}
-                    <div className={`md:hidden transition-all duration-300 ease-in-out ${
-                        isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
-                    }`}>
-                        <div className="px-2 pt-2 pb-3 space-y-1 bg-black/30 backdrop-blur-lg rounded-lg mb-4">
-                            {['Home', 'About', 'Projects', 'Work', 'Gallery', 'Timeline', 'Team', 'Contact'].map((item) => (
+                    <div
+                        className={`items-center justify-between ${isMenuOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto md:order-1`}
+                        id="navbar-sticky"
+                    >
+                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
+                            <li>
                                 <Link
-                                    key={item}
-                                    to={item === 'Home' ? '/' : `/${item === 'Contact' ? 'FAQ' : item}`}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium ${
-                                        activeSection === item
-                                            ? 'text-purple-400 bg-purple-900/20'
-                                            : 'text-gray-300 hover:bg-purple-900/10 hover:text-white'
-                                    }`}
+                                    to="/"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Home' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    aria-current="page"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    {item}
+                                    Home
                                 </Link>
-                            ))}
-                        </div>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#About"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'About' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Speakers"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Speakers' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Speakers
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Socialwall"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Socialwall' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Social Wall
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/Paper_call"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Paper_call' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Call for Papers
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Sponsors"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Sponsors' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Sponsors
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/Team"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Team' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Team
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#FAQ"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'FAQ' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    FAQ
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>

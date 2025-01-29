@@ -5,7 +5,7 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 const TeamCard = ({ photo, name, social }) => {
     return (
         <motion.div
-            className="border border-zinc-400 rounded-lg relative w-full md:w-64 h-auto md:h-72 bg-black hover:bg-black p-1 overflow-hidden shadow-lg flex flex-col items-center flex-shrink-0 transition-colors duration-300"
+            className="border border-zinc-400 rounded-lg relative w-3/4 md:w-64 h-auto md:h-72 bg-black hover:bg-black p-1 overflow-hidden shadow-lg flex flex-col items-center flex-shrink-0 transition-colors duration-300"
             style={{ perspective: 1000 }}
         >
             <motion.div
