@@ -64,39 +64,12 @@ const FAQ = () => {
         <div className="min-h-screen bg-black flex items-center justify-center p-4">
             <motion.div
                 ref={ref}
-                className="w-full h-fit max-w-5xl bg-neutral-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-6 rounded-lg shadow-md flex flex-col md:flex-row"
+                className="w-full  justify-center h-fit max-w-5xl bg-neutral-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-6 rounded-lg shadow-md flex flex-col md:flex-row"
                 initial="hidden"
                 animate={controls}
                 variants={containerVariants}
             >
                 {/* FAQ Section */}
-                <div className="md:w-1/2 md:pr-4 h-112 overflow-y-auto">
-                    <h1 className="text-3xl font-bold mb-6 text-center text-slate-300 sticky top-0 bg-neutral-400 bg-opacity-30 backdrop-filter flex items-center justify-center backdrop-blur-lg rounded-lg py-4" style={{ zIndex: 10 }}>
-                        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-                            Frequently Asked Questions
-                        </span>
-                    </h1>
-                    {faqs.map((faq, index) => (
-                        <motion.div
-                            key={index}
-                            className="mb-4"
-                            variants={itemVariants}
-                        >
-                            <div
-                                className="cursor-pointer bg-gray-700 p-3 rounded-lg flex justify-between items-center"
-                                onClick={() => toggleFAQ(index)}
-                            >
-                                <h3 className="font-semibold">{faq.question}</h3>
-                                <span>{activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
-                            </div>
-                            {activeIndex === index && (
-                                <div className="bg-gray-600 p-4 rounded-lg mt-2">
-                                    <p>{faq.answer}</p>
-                                </div>
-                            )}
-                        </motion.div>
-                    ))}
-                </div>
 
                 {/* Contact Us Section */}
                 <motion.div
@@ -163,18 +136,16 @@ const FAQ = () => {
                         </div>
                     </form>
                     <div className="flex space-x-8 mt-4">
-                        <a href="https://www.linkedin.com/in/physteo-nith-34a405255/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-600 hover:text-blue-800 transition-colors duration-300 icon-hover">
+                        <a href="https://www.linkedin.com/company/abraxas-nith/mycompany/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-600 hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaLinkedin />
                         </a>
-                        <a href="https://github.com/physteo-nith/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
+                        <a href="https://github.com/Team-Abraxas" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaGithub />
                         </a>
-                        <a href="https://www.instagram.com/physteo?igsh=enh1NWFucDJ5NGc4/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
+                        <a href="https://www.instagram.com/team_abraxas" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaInstagram />
                         </a>
-                        <a href="https://x.com/physteo?t=_nhVeLqYEwVic5EQpb4BvQ&s=09/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-500 hover:text-blue-800 transition-colors duration-300 icon-hover">
-                            <FaTwitter />
-                        </a>
+                        
                     </div>
                 </motion.div>
             </motion.div>

@@ -63,10 +63,10 @@ function App() {
             <section id='Sponsors'>
               <Sponsor />
             </section>
-            <section id='FAQ'>
+            <section id='FAQ' className=''>
               <FAQ />
             </section>
-            <section id='Footer'>
+            <section id='Footer' >
               <Footer />
             </section>
           </>

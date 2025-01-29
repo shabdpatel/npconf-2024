@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import CountUp from 'react-countup';
+import RoverCanvas from './Rover';
 
 const About = () => {
     const { scrollY } = useViewportScroll();
@@ -23,34 +24,19 @@ const About = () => {
             </motion.div>
             <div className="z-10 flex flex-col mt-20 h-full w-full px-10 md:flex-row">
                 <div className="flex flex-col justify-start items-start text-left w-full md:w-1/2">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-3">National Physics Conference 2024</h1>
-                    <h2 className="text-lg md:text-4xl font-bold mx-4 md:mx-2 mt-4">
-                        Registrations
-                    </h2>
-                    <h2 className="text-lg md:text-3xl font-medium mx-4 md:mx-2 mt-6">
-                        NIT Hamirpur, 15th July-18th July
-                    </h2>
-                    <p className="text-lg md:text-2xl font-sans mx-4 md:mx-2 mt-2">
-                        PyCon India 2024 is the premier conference for Python enthusiasts and professionals, offering an unparalleled opportunity to dive deep into the world of Python and explore its limitless potentials.
-                    </p>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">Who are we</h1>
+                    
+                    <p className="text-sm md:text-xl font-sans mx-4 md:mx-2 mt-2">
+                    The engineering physics branch's departmental club is Team Abraxas - a vibrant community of individuals fueled by passion, creativity, and technology. We embark on a journey to unravel the secrets of the universe, while at the same time, creating technological wonders that defy imagination. Our research encompasses a kaleidoscope of physics disciplines - from the frontier of quantum computing to the timeless theories of particle physics. Physics enthusiasts, come and join us in a world of discovery, where the universe is your playground and knowledge is your compass. Let's ignite your curiosity, spark new ideas and demonstrate your expertise. With discussions, demonstrations, and discoveries, we will create a captivating atmosphere that will leave a lasting impression on all who join us. Though we may be new, we are determined to make our mark and leave a legacy that will be remembered for years to come.                    </p>
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/H0iIuguAP9M?si=cjSxcadtbSrJT6TM"
-                        title="YouTube video player"
-                        frameBorder="0"
-
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="w-full h-60 rounded-lg md:h-96"
-                    ></iframe>
+                    <div>
+                        
+                    </div>
                 </div>
             </div>
             <motion.div
-                className="flex justify-around w-full mt-10 py-10 bg-gradient-to-r from-blue-400 to-slate-900"
+                className="flex justify-around w-full mt-24 py-10 bg-gradient-to-r from-blue-400 to-slate-900"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 50, delay: 1 }}
@@ -69,7 +55,7 @@ const About = () => {
                 </div>
                 <div className="text-center">
                     <h3 className="text-4xl md:text-5xl font-bold">
-                        <CountUp end={7} duration={5} />
+                        <CountUp end={9} duration={5} />
                     </h3>
                     <p className="text-lg md:text-2xl font-medium">Awards</p>
                 </div>
