@@ -6,8 +6,8 @@ const Footer = () => {
             <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <div className="flex items-center mb-4">
-                        <img src="/physteo.jpeg" alt="SRM NPC 2024 Logo" className="h-12 rounded-full" />
-                        <h2 className="text-white ml-4 text-2xl">Physteo</h2>
+                        <img src="/abraxas.jpeg" alt="SRM NPC 2024 Logo" className="h-12 rounded-full" />
+                        <h2 className="text-white ml-4 text-2xl">Abraxas</h2>
                     </div>
                     <p className="text-slate-200">
                         National Physicists’ Conclave 2024, a prestigious gathering of physicists, physics enthusiasts,

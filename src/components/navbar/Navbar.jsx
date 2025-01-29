@@ -79,14 +79,14 @@ const Navbar = () => {
             >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-around mx-auto p-4">
                     <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="/physteo.jpeg" className="h-12 rounded-full" alt="Physteo Logo" />
+                        <img src="/abraxas.jpeg" className="h-12 rounded-full" alt="Abraxas Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 dark:text-white">
-                            Physteo
+                            Abraxas
                         </span>
                     </Link>
                     <div className="flex md:order-2 h-12 space-x-3 md:space-x-0 rtl:space-x-reverse ">
                         <Link to="/" className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
-                            <img id="ticketImage" src="/ticket1.png" className="h-20 w-22" alt="Physteo Logo" />
+                            <img id="ticketImage" src="/ticket1.png" className="h-20 w-22" alt="Abraxas Logo" />
                         </Link>
                         <button
                             data-collapse-toggle="navbar-sticky"
