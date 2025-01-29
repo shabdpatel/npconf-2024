@@ -1,66 +1,120 @@
 {
     "Volunteers": [
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800315/IMG_20250125_132328_-_Ajandeep_Singh_i8dpn1.jpg",
+            "name": "Ajandeep Singh",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/ajandeep-singh-a58909346",
+                "instagram": "https://www.instagram.com/ajandeep303"
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800322/DSC_0247_-_Akhil_Verma_gjkeuq.jpg",
+            "name": "Akhil Verma",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/akhil_verma093"
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800310/24BPH005_-_Aman_Verma_ozgagv.png",
+            "name": "Aman",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "",
+                "instagram": ""
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800308/24BPH006_-_Aman_wfab9w.jpg",
+            "name": "Amandeep",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/senor_aman"
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800306/24BPHO48.._-_Ankit_Kumar_vigpk0.jpg",
+            "name": "Ankit Kumar",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/_ankit_9.4"
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800320/anshu_-_ANSHU_ASIT_ROY_gyngjv.jpg",
+            "name": "Anshu Asit Roy",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "https://github.com/AnshuRoy25",
+                "linkedin": "http://www.linkedin.com/in/anshuroy2006",
+                "instagram": "https://www.instagram.com/anshuroy2006/"
             }
         },
         {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800317/IMG20250124114225_-_Arun_Thakur_hi2bga.jpg",
+            "name": "Arun Thakur",
             "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/arun-thakur-234a6b323",
+                "instagram": "https://www.instagram.com/arun.thqr"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800309/24bph010_-_ARYAN_KUMAR_ezxrkt.jpg",
+            "name": "Aryan Kumar",
+            "social": {
+                "github": "",
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/__a_ryan_"
+            }
+        },
+        {
+            "photo": "",
+            "name": "Ashish Rawal",
+            "social": {
+                "github": "",
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800307/24BPH013_-_AYUSH_KUMAR_PRAJAPATI_jwgomn.jpg",
+            "name": "Ayush Prajapati",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/ayush-prajapati-63a993314",
+                "instagram": "https://www.instagram.com/ayush_prajapati_7242"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800309/Neha_._-_NEHA_DEVI_rc9l6c.jpg",
+            "name": "Neha",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/neha-215746321",
+                "instagram": "https://www.instagram.com/secret_wisher8"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800306/IMG-20241208-WA0007_-_Rohan_Kumar_rk0eor.jpg",
+            "name": "Rohan Mishra",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/rohanmishra29_",
+                "instagram": "https://www.instagram.com/rohanmishra29_"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800321/IMG-20241110-WA0021_-_VIKENDRA_KASHYAP_kuldch.jpg",
+            "name": "Vikendra Kashyap",
+            "social": {
+                "github": "",
+                "linkedin": "",
+                "instagram": ""
             }
         }
     ],
@@ -75,73 +129,106 @@
                 "instagram": "https://www.instagram.com/1_aaru.12?igsh=ZWxlOHBxeXZ1cTU4"
             }
         },
-        {
-            "photo": "",
-            "name": "Aditya Sahu",
-            "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787496/Picsart_23-02-14_16-40-55-903_-_aditya_kumar_kolesh_hyypzz.jpg",
+                "name": "Aditya Kumar",
+                "social": {
+                    "github": "https://github.com/codewithAdi04",
+                    "linkedin": "https://www.linkedin.com/in/aditya-kumar-993544305/",
+                    "instagram": "https://www.instagram.com/__adityakumarrr__/"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787462/image_-_Aditya_Verma_xdzn5g.jpg",
+                "name": "Aditya Verma",
+                "social": {
+                    "github": "https://github.com/Vermaa-adi",
+                    "linkedin": "https://www.linkedin.com/in/aditya-verma-096a8b2a7/",
+                    "instagram": "https://www.instagram.com/iamadi_verma/"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787460/20250124_170150_-_Akshay_Sharma_qbfid7.jpg",
+                "name": "Akshay Sharma",
+                "social": {
+                    "github": "http://github.com/AdditiveInstrr",
+                    "linkedin": "http://linkedin.com/in/akshays4124",
+                    "instagram": "https://www.instagram.com/akshuusss"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712824996/Batch2024/nmq7dxklsvoprlszpyxm.jpg",
+                "name": "Ankush Thakur",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": "https://www.instagram.com/ankushthakur__12?igsh=Zmo3Ynh0cHByNWZy"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737802398/Ashumit_-_Ashumit_Singh_na2e6r.png",
+                "name": "Ashumit",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": ""
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712824979/Batch2024/og18gl4nkcf8ovlma6xt.heic",
+                "name": "Nikhil Sharma",
+                "social": {
+                    "github": "",
+                    "linkedin": "https://www.linkedin.com/in/nikhil-sharma-0594bb289",
+                    "instagram": ""
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712832081/Batch2024/IMG_20240404_165626_1_-_Peeyush_Sharma_rmmdg5.jpg",
+                "name": "Peeyush Sharma",
+                "social": {
+                    "github": "https://github.com/Peeyushphy",
+                    "linkedin": "",
+                    "instagram": "https://www.instagram.com/peeyush.sharma.1/"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737825786/IMG_20240105_063359_-_RAHUL_SHARMA_fj6n3o.jpg",
+                "name": "Rahul",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": ""
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787460/23BPH034_-_Raj_Ranjan_hgxfpc.jpg",
+                "name": "Raj Ranjan",
+                "social": {
+                    "github": "https://github.com/beroozgar",
+                    "linkedin": "https://www.linkedin.com/in/sanchit-mittal-041a3b28b/",
+                    "instagram": "https://www.instagram.com/ranjanxraj/"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712825027/Batch2024/s2epfeanem5lqtfig3rr.jpg",
+                "name": "Shivangi Beniwal",
+                "social": {
+                    "github": "https://github.com/Shivangi14Beniwal",
+                    "linkedin": "http://www.linkedin.com/in/shivangi-beniwal-44a5092b9",
+                    "instagram": "https://www.instagram.com/shivangi_beniwal111?igsh=MjZ1aDZpMjdzYnVx"
+                }
+            },
+            {
+                "photo": "",
+                "name": "Shruti",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": ""
+                }
             }
-        },
-        {
-            "photo": "",
-            "name": "Ankush Thakur",
-            "social": {
-                "twitter": "#",
-                "linkedin": "https://www.linkedin.com/in/ankush-thakur-b9aa1528b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "github": "#",
-                "instagram": "https://www.instagram.com/ankushthakur__12?igsh=Zmo3Ynh0cHByNWZy"
-            }
-        },
-        {
-            "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1720017856/WhatsApp_Image_2023-08-17_at_12.45.52_kzbhze.jpg",
-            "name": "Aryan Gupta",
-            "social": {
-                "twitter": "#",
-                "linkedin": "https://www.linkedin.com/in/aryan-gupta-b1407a2b5/",
-                "github": "https://github.com/Aryan0512398",
-                "instagram": "https://www.instagram.com/aryan_gupta0512?igsh=Z2V4ZzNxa2N6ZXZq"
-            }
-        },
-        {
-            "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1720018131/IMG_8641_iqsbrr.jpg",
-            "name": "Chandramouli Singh",
-            "social": {
-                "twitter": "#",
-                "linkedin": "https://www.linkedin.com/in/chandramouli-singh-3b6ab9316/",
-                "github": "#",
-                "instagram": "https://www.instagram.com/mouliiii2/"
-            }
-        },
-        {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
-            "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
-            }
-        },
-        {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
-            "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
-            }
-        },
-        {
-            "photo": "/shabd.jpeg",
-            "name": "Shabd Patel",
-            "social": {
-                "twitter": "#",
-                "linkedin": "#",
-                "github": "#"
-            }
-        }
-    ],
+        ],
     "Coordinators": [
         {
             "photo": "/shabd.jpeg",
