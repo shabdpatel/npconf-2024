@@ -24,7 +24,7 @@ const Team = () => {
     }, []);
 
     const getVisibleCards = () => {
-        if (windowWidth < 640) return 1;      // Mobile
+        if (windowWidth < 768) return 1;      // Mobile
         if (windowWidth < 1024) return 2;     // Tablet
         return 3;                             // Desktop
     };
@@ -45,15 +45,15 @@ const Team = () => {
         if (!teamData[year]) return null;
 
         const visibleCards = getVisibleCards();
-        const cardWidth = Math.min((windowWidth - 64) / visibleCards, 320);
+        const containerPadding = windowWidth < 768 ? 32 : 48; // Adjust padding for different screens
+        const cardWidth = Math.min((windowWidth - (containerPadding * 2)) / visibleCards, 320);
 
         return (
             <section id={year} className="w-full max-w-7xl mx-auto mb-16 scroll-mt-24">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-8 px-4 md:px-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-8 text-center px-4">
                     {year.replace(/-/g, ' ')}
                 </h2>
                 <InView threshold={0.1} onChange={(inView) => inView && controls.start("visible")}>
-                    {/* Scroll Container */}
                     <div className="relative px-4 md:px-6">
                         <div className="overflow-x-auto hide-scrollbar">
                             <motion.div
@@ -63,14 +63,19 @@ const Team = () => {
                                 variants={variants}
                                 style={{
                                     width: 'fit-content',
-                                    minWidth: '100%'
+                                    minWidth: '100%',
+                                    display: 'flex',
+                                    justifyContent: windowWidth < 1024 ? 'flex-start' : 'center'
                                 }}
                             >
                                 {teamData[year].map((member, index) => (
                                     <motion.div
                                         key={index}
                                         className="flex-shrink-0"
-                                        style={{ width: cardWidth }}
+                                        style={{ 
+                                            width: cardWidth,
+                                            maxWidth: '100%'
+                                        }}
                                         variants={variants}
                                     >
                                         <TeamCard
@@ -82,6 +87,14 @@ const Team = () => {
                                 ))}
                             </motion.div>
                         </div>
+
+                        {/* Scroll Indicators */}
+                        {teamData[year].length > getVisibleCards() && (
+                            <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 pb-2">
+                                <div className="w-16 h-1 bg-white/20 rounded-full"></div>
+                                <div className="w-16 h-1 bg-white/20 rounded-full"></div>
+                            </div>
+                        )}
                     </div>
                 </InView>
             </section>
@@ -96,6 +109,8 @@ const Team = () => {
                 -ms-overflow-style: none;
                 scrollbar-width: none;
                 scroll-behavior: smooth;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
             .hide-scrollbar::-webkit-scrollbar {
                 display: none;
@@ -140,7 +155,7 @@ const Team = () => {
             {/* Main content container */}
             <div className="relative z-10 min-h-screen pt-20">
                 {/* Main heading */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-16">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-16 px-4">
                     Our{" "}
                     <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
                         Team Members
