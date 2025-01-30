@@ -30,14 +30,13 @@ const SpeakerCard = ({ photo, name, position, description }) => {
             onMouseLeave={handleMouseLeave}
         >
             <motion.div
-                className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 mt-3"
+                className="w-32 h-32 md:w-48 md:h-48 rounded overflow-hidden mb-4 mt-3"
                 style={{ rotateX, rotateY }}
             >
                 <img src={photo} alt={name} className="w-full h-full object-cover" />
             </motion.div>
             <div className="text-center mb-4">
                 <h2 className="text-lg font-semibold text-slate-100">{name}</h2>
-                <p className="text-slate-100">{position}</p>
             </div>
             <div className="text-center px-3">
                 <p className="text-slate-300">{description}</p>

@@ -14,8 +14,9 @@ const Socialwall = () => {
                     Social Wall
                 </span></h2>
             <p className="text-center text-gray-300 text-xl md:text-2xl mb-6 md:mb-8">Get updated on our latest events and workshops</p>
-            
-            
+            <div>
+                
+            </div>
 
         </div>
     );
