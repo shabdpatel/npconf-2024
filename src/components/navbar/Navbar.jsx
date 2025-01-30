@@ -39,8 +39,8 @@ const Navbar = () => {
             case '/Team':
                 setActiveSection('Team');
                 break;
-            case '/Paper_call':
-                setActiveSection('Paper_call');
+            case '/Gallery':
+                setActiveSection('Gallery');
                 break;
             default:
                 setActiveSection('');
@@ -176,11 +176,11 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/Paper_call"
-                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Paper_call' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    to="/Gallery"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Gallery' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Call for Papers
+                                    Gallery
                                 </Link>
                             </li>
                             <li>

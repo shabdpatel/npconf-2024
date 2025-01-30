@@ -20,7 +20,7 @@ const Footer = () => {
                         <li><a href="/#About" className="hover:underline">About</a></li>
                         <li><a href="/#Speakers" className="hover:underline">Speakers</a></li>
                         <li><a href="/#Socialwall" className="hover:underline">Social Wall</a></li>
-                        <li><a href="/Paper_call" className="hover:underline">Call for Papers</a></li>
+                        <li><a href="/Gallery" className="hover:underline">Gallery</a></li>
                         <li><a href="/#Sponsors" className="hover:underline">Sponsors</a></li>
                         <li><a href="/Team" className="hover:underline">Team</a></li>
                         <li><a href="/#FAQ" className="hover:underline">FAQ</a></li>
