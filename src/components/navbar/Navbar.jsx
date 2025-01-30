@@ -69,7 +69,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between">
                         {/* Logo and Brand */}
                         <Link to="/" className="flex items-center space-x-2">
-                            <img src="/abraxas.jpeg" className="h-7 sm:h-8 lg:h-10 rounded-full ring-2 ring-blue-500/50" alt="Logo" />
+                            <img src="/AbraxasLogo.png" className="h-7 sm:h-8 lg:h-10 rounded-full ring-2 ring-blue-500/50" alt="Logo" />
                             <span className="self-center text-base sm:text-lg lg:text-xl font-semibold text-white tracking-wide">
                                 ABRAXAS
                             </span>

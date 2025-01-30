@@ -41,8 +41,7 @@ const Footer = () => {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade">
                         </iframe>
-                        <a href="tel:91-8757489128" className="hover:underline">+91-8757489128</a><br />
-                        <a href="mailto:shabdpatel0@gmail.com" className="hover:underline">shabdpatel0@gmail.com</a>
+                        
                     </p>
                 </div>
             </div>

@@ -64,23 +64,23 @@ const FAQ = () => {
         <div className="min-h-screen bg-black flex items-center justify-center p-4">
             <motion.div
                 ref={ref}
-                className="w-full  justify-center h-fit max-w-5xl bg-neutral-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-6 rounded-lg shadow-md flex flex-col md:flex-row"
+                className="w-full max-w-5xl bg-neutral-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-4 md:p-6 rounded-lg shadow-md flex flex-col md:flex-row md:justify-center"
                 initial="hidden"
                 animate={controls}
                 variants={containerVariants}
             >
-                {/* FAQ Section */}
-
                 {/* Contact Us Section */}
                 <motion.div
-                    className="md:w-1/2 md:pl-4 mt-6 md:mt-0 flex flex-col items-center justify-center"
+                    className="w-full md:w-1/2 md:pl-4 mt-6 md:mt-0 flex flex-col items-center justify-center"
                     variants={itemVariants}
                 >
-                    <h1 className="text-4xl font-bold text-slate-300 text-center"> <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-                        Contact Us
-                    </span></h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-slate-300 text-center">
+                        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                            Contact Us
+                        </span>
+                    </h1>
 
-                    <form className="w-full max-w-lg mt-4 bg-gray-700 p-6 rounded-lg" onSubmit={handleSubmit}>
+                    <form className="w-full max-w-lg mt-4 bg-gray-700 p-4 md:p-6 rounded-lg" onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-slate-300 text-sm font-bold mb-2" htmlFor="to_name">
                                 Name
@@ -135,26 +135,22 @@ const FAQ = () => {
                             </button>
                         </div>
                     </form>
-                    <div className="flex space-x-8 mt-4">
-                        <a href="https://www.linkedin.com/company/abraxas-nith/mycompany/" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue-600 hover:text-blue-800 transition-colors duration-300 icon-hover">
+                    <div className="flex space-x-6 md:space-x-8 mt-4">
+                        <a href="https://www.linkedin.com/company/abraxas-nith/mycompany/" target="_blank" rel="noopener noreferrer" className="text-3xl md:text-4xl text-blue-600 hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaLinkedin />
                         </a>
-                        <a href="https://github.com/Team-Abraxas" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
+                        <a href="https://github.com/Team-Abraxas" target="_blank" rel="noopener noreferrer" className="text-3xl md:text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaGithub />
                         </a>
-                        <a href="https://www.instagram.com/team_abraxas" target="_blank" rel="noopener noreferrer" className="text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
+                        <a href="https://www.instagram.com/team_abraxas" target="_blank" rel="noopener noreferrer" className="text-3xl md:text-4xl text-blue hover:text-blue-800 transition-colors duration-300 icon-hover">
                             <FaInstagram />
                         </a>
-                        
                     </div>
                 </motion.div>
             </motion.div>
             <style jsx>{`
                 .icon-hover:hover {
                     transform: scale(1.3); /* Increase size on hover */
-                }
-                .h-112 {
-                    height: 28rem; /* Custom height */
                 }
             `}</style>
         </div>

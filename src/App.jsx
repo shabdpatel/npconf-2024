@@ -55,13 +55,13 @@ function App() {
               <section id='About'>
                 <About />
               </section>
-              <section id='Speakers'>
+              <section id='Speakers' className='sm:mt-30 mt-20 md:mt-0'>
                 <Speaker />
               </section>
               <section id='Socialwall'>
                 <Socialwall />
               </section>
-              <section id='Sponsors'>
+              <section id='Sponsors' className='sm-mt-0 mt-[36rem]'>
                 <Sponsor />
               </section>
               <section id='FAQ' className=''>
