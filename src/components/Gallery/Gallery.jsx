@@ -19,7 +19,13 @@ const Gallery = () => {
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712791066/ABRAXAS-Gallery24/yyqwf9x1uymoxz7fnsdk.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712790962/ABRAXAS-Gallery24/pude5plcom6q0xbtq2dy.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712793846/ABRAXAS-Gallery24/tfo3lskopqcx1uccmv6m.jpg",
-      "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712791247/ABRAXAS-Gallery24/yivjfkaqdkt4sxxb9vo4.jpg"
+      "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712791247/ABRAXAS-Gallery24/yivjfkaqdkt4sxxb9vo4.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269369/Screenshot_20240818-184421_fdkyb6.png",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269369/Screenshot_20250131-015712_Photos_aq4hzd.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269369/Screenshot_20250131-015648_Photos_foxja7.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269369/Screenshot_20250131-015738_Photos_ub228u.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269370/Screenshot_20250131-015833_Photos_idujq9.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269369/Screenshot_20250131-015755_Photos_yzjgje.jpg"
     ],
     "2023": [
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786020/ABRAXAS-Gallery/p4bfierd3hosdoawdzsy.jpg",
@@ -37,6 +43,11 @@ const Gallery = () => {
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786228/ABRAXAS-Gallery/tfopj6kz3nyxfhx2s1ae.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786260/ABRAXAS-Gallery/ziuw6xbziugszlap3dvf.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786178/ABRAXAS-Gallery/a7txsa3jgy3ibf0hq6gh.jpg"
+    ],
+    "2025":[
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269372/Screenshot_20250131-015950_Photos_uhykne.jpg",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269371/Screenshot_20250131-015927_Photos_l0uv7j.png",
+      "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1738269372/Screenshot_20250131-020027_Photos_zxmpqf.png"
     ],
   };
 
@@ -87,7 +98,7 @@ const Gallery = () => {
                 onClick={() => setSelectedYear(year)}
                 className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500 
                   ${selectedYear === year
-                    ? "bg-gradient-to-r from-orange-600 to-orange-400 shadow-lg shadow-purple-500/25 scale-105 transform"
+                    ? "bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform"
                     : "bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform"
                   }`}
               >
@@ -120,7 +131,7 @@ const Gallery = () => {
                       alt={`Gallery ${index + 1}`}
                       className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-t  via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="absolute bottom-4 left-4 flex items-center space-x-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <Camera className="w-5 h-5" />
                         <span className="text-sm font-medium">View Image</span>
@@ -139,7 +150,7 @@ const Gallery = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center"
+              className="fixed inset-0 bg-transparent backdrop-blur-md z-50 flex items-center justify-center"
               onClick={() => setSelectedImage(null)}
             >
               <div className="relative w-full max-w-7xl px-4">
