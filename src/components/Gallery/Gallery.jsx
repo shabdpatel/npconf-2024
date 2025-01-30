@@ -37,7 +37,7 @@ const Gallery = () => {
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786228/ABRAXAS-Gallery/tfopj6kz3nyxfhx2s1ae.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786260/ABRAXAS-Gallery/ziuw6xbziugszlap3dvf.jpg",
       "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712786178/ABRAXAS-Gallery/a7txsa3jgy3ibf0hq6gh.jpg"
-    ]
+    ],
   };
 
   const [selectedYear, setSelectedYear] = useState("2024");
@@ -77,7 +77,7 @@ const Gallery = () => {
   }, [selectedImage, currentImageIndex, selectedYear]);
 
   return (
-    <div className="h-full bg-transparent">
+    <div className="h-screen overflow-y-auto"> {/* Enable vertical scrolling */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-center mb-8">
           <div className="flex space-x-6">
@@ -99,7 +99,7 @@ const Gallery = () => {
 
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4" 
         >
           <AnimatePresence>
             {galleryData[selectedYear].map((image, index) => (
@@ -113,7 +113,7 @@ const Gallery = () => {
                 className="group relative"
                 onClick={() => handleImageClick(image, index)}
               >
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gray-800/30 backdrop-blur-sm p-2">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-transparent backdrop-blur-sm p-2"> 
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img
                       src={image}

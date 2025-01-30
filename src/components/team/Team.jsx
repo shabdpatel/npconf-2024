@@ -41,7 +41,7 @@ const Team = () => {
         const dragConstraintsLeft = -(teamData[year].length - visibleCards) * (cardWidth + 16);
 
         return (
-            <div className="mb-12 w-full">
+            <div className="mb-12 w-full mr-{-40}">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{year}</h2>
                 <div className="w-full overflow-x-auto overflow-y-hidden rounded-lg hide-scrollbar">
                     <InView
