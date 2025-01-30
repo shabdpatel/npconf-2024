@@ -17,8 +17,8 @@ const About = () => {
                 transition={{ type: 'spring', stiffness: 50, delay: 0.7 }}
             >
                 {/* Text Section */}
-                <div className="flex flex-col md:justify-start justify-center items-center md:items-start text-left w-full md:w-1/2">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4 md:w-full md:text-center md:mb-6">Who are we</h1>
+                <div className="flex flex-col md:justify-center justify-center items-center md:items-center text-left w-full md:w-1/2">
+                    <h1 className="text-3xl md:text-5xl align-middle bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text md:mb-6">Who are we</h1>
                     <p className="text-sm md:text-lg font-sans mx-2 md:mx-0 mt-2 w-96 md:w-full text-center">
                         The engineering physics branch's departmental club is Team Abraxas - a vibrant community of individuals fueled by passion, creativity, and technology. We embark on a journey to unravel the secrets of the universe, while at the same time, creating technological wonders that defy imagination. Our research encompasses a kaleidoscope of physics disciplines - from the frontier of quantum computing to the timeless theories of particle physics. Physics enthusiasts, come and join us in a world of discovery, where the universe is your playground and knowledge is your compass. Let's ignite your curiosity, spark new ideas and demonstrate your expertise. With discussions, demonstrations, and discoveries, we will create a captivating atmosphere that will leave a lasting impression on all who join us. Though we may be new, we are determined to make our mark and leave a legacy that will be remembered for years to come.
                     </p>
