@@ -1,39 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
-
-// Space-themed loader component
-const SpaceLoader = () => (
-  <div className="fixed inset-0 bg-gray-900 z-50 flex items-center justify-center">
-    <div className="relative">
-      {/* Central planet */}
-      <div className="w-16 h-16 bg-purple-600 rounded-full animate-pulse relative">
-        <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75"></div>
-        {/* Rings */}
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute inset-0 border-2 border-blue-500/30 rounded-full"
-            style={{
-              animation: `spin ${(i + 2) * 2}s linear infinite`,
-              width: `${(i + 1) * 150}%`,
-              height: `${(i + 1) * 150}%`,
-              top: `${-(i + 1) * 25}%`,
-              left: `${-(i + 1) * 25}%`,
-            }}
-          >
-            {/* Orbiting stars */}
-            <div 
-              className="absolute -top-1 -left-1 w-2 h-2 bg-white rounded-full"
-              style={{
-                boxShadow: '0 0 10px #fff, 0 0 20px #fff',
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
 
 const TimelineEvent = ({ date, events }) => {
   const [ref, inView] = useInView({
@@ -42,39 +8,74 @@ const TimelineEvent = ({ date, events }) => {
   });
 
   return (
-    <div ref={ref} className="relative w-full md:w-1/4 px-4 mb-8 md:mb-0">
+    <div ref={ref} className="relative w-full md:w-1/2 lg:w-1/3 xl:w-1/6 px-4 mb-12">
       <div className={`transform transition-all duration-1000 ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        {/* Month Label */}
-        <div className="text-lg font-bold mb-14 text-gray-200">
+        <div className="text-lg font-bold mb-14 text-gray-200 text-center">
           {date}
         </div>
-        
-        {/* Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-600 top-0 mt-10">
-          <div className={`w-4 h-4 rounded-full bg-white absolute left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${
-            inView ? 'scale-100' : 'scale-0'
+
+        {/* Timeline Line with Moving Dot */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-px bg-transparent top-0 mt-10 overflow-hidden h-full">
+          <div className={`w-px bg-gray-600 h-full transform origin-top transition-transform duration-1000 ${
+            inView ? 'scale-y-100' : 'scale-y-0'
           }`} />
+
+          <div className={`w-4 h-4 rounded-full bg-white absolute left-1/2 transform -translate-x-1/2 
+            transition-all duration-1000 ${
+            inView ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          }`}>
+            <div className="absolute w-full h-full rounded-full bg-white animate-ping opacity-75" />
+          </div>
+
+          <div className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${
+            inView ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <div className={`w-4 h-4 rounded-full bg-white 
+              shadow-[0_0_15px_rgba(255,255,255,0.8)] 
+              animate-moveDown
+              transition-colors duration-1000`}>
+              <div className="absolute inset-0 rounded-full 
+                bg-gradient-to-b from-white via-blue-400 to-blue-600 
+                opacity-0 animate-colorChange" />
+            </div>
+          </div>
+
+          <div className={`w-4 h-4 rounded-full bg-blue-500 absolute left-1/2 transform -translate-x-1/2 bottom-0
+            transition-all duration-1000 ${
+            inView ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          }`}>
+            <div className="absolute w-full h-full rounded-full bg-blue-400 animate-pulse opacity-75" />
+          </div>
         </div>
 
         {/* Events Container */}
-        <div className="space-y-4">
+        <div className="space-y-4 relative">
           {events.map((event, index) => (
             <div
               key={index}
-              className={`p-4 bg-gray-800 rounded-lg shadow-lg transform transition-all duration-1000 delay-${
-                index * 200
-              } ${
-                inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
+              className={`relative p-4 rounded-lg shadow-lg transform transition-all duration-1000 
+                group overflow-hidden
+                ${inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              style={{ 
+                transitionDelay: `${index * 200}ms`,
+                background: 'linear-gradient(to right, rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8))'
+              }}
             >
-              <div className="font-semibold text-gray-200 mb-1">
-                {event.date}: {event.title}
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-800/80 via-purple-900/80 to-purple-800/80 
+                translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="font-semibold text-gray-200 mb-1">
+                  {event.date}: {event.title}
+                </div>
+                {event.subtitle && (
+                  <div className="text-sm text-gray-400">{event.subtitle}</div>
+                )}
               </div>
-              {event.subtitle && (
-                <div className="text-sm text-gray-400">{event.subtitle}</div>
-              )}
             </div>
           ))}
         </div>
@@ -84,8 +85,6 @@ const TimelineEvent = ({ date, events }) => {
 };
 
 const Timeline = () => {
-  const [loading, setLoading] = useState(true);
-  
   const timelineData = [
     {
       month: 'November 2024',
@@ -133,33 +132,44 @@ const Timeline = () => {
         { date: '12', title: 'Möbius', subtitle: 'An infinite continuum' },
         { date: '13', title: 'Physics Arena' }
       ]
-    },
+    }
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <>
-      {loading && <SpaceLoader />}
-      <div className={`min-h-screen bg-gray-900 p-8 transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}>
-        <h1 className="text-4xl font-bold text-white mb-12 text-center font-serif">TIMELINE</h1>
-        <div className="flex flex-col md:flex-row justify-between max-w-7xl mx-auto">
-          {timelineData.map((month, index) => (
-            <TimelineEvent
-              key={index}
-              date={month.month}
-              events={month.events}
-            />
-          ))}
-        </div>
+    <div className="min-h-screen bg-gray-900 p-4 md:p-8">
+      <style jsx global>{`
+        @keyframes moveDown {
+          0% { transform: translate(-50%, 0); }
+          100% { transform: translate(-50%, 100%); }
+        }
+
+        @keyframes colorChange {
+          0% { opacity: 0; }
+          50% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+
+        .animate-moveDown {
+          animation: moveDown 2s ease-in-out infinite;
+        }
+
+        .animate-colorChange {
+          animation: colorChange 2s ease-in-out infinite;
+        }
+      `}</style>
+      <h1 className="text-4xl font-bold text-white mb-12 text-center font-serif">
+        TIMELINE
+      </h1>
+      <div className="flex flex-col md:flex-row flex-wrap justify-center max-w-7xl mx-auto">
+        {timelineData.map((month, index) => (
+          <TimelineEvent
+            key={index}
+            date={month.month}
+            events={month.events}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

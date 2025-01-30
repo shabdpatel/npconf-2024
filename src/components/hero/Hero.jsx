@@ -6,7 +6,7 @@ import Atom from '../hero/Atom'
 
 const fadeInUp = {
     initial: {
-        y: 60,
+        y: 50,
         opacity: 0
     },
     animate: {
@@ -48,8 +48,6 @@ const Hero = () => {
             {/* Animated stars background */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="stars"></div>
-                <div className="stars2"></div>
-                <div className="stars3"></div>
             </div>
 
             {/* Main content */}
