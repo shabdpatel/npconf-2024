@@ -40,8 +40,8 @@ const Navbar = () => {
             case '/Team':
                 setActiveSection('Team');
                 break;
-            case '/Paper_call':
-                setActiveSection('Paper_call');
+            case '/Gallery':
+                setActiveSection('Gallery');
                 break;
             default:
                 setActiveSection('');
@@ -72,6 +72,80 @@ const Navbar = () => {
                         onClick={toggleMenu}
                         className="md:hidden p-2 text-gray-300 hover:text-white rounded-lg hover:bg-gray-800/50"
                     >
+                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
+                            <li>
+                                <Link
+                                    to="/"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Home' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    aria-current="page"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#About"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'About' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Speakers"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Speakers' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Speakers
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Socialwall"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Socialwall' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Social Wall
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/Gallery"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Gallery' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Gallery
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#Sponsors"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Sponsors' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Sponsors
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/Team"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'Team' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Team
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/#FAQ"
+                                    className={`block py-3 px-4 rounded md:p-2 ${activeSection === 'FAQ' ? ' text-blue-700 border border-blue-300' : 'text-gray-200 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'} dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    FAQ
+                                </Link>
+                            </li>
                         <span className="sr-only">Open menu</span>
                         {isMenuOpen ? (
                             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

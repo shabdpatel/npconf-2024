@@ -9,7 +9,7 @@ import Speaker from './components/speaker/Speaker';
 import Sponsor from './components/sponsor/Sponsor';
 import Team from './components/team/Team';
 import About from './components/about/About';
-import Paper_call from './components/paper_call/Paper_call';
+import Gallery from './components/Gallery/Gallery';
 import Footer from './components/footer/Footer';
 import Socialwall from './components/socialwall/Socialwall';
 
@@ -72,7 +72,7 @@ function App() {
           </>
         } />
         <Route path="/Team" element={<Team />} />
-        <Route path="/Paper_call" element={<Paper_call />} />
+        <Route path="/Gallery" element={<Gallery />} />
       </Routes>
     </Router>
   );
