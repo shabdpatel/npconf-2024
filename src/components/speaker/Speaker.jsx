@@ -1,31 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SpeakerCard from './SpeakerCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import speakersData from './Speakers.json';
 
 const Speakers = () => {
-    const [visibleCards, setVisibleCards] = useState(3);
     const [selectedYear, setSelectedYear] = useState('all');
     const { ref, inView } = useInView({ triggerOnce: true });
-
-    useEffect(() => {
-        const updateVisibleCards = () => {
-            if (window.innerWidth < 768) {
-                setVisibleCards(1);
-            } else if (window.innerWidth < 1024) {
-                setVisibleCards(2);
-            } else {
-                setVisibleCards(3);
-            }
-        };
-
-        updateVisibleCards();
-        window.addEventListener('resize', updateVisibleCards);
-        return () => {
-            window.removeEventListener('resize', updateVisibleCards);
-        };
-    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -36,7 +17,6 @@ const Speakers = () => {
                 type: 'spring',
                 stiffness: 50,
                 delay: 0.5,
-                staggerChildren: 0.3
             }
         }
     };
@@ -44,26 +24,15 @@ const Speakers = () => {
     const cardVariants = {
         hidden: { 
             opacity: 0, 
-            y: 100,
-            scale: 0.8
+            y: 50,
         },
         visible: { 
             opacity: 1, 
             y: 0,
-            scale: 1,
             transition: { 
                 type: 'spring', 
                 stiffness: 50,
-                damping: 15
             } 
-        },
-        exit: {
-            opacity: 0,
-            y: -50,
-            scale: 0.9,
-            transition: {
-                duration: 0.3
-            }
         }
     };
 
@@ -92,39 +61,35 @@ const Speakers = () => {
         ? allYearsData 
         : (groupedData[selectedYear] || []).slice(0, 7);
 
-    const cardWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? window.innerWidth - 32 : 320;
-    const dragConstraintsRight = 0;
-    const dragConstraintsLeft = -(filteredData.length - visibleCards) * (cardWidth + 16);
-
     return (
         <motion.div
             ref={ref}
-            className="min-h-screen bg-black flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 w-full max-w-screen-xl mx-auto py-16"
+            className="min-h-screen bg-black flex flex-col items-start md:items-center justify-start md:justify-center px-4 md:px-8 w-full max-w-screen-xl mx-auto py-8 md:py-16"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={containerVariants}
         >
-            <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 md:mb-14 text-center" variants={cardVariants}>
+            <motion.h1 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-14 text-left md:text-center" variants={cardVariants}>
                 Our{" "} 
                 <span className="bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text">
                     Projects
                 </span>
             </motion.h1>
             
-            <motion.p className="text-center text-gray-300 text-lg sm:text-xl mb-8 md:mb-10" variants={cardVariants}>
+            <motion.p className="text-left md:text-center text-gray-300 text-base md:text-xl mb-4 md:mb-10" variants={cardVariants}>
                 Check out our great projects from the last few years.
             </motion.p>
 
-            <motion.div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-12" variants={cardVariants}>
+            <motion.div className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12" variants={cardVariants}>
                 <motion.button
                     onClick={() => setSelectedYear('all')}
                     variants={buttonVariants}
                     whileHover="hover"
-                    className={`px-6 py-2 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300
+                    className={`px-4 py-1.5 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300
                         ${selectedYear === 'all' 
                             ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
                             : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'
-                        } relative overflow-hidden`}
+                        }`}
                 >
                     All Years
                 </motion.button>
@@ -134,49 +99,42 @@ const Speakers = () => {
                         onClick={() => setSelectedYear(year)}
                         variants={buttonVariants}
                         whileHover="hover"
-                        className={`px-6 py-2 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300
+                        className={`px-4 py-1.5 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300
                             ${selectedYear === year 
                                 ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
                                 : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'
-                            } relative overflow-hidden`}
+                            }`}
                     >
                         {year}
                     </motion.button>
                 ))}
             </motion.div>
 
-            <div className="w-full overflow-x-auto overflow-y-hidden rounded-lg hide-scrollbar">
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={selectedYear}
-                        className="flex space-x-4 sm:space-x-6 px-4"
-                        drag="x"
-                        dragConstraints={{ right: dragConstraintsRight, left: dragConstraintsLeft }}
-                        variants={containerVariants}
-                    >
-                        {filteredData.map((speaker, index) => (
-                            <motion.div 
-                                key={`${selectedYear}-${index}`}
-                                variants={cardVariants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                custom={index}
-                                className="flex-shrink-0 w-64 sm:w-72 md:w-80"
-                                transition={{
-                                    delay: index * 0.1,
-                                }}
-                            >
-                                <SpeakerCard
-                                    photo={speaker.photo}
-                                    name={speaker.name}
-                                    position={speaker.position}
-                                    description={speaker.description}
-                                />
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </AnimatePresence>
+            <div className="w-full">
+                <div className="relative">
+                    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-gray-700">
+                        <div className="flex gap-4 md:gap-6 pb-4">
+                            <div className="flex gap-4 md:gap-6 snap-x snap-mandatory">
+                                {filteredData.map((speaker, index) => (
+                                    <div 
+                                        key={`${selectedYear}-${index}`}
+                                        className="snap-start flex-shrink-0 first:pl-0 last:pr-4
+                                            w-[calc(100vw-32px)] 
+                                            md:w-[calc(50vw-48px)] 
+                                            lg:w-80"
+                                    >
+                                        <SpeakerCard
+                                            photo={speaker.photo}
+                                            name={speaker.name}
+                                            position={speaker.position}
+                                            description={speaker.description}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </motion.div>
     );

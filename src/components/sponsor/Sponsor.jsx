@@ -156,18 +156,43 @@ const Timeline = () => {
         .animate-colorChange {
           animation: colorChange 2s ease-in-out infinite;
         }
+
+        @media (max-width: 1024px) {
+          .timeline-container {
+            height: calc(100vh - 8rem);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(156, 163, 175, 0.5) rgba(31, 41, 55, 0.5);
+          }
+
+          .timeline-container::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          .timeline-container::-webkit-scrollbar-track {
+            background: rgba(31, 41, 55, 0.5);
+            border-radius: 3px;
+          }
+
+          .timeline-container::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 3px;
+          }
+        }
       `}</style>
       <h1 className="text-4xl font-bold text-white mb-12 text-center font-serif">
         TIMELINE
       </h1>
-      <div className="flex flex-col md:flex-row flex-wrap justify-center max-w-7xl mx-auto">
-        {timelineData.map((month, index) => (
-          <TimelineEvent
-            key={index}
-            date={month.month}
-            events={month.events}
-          />
-        ))}
+      <div className="timeline-container">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center max-w-7xl mx-auto">
+          {timelineData.map((month, index) => (
+            <TimelineEvent
+              key={index}
+              date={month.month}
+              events={month.events}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

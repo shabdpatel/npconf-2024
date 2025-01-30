@@ -8,64 +8,69 @@ const About = () => {
     const textXOut = useTransform(scrollY, [300, 1000], [0, 500]);
 
     return (
-        <div className="min-h-screen relative flex flex-col justify-center items-center text-white bg-black">
+        <div className="min-h-screen relative flex flex-col justify-start items-center bg-black text-white py-16 sm:py-20 lg:py-24">
             {/* Main Content */}
             <motion.div
-                className="z-10 flex flex-col mt-20 h-full w-full px-4 md:px-10 md:flex-row"
+                className="z-10 flex flex-col w-full max-w-6xl px-4 sm:px-6 lg:px-8"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 50, delay: 0.7 }}
             >
-                {/* Text Section */}
-                <div className="flex flex-col md:justify-center justify-center items-center md:items-center text-left w-full md:w-1/2">
-                    <h1 className="text-3xl md:text-5xl align-middle bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text md:mb-6">Who are we</h1>
-                    <p className="text-sm md:text-lg font-sans mx-2 md:mx-0 mt-2 w-96 md:w-full text-center">
-                        The engineering physics branch's departmental club is Team Abraxas - a vibrant community of individuals fueled by passion, creativity, and technology. We embark on a journey to unravel the secrets of the universe, while at the same time, creating technological wonders that defy imagination. Our research encompasses a kaleidoscope of physics disciplines - from the frontier of quantum computing to the timeless theories of particle physics. Physics enthusiasts, come and join us in a world of discovery, where the universe is your playground and knowledge is your compass. Let's ignite your curiosity, spark new ideas and demonstrate your expertise. With discussions, demonstrations, and discoveries, we will create a captivating atmosphere that will leave a lasting impression on all who join us. Though we may be new, we are determined to make our mark and leave a legacy that will be remembered for years to come.
-                    </p>
-                </div>
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                    {/* Text Section */}
+                    <div className="flex flex-col w-full lg:w-1/2">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text mb-4 sm:mb-6">
+                            Who are we
+                        </h1>
+                        <p className="text-sm sm:text-base lg:text-lg font-sans max-w-prose text-gray-300 leading-relaxed">
+                            Team Abraxas is the engineering physics branch's departmental club - a vibrant community driven by passion for technology and discovery. We explore diverse physics disciplines from quantum computing to particle physics, creating technological innovations while unraveling universal mysteries. As physics enthusiasts, we've built a space where curiosity thrives and knowledge grows. Through engaging discussions, demonstrations, and groundbreaking discoveries, we're building a legacy that combines scientific exploration with practical innovation, inviting fellow enthusiasts to join us in pushing the boundaries of what's possible.
+                        </p>
+                    </div>
 
-                {/* Image Section (Placeholder for RoverCanvas or other content) */}
-                <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0">
-                    <div>
-                        {/* Placeholder for RoverCanvas or other content */}
-                        <div className="w-64 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
-                            <span className="text-gray-400">Rover Canvas</span>
+                    {/* Image Section */}
+                    <div className="w-full lg:w-1/2 flex justify-center items-start lg:items-center">
+                        <div className="w-1/3 sm:w-1/3 lg:w-full max-w-sm">
+                            <div className="aspect-square w-full bg-gray-700 rounded-lg flex items-center justify-center shadow-lg">
+                                <span className="text-gray-400 text-lg">Rover Canvas</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </motion.div>
 
-            {/* CountUp Section */}
-            <motion.div
-                className="flex flex-col md:flex-row justify-around w-full mt-8 md:mt-24 py-8 md:py-10 bg-gradient-to-r from-blue-400 to-slate-900"
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 50, delay: 1 }}
-            >
-                <div className="text-center mb-6 md:mb-0">
-                    <h3 className="text-3xl md:text-5xl font-bold">
-                        <CountUp end={15} duration={5} />
-                    </h3>
-                    <p className="text-lg md:text-2xl font-medium">Projects</p>
-                </div>
-                <div className="text-center mb-6 md:mb-0">
-                    <h3 className="text-3xl md:text-5xl font-bold">
-                        <CountUp end={46} duration={5} />
-                    </h3>
-                    <p className="text-lg md:text-2xl font-medium">Members</p>
-                </div>
-                <div className="text-center mb-6 md:mb-0">
-                    <h3 className="text-3xl md:text-5xl font-bold">
-                        <CountUp end={1} duration={5} />
-                    </h3>
-                    <p className="text-lg md:text-2xl font-medium">Wins</p>
-                </div>
-                <div className="text-center mb-6 md:mb-0">
-                    <h3 className="text-3xl md:text-5xl font-bold">
-                        <CountUp end={2} duration={5} />
-                    </h3>
-                    <p className="text-lg md:text-2xl font-medium">Events</p>
-                </div>
+                {/* CountUp Section */}
+                <motion.div
+                    className="mt-12 sm:mt-16 lg:mt-24 w-full"
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 1 }}
+                >
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 bg-gradient-to-r from-blue-400 to-slate-900 rounded-xl">
+                        <div className="text-center">
+                            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
+                                <CountUp end={15} duration={5} />
+                            </h3>
+                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Projects</p>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
+                                <CountUp end={46} duration={5} />
+                            </h3>
+                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Members</p>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
+                                <CountUp end={1} duration={5} />
+                            </h3>
+                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Wins</p>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
+                                <CountUp end={2} duration={5} />
+                            </h3>
+                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Projects</p>
+                        </div>
+                    </div>
+                </motion.div>
             </motion.div>
         </div>
     );

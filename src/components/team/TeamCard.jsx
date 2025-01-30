@@ -22,7 +22,7 @@ const TeamCard = ({ photo, name, social }) => {
             </div>
 
             {/* Content Container */}
-            <div className="relative h-full flex flex-col justify-end p-6">
+            <div className="relative h-full flex flex-col justify-end p-6 ">
                 {/* Name */}
                 <motion.h2 
                     className="text-2xl font-bold text-white mb-4 text-center"

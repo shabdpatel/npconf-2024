@@ -34,47 +34,49 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <section id='Navbar'>
-        <Navbar />
-      </section>
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Starfield
-              starCount={5000}
-              starColor={[255, 255, 255]}
-              speedFactor={0.15}
-              backgroundColor="black"
-            />
-            <section id='Home'>
-              <Hero />
-            </section>
-            <section id='About'>
-              <About />
-            </section>
-            <section id='Speakers'>
-              <Speaker />
-            </section>
-            <section id='Socialwall'>
-              <Socialwall />
-            </section>
-            <section id='Sponsors'>
-              <Sponsor />
-            </section>
-            <section id='FAQ' className=''>
-              <FAQ />
-            </section>
-            <section id='Footer' >
-              <Footer />
-            </section>
-          </>
-        } />
-        <Route path="/Team" element={<Team />} />
-        <Route path="/Gallery" element={<Gallery />} />
-      </Routes>
-    </Router>
+    <div className='md:w-full w-[32rem] sm:w-[52rem]'>
+      <Router>
+        <ScrollToTop />
+        <section id='Navbar'>
+          <Navbar />
+        </section>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Starfield
+                starCount={5000}
+                starColor={[255, 255, 255]}
+                speedFactor={0.15}
+                backgroundColor="black"
+              />
+              <section id='Home'>
+                <Hero />
+              </section>
+              <section id='About'>
+                <About />
+              </section>
+              <section id='Speakers'>
+                <Speaker />
+              </section>
+              <section id='Socialwall'>
+                <Socialwall />
+              </section>
+              <section id='Sponsors'>
+                <Sponsor />
+              </section>
+              <section id='FAQ' className=''>
+                <FAQ />
+              </section>
+              <section id='Footer' >
+                <Footer />
+              </section>
+            </>
+          } />
+          <Route path="/Team" element={<Team />} />
+          <Route path="/Gallery" element={<Gallery />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
