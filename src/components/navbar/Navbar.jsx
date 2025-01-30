@@ -1,4 +1,4 @@
- import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -8,6 +8,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
+    // Existing scroll and location effects remain the same
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -47,94 +48,29 @@ const Navbar = () => {
         }
     }, [location]);
 
-    useEffect(() => {
-        const ticketImage = document.getElementById('ticketImage');
-        if (ticketImage) {
-            const handleMouseOver = () => {
-                ticketImage.src = '/ticket.png';
-            };
-            const handleMouseOut = () => {
-                ticketImage.src = '/ticket1.png';
-            };
-
-            ticketImage.addEventListener('mouseover', handleMouseOver);
-            ticketImage.addEventListener('mouseout', handleMouseOut);
-
-            return () => {
-                ticketImage.removeEventListener('mouseover', handleMouseOver);
-                ticketImage.removeEventListener('mouseout', handleMouseOut);
-            };
-        }
-    }, []);
-
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <div id='Navbar'>
+        <div id='Navbar' className="flex justify-center w-full fixed top-0 z-50 px-4">
             <nav
-                className={`bg-gray-800 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 transition-transform duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
-                    }`}
+                className={`w-full max-w-5xl mx-8 mt-4 rounded-2xl transition-all duration-300 
+                backdrop-blur-md bg-opacity-70 bg-gray-900 border border-gray-700/30
+                shadow-lg ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'}
+                hover:bg-opacity-80 transition-all duration-300`}
             >
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-around mx-auto p-4">
+                <div className="flex flex-wrap items-center justify-between px-6 py-3">
                     <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="/physteo.jpeg" className="h-12 rounded-full" alt="Physteo Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 dark:text-white">
-                            Physteo
+                        <img src="/abraxas.jpeg" className="h-10 rounded-full ring-2 ring-blue-500/50" alt="Physteo Logo" />
+                        <span className="self-center text-xl font-semibold whitespace-nowrap text-white tracking-wide">
+                            ABRAXAS
                         </span>
                     </Link>
-                    <div className="flex md:order-2 h-12 space-x-3 md:space-x-0 rtl:space-x-reverse ">
-                        <Link to="/" className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
-                            <img id="ticketImage" src="/ticket1.png" className="h-20 w-22" alt="Physteo Logo" />
-                        </Link>
-                        <button
-                            data-collapse-toggle="navbar-sticky"
-                            type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                            aria-controls="navbar-sticky"
-                            aria-expanded={isMenuOpen}
-                            onClick={toggleMenu}
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {isMenuOpen ? (
-                                <svg
-                                    className="w-5 h-5"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg
-                                    className="w-5 h-5"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 17 14"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M1 1h15M1 7h15M1 13h15"
-                                    />
-                                </svg>
-                            )}
-                        </button>
-                    </div>
-                    <div
-                        className={`items-center justify-between ${isMenuOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto md:order-1`}
-                        id="navbar-sticky"
+
+                    <button
+                        onClick={toggleMenu}
+                        className="md:hidden p-2 text-gray-300 hover:text-white rounded-lg hover:bg-gray-800/50"
                     >
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
                             <li>
@@ -210,6 +146,43 @@ const Navbar = () => {
                                     FAQ
                                 </Link>
                             </li>
+                        <span className="sr-only">Open menu</span>
+                        {isMenuOpen ? (
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
+
+                    <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`}>
+                        <ul className="flex flex-col md:flex-row md:space-x-1 mt-4 md:mt-0">
+                            {[
+                                { name: 'Home', path: '/' },
+                                { name: 'About', path: '/#About' },
+                                { name: 'Speakers', path: '/#Speakers' },
+                                { name: 'Social Wall', path: '/#Socialwall' },
+                                { name: 'Call for Papers', path: '/Paper_call' },
+                                { name: 'Sponsors', path: '/#Sponsors' },
+                                { name: 'Team', path: '/Team' },
+                                { name: 'FAQ', path: '/#FAQ' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        to={item.path}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                                        ${activeSection === item.name.replace(' ', '') 
+                                            ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' 
+                                            : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'}`}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

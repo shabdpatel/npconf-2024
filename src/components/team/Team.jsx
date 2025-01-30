@@ -93,7 +93,7 @@ const Team = () => {
                 speedFactor={0.15}
                 backgroundColor="black"
             />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 md:mb-14">Our{" "}<span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+            <h1 className="text-2xl md:text-5xl font-bold text-white mb-20 md:mb-10">Our{" "}<span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
                 Team Members
             </span> </h1>
             {renderTeamSection('Club-Coordinators')}
