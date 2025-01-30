@@ -1,149 +1,100 @@
-[
-    {
-        "photo": "url_to_photo1",
-        "name": "Speaker 1",
-        "position": "Position 1",
-        "description": "Description 1",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo2",
-        "name": "Speaker 2",
-        "position": "Position 2",
-        "description": "Description 2",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo3",
-        "name": "Speaker 3",
-        "position": "Position 3",
-        "description": "Description 3",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo4",
-        "name": "Speaker 4",
-        "position": "Position 4",
-        "description": "Description 4",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo5",
-        "name": "Speaker 5",
-        "position": "Position 5",
-        "description": "Description 5",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo6",
-        "name": "Speaker 6",
-        "position": "Position 6",
-        "description": "Description 6",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo7",
-        "name": "Speaker 7",
-        "position": "Position 7",
-        "description": "Description 7",
-        "year": "2023"
-    },
-    {
-        "photo": "url_to_photo8",
-        "name": "Speaker 8",
-        "position": "Position 8",
-        "description": "Description 8",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo9",
-        "name": "Speaker 9",
-        "position": "Position 9",
-        "description": "Description 9",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo10",
-        "name": "Speaker 10",
-        "position": "Position 10",
-        "description": "Description 10",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo11",
-        "name": "Speaker 11",
-        "position": "Position 11",
-        "description": "Description 11",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo12",
-        "name": "Speaker 12",
-        "position": "Position 12",
-        "description": "Description 12",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo13",
-        "name": "Speaker 13",
-        "position": "Position 13",
-        "description": "Description 13",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo14",
-        "name": "Speaker 14",
-        "position": "Position 14",
-        "description": "Description 14",
-        "year": "2024"
-    },
-    {
-        "photo": "url_to_photo15",
-        "name": "Speaker 15",
-        "position": "Position 15",
-        "description": "Description 15",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo16",
-        "name": "Speaker 16",
-        "position": "Position 16",
-        "description": "Description 16",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo17",
-        "name": "Speaker 17",
-        "position": "Position 17",
-        "description": "Description 17",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo18",
-        "name": "Speaker 18",
-        "position": "Position 18",
-        "description": "Description 18",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo19",
-        "name": "Speaker 19",
-        "position": "Position 19",
-        "description": "Description 19",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo20",
-        "name": "Speaker 20",
-        "position": "Position 20",
-        "description": "Description 20",
-        "year": "2025"
-    },
-    {
-        "photo": "url_to_photo21",
-        "name": "Speaker 21",
-        "position": "Position 21",
-        "description": "Description 21",
-        "year": "2025"
-    }
-]
+ [
+        {
+            "photo": "url_to_ionic_thruster",
+            "name": "Ionic Thruster",
+            "position": "Advanced Space Propulsion",
+            "description": "Ionic thrusters propel spacecraft by accelerating ions using electromagnetic fields. They promise efficient, high-performance propulsion, revolutionizing space exploration with enhanced efficiency and extended capabilities.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_ramjet_engine",
+            "name": "Ramjet Engine",
+            "position": "High-Speed Propulsion",
+            "description": "Ramjet engines are air-breathing jet engines for high-speed flight, distinct from traditional ones by lacking compressors. They exploit the aircraft's forward motion to compress incoming air for combustion.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_cyclorotor",
+            "name": "Cyclorotor",
+            "position": "VTOL Propulsion",
+            "description": "A cyclorotor, found in VTOL aircraft, features cycloidal rotors rotating around the fuselage. This design creates swirling airflow akin to cyclones, offering efficient lift and propulsion for improved maneuverability in various applications.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_leveraging_light",
+            "name": "Leveraging Light",
+            "position": "Quantum-Enhanced Mass Detection",
+            "description": "Our method, merging Michelson interferometer patterns with Newtonian physics, detects tiny masses. Mirror adjustments via a lever reveal mass-induced interference changes, opening fresh insights across physics domains.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_quantum_breakout",
+            "name": "Quantum Breakout",
+            "position": "Quantum Computing Education",
+            "description": "Designed a quantum Breakout game to teach school students Qubit Manipulation using Quantum Gates. It offers an interactive platform for learning complex concepts in a fun and engaging way.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_quantum_walker",
+            "name": "Quantum Walker",
+            "position": "Quantum Behavior Simulation",
+            "description": "Quantum walker simulations utilize silica gel to mimic quantum behavior. Silica's porous structure mimics quantum states, enabling studies in particle dynamics, paving the way for quantum computing advancements.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_telescope",
+            "name": "Telescope",
+            "position": "Astronomical Observation",
+            "description": "Crafted with precision, our Newtonian telescope offers an immersive stargazing experience. With homemade optics and meticulous assembly, it unveils celestial wonders, bringing the cosmos closer to amateur astronomers.",
+            "year": "2023"
+        },
+        {
+            "photo": "url_to_ionic_wind",
+            "name": "Ionic Wind",
+            "position": "Next-Gen Space Propulsion",
+            "description": "Revolutionizing space travel with advanced ionic thrusters, utilizing electromagnetic fields to propel ions for spacecraft. Our focus: enhancing efficiency, enabling missions to explore new cosmic frontiers.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_qrng",
+            "name": "QRNG",
+            "position": "Quantum Random Number Generator",
+            "description": "Quantum Binary Number Generator: Revolutionizing security with quantum mechanics. Join us in bridging theory with implementation, unlocking new frontiers in computational unpredictability and cryptographic security.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_sonic_levitation",
+            "name": "Sonic Levitation",
+            "position": "Acoustic Manipulation",
+            "description": "Sound waves suspend objects mid-air, defying gravity without contact. High-frequency waves generate pressure, counteracting gravity. Precise wave control allows manipulation and levitation.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_plant_disease_detector",
+            "name": "Plant Disease Detector",
+            "position": "AI-Powered Agriculture",
+            "description": "Revolutionizing farming, our tool utilizes machine learning and Python to swiftly identify plant diseases, ensuring healthier yields and sustainable agriculture. Experience the future of crop management with our innovative solution.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_radio_telescope",
+            "name": "Radio Telescope",
+            "position": "Radio Astronomy",
+            "description": "An advanced cosmic listener captures distant celestial radio waves, revealing mysteries beyond visible light. Operating ceaselessly, it unlocks cosmic secrets, undeterred by atmospheric barriers, expanding our cosmic comprehension.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_radiation_sensor",
+            "name": "Radiation Sensor",
+            "position": "Radiation Detection & Monitoring",
+            "description": "Deploying Geiger-Müller tubes and advanced signal processing for ongoing monitoring. Dependable, wireless, and alert-ready, it ensures unmatched radiation detection across diverse environments.",
+            "year": "2024"
+        },
+        {
+            "photo": "url_to_quantum_hunt",
+            "name": "Quantum Hunt",
+            "position": "Quantum Computing Game",
+            "description": "Experience the efficiency of quantum computing through a treasure hunt game featuring Grover's algorithm. This interactive tool not only entertains but also educates, offering insights into quantum algorithms.",
+            "year": "2024"
+        }
+    ]

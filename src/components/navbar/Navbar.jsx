@@ -50,7 +50,7 @@ const Navbar = () => {
     const navigationItems = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/#About' },
-        { name: 'Speakers', path: '/#Speakers' },
+        { name: 'Projects', path: '/#Projects' },
         { name: 'Social Wall', path: '/#Socialwall' },
         { name: 'Gallery', path: '/Gallery' },
         { name: 'Sponsors', path: '/#Sponsors' },
