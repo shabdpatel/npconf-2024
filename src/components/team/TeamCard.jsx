@@ -5,55 +5,56 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 const TeamCard = ({ photo, name, social }) => {
     return (
         <motion.div
-            className="border border-zinc-400 rounded-lg relative w-3/4 md:w-64 h-auto md:h-72 bg-black hover:bg-black p-1 overflow-hidden shadow-lg flex flex-col items-center flex-shrink-0 transition-colors duration-300"
-            style={{ perspective: 1000 }}
+            className="group relative w-full sm:w-80 h-[400px] rounded-xl overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
         >
-            <motion.div
-                className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden mb-4 mt-3 transition-all duration-300 transform hover:scale-105 hover:rounded-lg"
-                whileHover={{ scale: 1.1 }}
-            >
-                <img src={photo} alt={name} className="w-full h-full object-cover" />
-            </motion.div>
-            <div className="text-center mb-4">
-                <h2 className="text-lg md:text-xl font-bold text-slate-100">{name}</h2>
+            {/* Full-size background image */}
+            <div className="absolute inset-0 w-full h-full">
+                <img 
+                    src={photo} 
+                    alt={name} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient overlay for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
             </div>
-            <div className="text-center px-3 flex space-x-4">
-                <motion.a
-                    href={social.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300"
-                    whileHover={{ scale: 1.2 }}
+
+            {/* Content Container */}
+            <div className="relative h-full flex flex-col justify-end p-6">
+                {/* Name */}
+                <motion.h2 
+                    className="text-2xl font-bold text-white mb-4 text-center"
+                    whileHover={{ scale: 1.05 }}
                 >
-                    <FaTwitter size={24} />
-                </motion.a>
-                <motion.a
-                    href={social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300"
-                    whileHover={{ scale: 1.2 }}
-                >
-                    <FaLinkedin size={24} />
-                </motion.a>
-                <motion.a
-                    href={social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300"
-                    whileHover={{ scale: 1.2 }}
-                >
-                    <FaGithub size={24} />
-                </motion.a>
-                <motion.a
-                    href={social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300"
-                    whileHover={{ scale: 1.2 }}
-                >
-                    <FaInstagram size={24} />
-                </motion.a>
+                    {name}
+                </motion.h2>
+
+                {/* Social Links */}
+                <div className="flex justify-center space-x-6">
+                    {[
+                        { icon: FaTwitter, link: social.twitter, color: "hover:text-blue-400" },
+                        { icon: FaLinkedin, link: social.linkedin, color: "hover:text-blue-600" },
+                        { icon: FaGithub, link: social.github, color: "hover:text-purple-400" },
+                        { icon: FaInstagram, link: social.instagram, color: "hover:text-pink-500" }
+                    ].map((item, index) => (
+                        <motion.a
+                            key={index}
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-white/90 transition-colors duration-300 ${item.color}`}
+                            whileHover={{ 
+                                scale: 1.2,
+                                rotate: 360,
+                                transition: { duration: 0.3 }
+                            }}
+                        >
+                            <item.icon size={28} />
+                        </motion.a>
+                    ))}
+                </div>
             </div>
         </motion.div>
     );

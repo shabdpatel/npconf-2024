@@ -46,11 +46,6 @@ const Team = () => {
 
         const visibleCards = getVisibleCards();
         const cardWidth = Math.min((windowWidth - 64) / visibleCards, 320);
-        const totalWidth = teamData[year].length * (cardWidth + 24);
-        const dragConstraints = {
-            right: 0,
-            left: -Math.max(totalWidth - windowWidth + 48, 0)
-        };
 
         return (
             <section id={year} className="w-full max-w-7xl mx-auto mb-16 scroll-mt-24">
@@ -58,37 +53,57 @@ const Team = () => {
                     {year.replace(/-/g, ' ')}
                 </h2>
                 <InView threshold={0.1} onChange={(inView) => inView && controls.start("visible")}>
-                    <div className="relative overflow-hidden px-4 md:px-6">
-                        <motion.div
-                            className="flex space-x-6 cursor-grab active:cursor-grabbing"
-                            initial="hidden"
-                            animate={controls}
-                            variants={variants}
-                            drag="x"
-                            dragConstraints={dragConstraints}
-                            dragElastic={0.1}
-                            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-                        >
-                            {teamData[year].map((member, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="flex-shrink-0"
-                                    style={{ width: cardWidth }}
-                                    variants={variants}
-                                >
-                                    <TeamCard
-                                        photo={member.photo}
-                                        name={member.name}
-                                        social={member.social}
-                                    />
-                                </motion.div>
-                            ))}
-                        </motion.div>
+                    {/* Scroll Container */}
+                    <div className="relative px-4 md:px-6">
+                        <div className="overflow-x-auto hide-scrollbar">
+                            <motion.div
+                                className="flex space-x-6 pb-4"
+                                initial="hidden"
+                                animate={controls}
+                                variants={variants}
+                                style={{
+                                    width: 'fit-content',
+                                    minWidth: '100%'
+                                }}
+                            >
+                                {teamData[year].map((member, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="flex-shrink-0"
+                                        style={{ width: cardWidth }}
+                                        variants={variants}
+                                    >
+                                        <TeamCard
+                                            photo={member.photo}
+                                            name={member.name}
+                                            social={member.social}
+                                        />
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        </div>
                     </div>
                 </InView>
             </section>
         );
     };
+
+    // Add custom scrollbar styles
+    useEffect(() => {
+        const style = document.createElement('style');
+        style.textContent = `
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                scroll-behavior: smooth;
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+        `;
+        document.head.appendChild(style);
+        return () => document.head.removeChild(style);
+    }, []);
 
     const QuickNav = () => (
         <nav className="hidden lg:flex flex-col fixed right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm rounded-lg p-2">
