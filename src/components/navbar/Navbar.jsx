@@ -146,6 +146,7 @@ const Navbar = () => {
                                     FAQ
                                 </Link>
                             </li>
+                            </ul>
                         <span className="sr-only">Open menu</span>
                         {isMenuOpen ? (
                             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -165,7 +166,7 @@ const Navbar = () => {
                                 { name: 'About', path: '/#About' },
                                 { name: 'Speakers', path: '/#Speakers' },
                                 { name: 'Social Wall', path: '/#Socialwall' },
-                                { name: 'Call for Papers', path: '/Paper_call' },
+                                { name: 'Gallery', path: '/Gallery' },
                                 { name: 'Sponsors', path: '/#Sponsors' },
                                 { name: 'Team', path: '/Team' },
                                 { name: 'FAQ', path: '/#FAQ' }
