@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="min-h-screen bg-black flex items-center justify-center p-4">
             <motion.div
                 ref={ref}
-                className="w-full max-w-5xl bg-neutral-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-4 md:p-6 rounded-lg shadow-md flex flex-col md:flex-row md:justify-center"
+                className="w-full max-w-5xl  bg-opacity-30 backdrop-filter backdrop-blur-lg p-4 md:p-6 rounded-lg shadow-md flex flex-col md:flex-row md:justify-center"
                 initial="hidden"
                 animate={controls}
                 variants={containerVariants}
