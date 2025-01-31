@@ -28,7 +28,6 @@ const About = () => {
                         </p>
                     </div>
 
-                    {/* Image Section */}
                     {/* <RoverCanvas/> */}
                 </div>
 

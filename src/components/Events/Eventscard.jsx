@@ -53,11 +53,30 @@ const Eventscard = () => {
     ];
 
     const containerVariants = {
-        hidden: { opacity: 0 },
+        hidden: { 
+            opacity: 0,
+            y: 100  // Start from below
+        },
         visible: {
             opacity: 1,
+            y: 0,    // Move to original position
             transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 1,
                 staggerChildren: 0.2
+            }
+        },
+        exit: {
+            opacity: 0,
+            y: -100,  // Exit towards top
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 1,
+                staggerChildren: 0.1
             }
         }
     };
@@ -65,7 +84,7 @@ const Eventscard = () => {
     const cardVariants = {
         hidden: { 
             opacity: 0,
-            y: 50,
+            y: 100,
             rotateX: -15
         },
         visible: {
@@ -73,15 +92,22 @@ const Eventscard = () => {
             y: 0,
             rotateX: 0,
             transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 1,
                 duration: 0.8,
-                ease: "easeOut"
             }
         },
         exit: {
             opacity: 0,
-            y: -50,
+            y: -100,
             rotateX: 15,
             transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 1,
                 duration: 0.6
             }
         },
@@ -98,11 +124,15 @@ const Eventscard = () => {
     const renderCards = (cardsData) => {
         return (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-3/4 max-w-7xl mx-auto px-4">
-                {cardsData.map((card) => (
+                {cardsData.map((card, index) => (
                     <motion.div
                         key={card.id}
                         variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
                         whileHover="hover"
+                        custom={index}
                         onHoverStart={() => setHoveredCard(card.id)}
                         onHoverEnd={() => setHoveredCard(null)}
                         className="flip-card w-full aspect-[3/4] rounded-lg cursor-pointer perspective-1000"
@@ -132,10 +162,8 @@ const Eventscard = () => {
                                     transform: 'rotateY(0deg)',
                                 }}
                             >
-                                {/* 3D Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 mix-blend-overlay" />
                                 
-                                {/* Floating Eye Animation */}
                                 {hoveredCard === card.id && !flippedCards[card.id] && (
                                     <motion.div
                                         className="absolute inset-0 flex items-center justify-center"
