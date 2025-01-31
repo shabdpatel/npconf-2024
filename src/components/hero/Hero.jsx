@@ -62,7 +62,7 @@ const Hero = () => {
                         {/* Atom Animation */}
                         <motion.div 
                             variants={fadeInUp} 
-                            className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] mb-4 sm:mb-6 md:mb-8 lg:mb-10"
+                            className=" max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] mb-4 sm:mb-6 md:mb-8 lg:mb-10"
                         >
                             <Atom />
                         </motion.div>

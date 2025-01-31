@@ -65,7 +65,7 @@ const Projects = () => {
     return (
         <motion.div
             ref={ref}
-            className="min-h-screen bg-black flex flex-col items-start md:items-center justify-start md:justify-center px-4 md:px-8 w-full max-w-screen-xl mx-auto py-8 md:py-16"
+            className="min-h-screen bg-black flex flex-col items-center md:items-center justify-start md:justify-center px-4 md:px-8 w-full max-w-screen-xl mx-auto py-8 md:py-16"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={containerVariants}
