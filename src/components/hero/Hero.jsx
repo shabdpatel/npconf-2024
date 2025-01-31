@@ -85,11 +85,7 @@ const Hero = () => {
                             variants={fadeInUp}
                             className="text-center w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl px-4"
                         >
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed mb-6 sm:mb-8 md:mb-10">
-                                Immerse yourself in the world of physics at our Annual Physics Conference. 
-                                From quantum mechanics to cosmic phenomena, join us as we explore the fundamental 
-                                forces that shape our universe and push the boundaries of human knowledge.
-                            </p>
+                            
 
                             {/* Social Media Icons */}
                             <div className="flex justify-center space-x-6 sm:space-x-8 md:space-x-10">
