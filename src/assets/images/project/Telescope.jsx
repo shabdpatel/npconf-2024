@@ -1,30 +1,59 @@
+
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../../../components/about/Loader";
 
-
 const Telescope = ({ isMobile }) => {
   const telescope = useGLTF("./Telescope.gltf");
 
+  // Apply metallic gradient material
+  useEffect(() => {
+    telescope.scene.traverse((child) => {
+      if (child.isMesh) {
+        child.material.color.set('#ffffff');
+        child.material.metalness = 0.6;
+        child.material.roughness = 0.3;
+        child.material.envMapIntensity = 2.0;
+        child.material.emissive.set('#808080');
+        child.material.emissiveIntensity = 0.4;
+      }
+    });
+  }, [telescope]);
+
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.5}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
+      {/* Enhanced lighting system */}
+      <ambientLight intensity={0.6} color="#ffffff" />
+      <hemisphereLight 
+        intensity={1.0}
+        groundColor='#4a4a4a'
+        color='#ffffff'
       />
-      <pointLight intensity={1} />
+      <spotLight
+        position={[-25, 55, 15]}
+        angle={0.45}
+        penumbra={0.8}
+        intensity={2.0}
+        castShadow
+        shadow-mapSize={2048}
+        color='#ffffff'
+      />
+      <spotLight
+        position={[25, -35, -15]}
+        angle={0.75}
+        penumbra={1}
+        intensity={1.0}
+        color='#a5a5a5'
+      />
+      <pointLight position={[0, 2, 0]} intensity={1.8} color="#d3d3d3" />
+      <pointLight position={[5, -1, -3]} intensity={0.9} color="#909090" />
+
       <primitive
         object={telescope.scene}
         scale={isMobile ? 0.0068 : 0.0068}
-        position={[0, -3, -2]} // {isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        position={[0, -3, -2]}
         rotation={[3 * Math.PI / 2, 0, 3 * Math.PI / 2]}
-
       />
     </mesh>
   );
@@ -34,21 +63,15 @@ const TELESCOPE = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
@@ -60,7 +83,10 @@ const TELESCOPE = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ 
+        preserveDrawingBuffer: true,
+        toneMappingExposure: 1.5
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -70,10 +96,9 @@ const TELESCOPE = () => {
         />
         <Telescope isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
 }
 
-export default TELESCOPE
+export default TELESCOPE;

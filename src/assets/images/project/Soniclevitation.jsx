@@ -6,61 +6,86 @@ import CanvasLoader from "../../../components/about/Loader";
 const Sonic = ({ isMobile }) => {
     const sonic = useGLTF("./Soniclevitation.gltf");
 
+    // Apply metallic gradient material
+    useEffect(() => {
+        sonic.scene.traverse((child) => {
+            if (child.isMesh) {
+                child.material.color.set('#ffffff');
+                child.material.metalness = 0.65;
+                child.material.roughness = 0.25;
+                child.material.envMapIntensity = 2.2;
+                child.material.emissive.set('#909090');
+                child.material.emissiveIntensity = 0.45;
+            }
+        });
+    }, [sonic]);
+
     return (
         <mesh>
-            <hemisphereLight intensity={0.15} groundColor='black' />
-            <spotLight
-                position={[-20, 50, 10]}
-                angle={0.5}
-                penumbra={1}
-                intensity={1}
-                castShadow
-                shadow-mapSize={1024}
+            {/* Enhanced lighting system */}
+            <ambientLight intensity={0.7} color="#f0f0f0" />
+            <hemisphereLight 
+                intensity={1.2}
+                groundColor='#505050'
+                color='#ffffff'
             />
-            <pointLight intensity={1} />
+            <spotLight
+                position={[-25, 55, 15]}
+                angle={0.45}
+                penumbra={0.8}
+                intensity={2.0}
+                castShadow
+                shadow-mapSize={2048}
+                color='#ffffff'
+            />
+            <spotLight
+                position={[25, -35, -15]}
+                angle={0.75}
+                penumbra={1}
+                intensity={1.0}
+                color='#a5a5a5'
+            />
+            <pointLight position={[0, 2, 0]} intensity={1.8} color="#e0e0e0" />
+            <pointLight position={[5, -1, -3]} intensity={0.9} color="#909090" />
+
             <primitive
                 object={sonic.scene}
                 scale={isMobile ? 0.006 : 0.006}
-                position={[0, 0, -1]} // {isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+                position={[0, 0, -1]}
                 rotation={[0, 0, 3 * Math.PI / 2]}
-
             />
         </mesh>
     );
 };
 
-
 const Soniclevitation = () => {
-
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        // Add a listener for changes to the screen size
         const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-        // Set the initial value of the `isMobile` state variable
         setIsMobile(mediaQuery.matches);
 
-        // Define a callback function to handle changes to the media query
         const handleMediaQueryChange = (event) => {
             setIsMobile(event.matches);
         };
 
-        // Add the callback function as a listener for changes to the media query
         mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-        // Remove the listener when the component is unmounted
         return () => {
             mediaQuery.removeEventListener("change", handleMediaQueryChange);
         };
     }, []);
+
     return (
         <Canvas
             frameloop='demand'
             shadows
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{ preserveDrawingBuffer: true }}
+            gl={{ 
+                preserveDrawingBuffer: true,
+                toneMappingExposure: 1.6  // Enhanced for metallic surfaces
+            }}
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls
@@ -73,7 +98,7 @@ const Soniclevitation = () => {
 
             <Preload all />
         </Canvas>
-    )
+    );
 }
 
-export default Soniclevitation
+export default Soniclevitation;
