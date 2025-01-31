@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
 import FAQ from './components/faq/Faq';
 import Starfield from './components/star/Starfield';
-import Speaker from './components/speaker/Speaker';
+import Project from './components/Project/Project';
 import Sponsor from './components/sponsor/Sponsor';
 import Team from './components/team/Team';
 import About from './components/about/About';
@@ -55,8 +55,8 @@ function App() {
               <section id='About'>
                 <About />
               </section>
-              <section id='Speakers' className='sm:mt-30 mt-20 md:mt-0'>
-                <Speaker />
+              <section id='Projects' className='sm:mt-30 mt-20 md:mt-0'>
+                <Project />
               </section>
               <section id='Socialwall'>
                 <Socialwall />

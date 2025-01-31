@@ -1,0 +1,100 @@
+[
+    {
+        "photo": "/assets/images/project/ionicthruster.svg",
+        "name": "Ionic Thruster",
+        "position": "2023 Project",
+        "description": "Ionic thrusters propel spacecraft by accelerating ions using electromagnetic fields. They promise efficient, high-performance propulsion, revolutionizing space exploration with enhanced efficiency and extended capabilities.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/ramjet.svg",
+        "name": "Ramjet Engine",
+        "position": "2023 Project",
+        "description": "Ramjet engines are air-breathing jet engines for high-speed flight, distinct from traditional ones by lacking compressors. They exploit the aircraft's forward motion to compress incoming air for combustion.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/cyclorotor.svg",
+        "name": "Cyclorotor",
+        "position": "2023 Project",
+        "description": "A cyclorotor, found in VTOL aircraft, features cycloidal rotors rotating around the fuselage. This design creates swirling airflow akin to cyclones, offering efficient lift and propulsion for improved maneuverability.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/leveraginglight.svg",
+        "name": "Leveraging Light",
+        "position": "2023 Project",
+        "description": "Our method, merging Michelson interferometer patterns with Newtonian physics, detects tiny masses. Mirror adjustments via a lever reveal mass-induced interference changes.",
+        "year": "2023"
+    },
+    {
+        "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712836790/Batch2024/Screenshot_from_2024-04-11_17-29-30_w1cths.png",
+        "name": "Quantum Breakout",
+        "position": "2023 Project",
+        "description": "Designed a quantum Breakout game to teach school students Qubit Manipulation using Quantum Gates. It offers an interactive platform for learning complex concepts.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/quantumwalker.svg",
+        "name": "Quantum Walker",
+        "position": "2023 Project",
+        "description": "Quantum walker simulations utilize silica gel to mimic quantum behavior. Silica's porous structure mimics quantum states, enabling studies in particle dynamics.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/telescope.svg",
+        "name": "Telescope",
+        "position": "2023 Project",
+        "description": "Crafted with precision, our Newtonian telescope offers an immersive stargazing experience. With homemade optics and meticulous assembly, it unveils celestial wonders.",
+        "year": "2023"
+    },
+    {
+        "photo": "/assets/images/project/ionicwind.svg",
+        "name": "Ionic Wind",
+        "position": "2024 Project",
+        "description": "Revolutionizing space travel with advanced ionic thrusters, utilizing electromagnetic fields to propel ions for spacecraft. Our focus: enhancing efficiency for cosmic exploration.",
+        "year": "2024"
+    },
+    {
+        "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712835814/Batch2024/images_djnjn3.jpg",
+        "name": "QRNG",
+        "position": "2024 Project",
+        "description": "Quantum Binary Number Generator: Revolutionizing security with quantum mechanics. Bridging theory with implementation for computational unpredictability.",
+        "year": "2024"
+    },
+    {
+        "photo": "/assets/images/project/soniclevitation.svg",
+        "name": "Sonic Levitation",
+        "position": "2024 Project",
+        "description": "Sound waves suspend objects mid-air, defying gravity without contact. High-frequency waves generate pressure, counteracting gravity. Precise wave control enables manipulation.",
+        "year": "2024"
+    },
+    {
+        "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712836309/Batch2024/images_eilvlr.jpg",
+        "name": "Plant Disease Detector",
+        "position": "2024 Project",
+        "description": "Revolutionizing farming with machine learning and Python to swiftly identify plant diseases, ensuring healthier yields and sustainable agriculture.",
+        "year": "2024"
+    },
+    {
+        "photo": "/assets/images/project/radiotelescope.svg",
+        "name": "Radio Telescope",
+        "position": "2024 Project",
+        "description": "An advanced cosmic listener captures distant celestial radio waves, revealing mysteries beyond visible light. Operating ceaselessly to unlock cosmic secrets.",
+        "year": "2024"
+    },
+    {
+        "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712836492/Batch2024/images_rpmmmv.jpg",
+        "name": "Radiation Sensor",
+        "position": "2024 Project",
+        "description": "Deploying Geiger-Müller tubes and advanced signal processing for ongoing monitoring. Dependable, wireless, and alert-ready radiation detection.",
+        "year": "2024"
+    },
+    {
+        "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712836619/Batch2024/images_jgwgbg.png",
+        "name": "Quantum Hunt",
+        "position": "2024 Project",
+        "description": "Experience quantum computing through a treasure hunt game featuring Grover's algorithm. An interactive tool that entertains and educates.",
+        "year": "2024"
+    }
+]
