@@ -85,7 +85,8 @@ const Hero = () => {
                             variants={fadeInUp}
                             className="text-center w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl px-4"
                         >
-                            
+                        <p className="mb-10">"Life, much like physics,full of forces acting on you. It’s not about avoiding them, but learning how to balance and use them to propel yourself forward.”</p>
+
 
                             {/* Social Media Icons */}
                             <div className="flex justify-center space-x-6 sm:space-x-8 md:space-x-10">
