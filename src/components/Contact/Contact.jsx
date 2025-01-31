@@ -30,7 +30,7 @@ const Contact = () => {
         e.preventDefault();
         setLoading(true);
 
-        emailjs.sendForm('service_7wjwhjz', 'template_c4vix68', e.target, 'k0Pzk-CjxMe24DpZY')
+        emailjs.sendForm('service_ku5tyb3', 'template_6jqzaku', e.target, 'k0Pzk-CjxMe24DpZY')
             .then((result) => {
                 setLoading(false);
                 alert('Message sent successfully!');

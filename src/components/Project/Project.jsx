@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
-import Modal from './modalpopup';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import projectsData from './projects.json';  // Make sure to import your projects data
+import projectsData from './Projectslist'; // Ensure the correct file extension
+// Make sure to import your projects data
 
 const Projects = () => {
     const [selectedYear, setSelectedYear] = useState('all');
@@ -24,17 +24,17 @@ const Projects = () => {
     };
 
     const cardVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             y: 100,  // Start further from bottom
         },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
-            transition: { 
-                type: 'spring', 
+            transition: {
+                type: 'spring',
                 stiffness: 50,
-            } 
+            }
         }
     };
 
@@ -44,13 +44,13 @@ const Projects = () => {
             boxShadow: '0 0 25px rgba(138, 43, 226, 0.6)',
         },
         hidden: { opacity: 0, y: 100 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
-            transition: { 
-                type: 'spring', 
+            transition: {
+                type: 'spring',
                 stiffness: 50,
-            } 
+            }
         }
     };
 
@@ -68,8 +68,8 @@ const Projects = () => {
         return [...acc, ...yearData.slice(0, 7)];
     }, []);
 
-    const filteredData = selectedYear === 'all' 
-        ? allYearsData 
+    const filteredData = selectedYear === 'all'
+        ? allYearsData
         : (groupedData[selectedYear] || []).slice(0, 7);
 
     return (
@@ -80,25 +80,25 @@ const Projects = () => {
             animate={inView ? "visible" : "hidden"}
             variants={containerVariants}
         >
-            <motion.h1 
-                className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-14 text-left md:text-center" 
+            <motion.h1
+                className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-14 text-left md:text-center"
                 variants={cardVariants}
             >
-                Our{" "} 
+                Our{" "}
                 <span className="bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text">
                     Projects
                 </span>
             </motion.h1>
-            
-            <motion.p 
-                className="text-left md:text-center text-gray-300 text-base md:text-xl mb-4 md:mb-10" 
+
+            <motion.p
+                className="text-left md:text-center text-gray-300 text-base md:text-xl mb-4 md:mb-10"
                 variants={cardVariants}
             >
                 Check out our great projects from the last few years.
             </motion.p>
 
-            <motion.div 
-                className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12" 
+            <motion.div
+                className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12"
                 variants={cardVariants}
             >
                 <motion.button
@@ -106,8 +106,8 @@ const Projects = () => {
                     variants={buttonVariants}
                     whileHover="hover"
                     className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
-                        ${selectedYear === 'all' 
-                            ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
+                        ${selectedYear === 'all'
+                            ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform'
                             : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
                         }`}
                 >
@@ -120,9 +120,9 @@ const Projects = () => {
                         variants={buttonVariants}
                         whileHover="hover"
                         className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
-                            ${selectedYear === year 
-                                ?  "bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform"
-                    : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
+                            ${selectedYear === year
+                                ? "bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform"
+                                : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
                             }`}
                     >
                         {year}
@@ -136,7 +136,7 @@ const Projects = () => {
                         <div className="flex gap-4 md:gap-6 pb-4">
                             <div className="flex gap-4 md:gap-6 snap-x snap-mandatory">
                                 {filteredData.map((project, index) => (
-                                    <motion.div 
+                                    <motion.div
                                         key={`${selectedYear}-${index}`}
                                         variants={cardVariants}
                                         className="snap-start flex-shrink-0 first:pl-0 last:pr-4

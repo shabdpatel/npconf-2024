@@ -1,27 +1,37 @@
-[
+import Cyclorotormodel from '../../assets/images/project/cyclorotor';
+import Ionicthruster from '../../assets/images/project/ionicthruster';
+import LeveragingLight from '../../assets/images/project/LeveragingLight';
+import TELESCOPE from '../../assets/images/project/Telescope';
+import Soniclevitation from '../../assets/images/project/Soniclevitation';
+import Quantumwalker from '../../assets/images/project/Quantumwalker';
+import IonicWind from '../../assets/images/project/ionicwind';
+import Ramjet from '../../assets/images/project/Ramjet';
+import RadioTelescope from '../../assets/images/project/Radiotelescope';
+
+const projectsData = [
     {
-        "photo": "/assets/images/project/ionicthruster.svg",
+        "photo": <Ionicthruster />,
         "name": "Ionic Thruster",
         "position": "2023 Project",
         "description": "Ionic thrusters propel spacecraft by accelerating ions using electromagnetic fields. They promise efficient, high-performance propulsion, revolutionizing space exploration with enhanced efficiency and extended capabilities.",
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/ramjet.svg",
+        "photo": <Ramjet />,
         "name": "Ramjet Engine",
         "position": "2023 Project",
         "description": "Ramjet engines are air-breathing jet engines for high-speed flight, distinct from traditional ones by lacking compressors. They exploit the aircraft's forward motion to compress incoming air for combustion.",
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/cyclorotor.svg",
+        "photo": <Cyclorotormodel />,
         "name": "Cyclorotor",
         "position": "2023 Project",
         "description": "A cyclorotor, found in VTOL aircraft, features cycloidal rotors rotating around the fuselage. This design creates swirling airflow akin to cyclones, offering efficient lift and propulsion for improved maneuverability.",
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/leveraginglight.svg",
+        "photo": <LeveragingLight />,
         "name": "Leveraging Light",
         "position": "2023 Project",
         "description": "Our method, merging Michelson interferometer patterns with Newtonian physics, detects tiny masses. Mirror adjustments via a lever reveal mass-induced interference changes.",
@@ -35,21 +45,21 @@
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/quantumwalker.svg",
+        "photo": <Quantumwalker />,
         "name": "Quantum Walker",
         "position": "2023 Project",
         "description": "Quantum walker simulations utilize silica gel to mimic quantum behavior. Silica's porous structure mimics quantum states, enabling studies in particle dynamics.",
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/telescope.svg",
+        "photo": <TELESCOPE />,
         "name": "Telescope",
         "position": "2023 Project",
         "description": "Crafted with precision, our Newtonian telescope offers an immersive stargazing experience. With homemade optics and meticulous assembly, it unveils celestial wonders.",
         "year": "2023"
     },
     {
-        "photo": "/assets/images/project/ionicwind.svg",
+        "photo": <IonicWind />,
         "name": "Ionic Wind",
         "position": "2024 Project",
         "description": "Revolutionizing space travel with advanced ionic thrusters, utilizing electromagnetic fields to propel ions for spacecraft. Our focus: enhancing efficiency for cosmic exploration.",
@@ -63,7 +73,7 @@
         "year": "2024"
     },
     {
-        "photo": "/assets/images/project/soniclevitation.svg",
+        "photo": <Soniclevitation />,
         "name": "Sonic Levitation",
         "position": "2024 Project",
         "description": "Sound waves suspend objects mid-air, defying gravity without contact. High-frequency waves generate pressure, counteracting gravity. Precise wave control enables manipulation.",
@@ -77,7 +87,7 @@
         "year": "2024"
     },
     {
-        "photo": "",
+        "photo": <RadioTelescope />,
         "name": "Radio Telescope",
         "position": "2024 Project",
         "description": "An advanced cosmic listener captures distant celestial radio waves, revealing mysteries beyond visible light. Operating ceaselessly to unlock cosmic secrets.",
@@ -98,3 +108,5 @@
         "year": "2024"
     }
 ]
+
+export default projectsData;

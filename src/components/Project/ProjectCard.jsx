@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 const ProjectCard = ({ photo, name, position, description }) => {
-    const [imageError, setImageError] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const cardRef = useRef(null);
     const x = useMotionValue(0);
@@ -12,23 +11,13 @@ const ProjectCard = ({ photo, name, position, description }) => {
 
     const handleMouseMove = (e) => {
         const rect = cardRef.current.getBoundingClientRect();
-        const cardX = e.clientX - rect.left;
-        const cardY = e.clientY - rect.top;
-        x.set(cardX - rect.width / 2);
-        y.set(cardY - rect.height / 2);
+        x.set(e.clientX - rect.left - rect.width / 2);
+        y.set(e.clientY - rect.top - rect.height / 2);
     };
 
     const handleMouseLeave = () => {
         x.set(0);
         y.set(0);
-    };
-
-    const handleImageError = () => {
-        setImageError(true);
-    };
-
-    const getImageSource = () => {
-        return imageError ? "https://placehold.co/400x300/black/grey" : photo;
     };
 
     return (
@@ -40,16 +29,22 @@ const ProjectCard = ({ photo, name, position, description }) => {
             onMouseLeave={handleMouseLeave}
         >
             <motion.div
-                className="w-32 h-32 md:w-48 md:h-48 rounded overflow-hidden mb-4 mt-3"
-                style={{ rotateX, rotateY }}
+                className="w-38 h-38  md:w-48 md:h-48 rounded overflow-hidden mb-3 mt-2 flex items-center justify-center"
             >
-                <img
-                    src={getImageSource()}
-                    alt={name}
-                    onError={handleImageError}
-                    className="w-full h-full object-cover"
-                />
+                {typeof photo === 'string' ? (
+                    <img
+                        src={photo}
+                        alt={name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => (e.target.src = "https://placehold.co/400x300/black/grey")}
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                        {photo} {/* Renders React component if photo is JSX */}
+                    </div>
+                )}
             </motion.div>
+
 
             <div className="text-center mb-2">
                 <h2 className="text-lg font-semibold text-slate-100">{name}</h2>
