@@ -75,7 +75,7 @@ const Contact = () => {
                     variants={itemVariants}
                 >
                     <h1 className="text-3xl md:text-4xl font-bold text-slate-300 text-center">
-                        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+                        <span className="bg-gradient-to-r from-purple-900 to-blue-700 text-transparent bg-clip-text">
                             Contact Us
                         </span>
                     </h1>
