@@ -86,10 +86,10 @@ const Projects = () => {
                     onClick={() => setSelectedYear('all')}
                     variants={buttonVariants}
                     whileHover="hover"
-                    className={`px-4 py-1.5 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300
+                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
                         ${selectedYear === 'all' 
-                            ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
-                            : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'
+                            ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
+                            : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
                         }`}
                 >
                     All Years
@@ -100,10 +100,10 @@ const Projects = () => {
                         onClick={() => setSelectedYear(year)}
                         variants={buttonVariants}
                         whileHover="hover"
-                        className={`px-4 py-1.5 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300
+                        className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
                             ${selectedYear === year 
-                                ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
-                                : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'
+                                ?  "bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform"
+                    : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
                             }`}
                     >
                         {year}

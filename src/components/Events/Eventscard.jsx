@@ -184,19 +184,19 @@ const Eventscard = () => {
             >
                 <button
                     onClick={() => setActiveTab('workshops')}
-                    className={`px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 w-full sm:w-auto
+                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
                         ${activeTab === 'workshops' 
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/30' 
-                        : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'}`}
+                        ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
+                        : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'}`}
                 >
                     Workshops
                 </button>
                 <button
                     onClick={() => setActiveTab('events')}
-                    className={`px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 w-full sm:w-auto
+                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
                         ${activeTab === 'events' 
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/30' 
-                        : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'}`}
+                        ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
+                        : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'}`}
                 >
                     Events
                 </button>
