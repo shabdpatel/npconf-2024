@@ -25,7 +25,3 @@
     transition: opacity 0.3s;
 }
 
-.flip-card:hover .flip-card-front::before,
-.flip-card:hover .flip-card-back::before {
-    opacity: 1;
-}

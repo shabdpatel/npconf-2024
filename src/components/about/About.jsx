@@ -67,7 +67,7 @@ const About = () => {
                             <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
                                 <CountUp end={2} duration={5} />
                             </h3>
-                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Projects</p>
+                            <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Events</p>
                         </div>
                     </div>
                 </motion.div>
