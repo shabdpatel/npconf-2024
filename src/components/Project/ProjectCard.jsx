@@ -34,7 +34,7 @@ const ProjectCard = ({ photo, name, position, description }) => {
     return (
         <motion.div
             ref={cardRef}
-            className="border border-zinc-400 rounded-lg relative w-full md:w-80 h-auto bg-black p-3 overflow-hidden shadow-lg flex flex-col items-center transition-colors duration-300"
+            className="border border-zinc-400 rounded-lg relative w-2/3 md:w-80 h-auto bg-black p-3 overflow-hidden shadow-lg flex flex-col items-center transition-colors duration-300"
             style={{ perspective: 1000 }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
