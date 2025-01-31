@@ -19,12 +19,12 @@ const IntroAnimation = ({ onComplete }) => {
     // Stage 3 (4-6 seconds): Prepare to land on landing page
     const fadeTimer = setTimeout(() => {       
       setFadeOut(true);     
-    }, 4000);      
+    }, 5000);      
 
     // Complete animation and transition to landing page
     const completeTimer = setTimeout(() => {       
       onComplete();     
-    }, 5000);      
+    }, 4400);      
 
     return () => {       
       clearTimeout(initialStageTimer);
@@ -53,7 +53,7 @@ const IntroAnimation = ({ onComplete }) => {
           }}         
         >           
           <p 
-            className="text-3xl md:text-3xl font-bold font-mono text-white
+            className="text-3xl md:text-3xl font-thin font-mono text-white
               tracking-widest "           
           >             
             Just a moment
