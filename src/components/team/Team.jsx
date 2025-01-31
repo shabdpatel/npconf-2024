@@ -59,7 +59,7 @@ const Team = () => {
                     <div className="relative px-4 sm:px-6">
                         <div className="overflow-x-auto hide-scrollbar">
                             <motion.div
-                                className="flex  space-x-3  md:space-x-20 sm:space-x-24  pb-4"
+                                className="flex  space-x-3  md:space-x-20 sm:space-x-28  pb-4"
                                 initial="hidden"
                                 animate={controls}
                                 variants={variants}
