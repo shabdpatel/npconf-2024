@@ -8,20 +8,24 @@
 
 .backface-hidden {
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
-.flip-card {
-    background-color: transparent;
+.flip-card-front::before,
+.flip-card-back::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.flip-card-front,
-.flip-card-back {
-    transition: all 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-
-/* Optional: Add hover effect */
-.flip-card:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
+.flip-card:hover .flip-card-front::before,
+.flip-card:hover .flip-card-back::before {
+    opacity: 1;
 }

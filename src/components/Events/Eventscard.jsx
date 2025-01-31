@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Events.css';
-import escape_room from '../../assets/events/escape_room.png'
-import physics_carnival from '../../assets/events/physics_carnival.jpg'
-import guest_lecture_ranjan_chopra from '../../assets/events/guest_lecture_ranjan_chopra.jpg'
-import threed_printing from '../../assets/events/threed_printing.jpg'
-import threed from '../../assets/events/threed.jpg'
-import guest from '../../assets/events/guest.jpg'
-
-import carnival from '../../assets/events/carnival.jpg'
-import escape from '../../assets/events/escape.jpg'
-
+import escape_room from '../../assets/events/escape_room.png';
+import physics_carnival from '../../assets/events/physics_carnival.jpg';
+import guest_lecture_ranjan_chopra from '../../assets/events/guest_lecture_ranjan_chopra.jpg';
+import threed_printing from '../../assets/events/threed_printing.jpg';
+import threed from '../../assets/events/threed.jpg';
+import guest from '../../assets/events/guest.jpg';
+import carnival from '../../assets/events/carnival.jpg';
+import escape from '../../assets/events/escape.jpg';
 
 const Eventscard = () => {
     const [flippedCards, setFlippedCards] = useState({});
     const [isAnimated, setIsAnimated] = useState(false);
     const [activeTab, setActiveTab] = useState('workshops');
+    const [hoveredCard, setHoveredCard] = useState(null);
 
     function handleFlip(cardId) {
         if (!isAnimated) {
@@ -66,41 +65,56 @@ const Eventscard = () => {
     const cardVariants = {
         hidden: { 
             opacity: 0,
-            y: 50
+            y: 50,
+            rotateX: -15
         },
         visible: {
             opacity: 1,
             y: 0,
+            rotateX: 0,
             transition: {
-                duration: 0.6,
+                duration: 0.8,
                 ease: "easeOut"
             }
         },
         exit: {
             opacity: 0,
             y: -50,
+            rotateX: 15,
             transition: {
-                duration: 0.4
+                duration: 0.6
+            }
+        },
+        hover: {
+            scale: 1.02,
+            rotateX: 5,
+            rotateY: 5,
+            transition: {
+                duration: 0.3
             }
         }
     };
 
     const renderCards = (cardsData) => {
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto px-4">
                 {cardsData.map((card) => (
                     <motion.div
                         key={card.id}
                         variants={cardVariants}
+                        whileHover="hover"
+                        onHoverStart={() => setHoveredCard(card.id)}
+                        onHoverEnd={() => setHoveredCard(null)}
                         className="flip-card w-full aspect-[3/4] rounded-lg cursor-pointer perspective-1000"
                         onClick={() => handleFlip(card.id)}
                     >
                         <motion.div
-                            className="relative w-full h-full transition-transform duration-700 transform-style-3d"
+                            className="relative w-full h-full transition-all duration-700 transform-style-3d"
                             initial={false}
                             animate={{ 
                                 rotateY: flippedCards[card.id] ? 180 : 0,
                                 scale: flippedCards[card.id] ? 1.02 : 1,
+                                z: hoveredCard === card.id ? 50 : 0
                             }}
                             transition={{ 
                                 duration: 0.7,
@@ -110,20 +124,44 @@ const Eventscard = () => {
                             }}
                             onAnimationComplete={() => setIsAnimated(false)}
                         >
+                            {/* Card Front */}
                             <div
-                                className="flip-card-front absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden"
+                                className="flip-card-front absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden overflow-hidden"
                                 style={{ 
                                     backgroundImage: `url(${card.front})`,
                                     transform: 'rotateY(0deg)',
                                 }}
-                            />
+                            >
+                                {/* 3D Glow Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 mix-blend-overlay" />
+                                
+                                {/* Floating Eye Animation */}
+                                {hoveredCard === card.id && !flippedCards[card.id] && (
+                                    <motion.div
+                                        className="absolute inset-0 flex items-center justify-center"
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        exit={{ scale: 0 }}
+                                    >
+                                        <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                                            <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center">
+                                                <div className="w-4 h-4 rounded-full bg-white" />
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </div>
+
+                            {/* Card Back */}
                             <div
-                                className="flip-card-back absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden"
+                                className="flip-card-back absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden overflow-hidden"
                                 style={{ 
                                     backgroundImage: `url(${card.back})`,
                                     transform: 'rotateY(180deg)',
                                 }}
-                            />
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 mix-blend-overlay" />
+                            </div>
                         </motion.div>
                     </motion.div>
                 ))}
@@ -133,7 +171,7 @@ const Eventscard = () => {
 
     return (
         <motion.div 
-            className="min-h-screen bg-gradient-to-b  from-slate-900 via-slate-800 to-black py-8 px-4"
+            className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-8 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -148,7 +186,7 @@ const Eventscard = () => {
                     onClick={() => setActiveTab('workshops')}
                     className={`px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 w-full sm:w-auto
                         ${activeTab === 'workshops' 
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
+                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/30' 
                         : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'}`}
                 >
                     Workshops
@@ -157,7 +195,7 @@ const Eventscard = () => {
                     onClick={() => setActiveTab('events')}
                     className={`px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 w-full sm:w-auto
                         ${activeTab === 'events' 
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white' 
+                        ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/30' 
                         : 'border-2 border-purple-500 text-purple-400 hover:text-purple-300'}`}
                 >
                     Events
