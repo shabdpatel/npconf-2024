@@ -88,7 +88,7 @@ const Gallery = () => {
   }, [selectedImage, currentImageIndex, selectedYear]);
 
   return (
-    <div className="h-screen overflow-y-auto"> {/* Enable vertical scrolling */}
+    <div className="h-screen overflow-y-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-center mb-8">
           <div className="flex space-x-6">
@@ -110,7 +110,7 @@ const Gallery = () => {
 
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4" 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4 perspective-1000" 
         >
           <AnimatePresence>
             {galleryData[selectedYear].map((image, index) => (
@@ -118,20 +118,39 @@ const Gallery = () => {
                 key={image}
                 layout
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{ 
+                  opacity: 1,
+                  y: 0,
+                  rotateX: 2,
+                  rotateY: 2,
+                  transition: { duration: 0.4, ease: "easeOut" }
+                }}
                 exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="group relative"
+                whileHover={{ 
+                  scale: 1.05,
+                  rotateX: 5,
+                  rotateY: 5,
+                  z: 50,
+                  transition: { 
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }
+                }}
+                className="group relative preserve-3d"
                 onClick={() => handleImageClick(image, index)}
+                style={{ 
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px"
+                }}
               >
-                <div className="aspect-square rounded-2xl overflow-hidden bg-transparent backdrop-blur-sm p-2"> 
+                <div className="aspect-square rounded-2xl overflow-hidden bg-transparent backdrop-blur-sm p-2">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img
                       src={image}
                       alt={`Gallery ${index + 1}`}
                       className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t  via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="absolute bottom-4 left-4 flex items-center space-x-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <Camera className="w-5 h-5" />
                         <span className="text-sm font-medium">View Image</span>
