@@ -68,11 +68,11 @@ const Navbar = () => {
                 <div className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3">
                     <div className="flex items-center justify-between">
                         {/* Logo and Brand */}
-                        <Link to="/" className="flex items-center space-x-2">
-                            <img src="/AbraxasLogo.png" className="h-7 sm:h-8 lg:h-10 rounded-full ring-2 ring-blue-500/50" alt="Logo" />
-                            <span className="self-center text-base sm:text-lg lg:text-xl font-semibold text-white tracking-wide">
+                        <Link to="/" className="flex items-center  space-x-3">
+                            <img src="/AbraxasLogo.png" className="h-7 sm:h-8 lg:h-10 rounded-full  ring-blue-500/50" alt="Logo" />
+                            <h6 className="self-center  text-xl sm:text-xl md:text-3xl font-bold bg-gradient-to-r from-white to-purple-600 text-transparent bg-clip-text ">
                                 ABRAXAS
-                            </span>
+                            </h6>
                         </Link>
 
                         {/* Mobile Menu Button */}
