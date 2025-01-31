@@ -87,13 +87,13 @@ const TimelineEvent = ({ date, events }) => {
 const Timeline = () => {
   const timelineData = [
     {
-      month: 'November 2025',
+      month: 'November 2024',
       events: [
         { date: '16', title: 'Sophomore Interviews' },
       ]
     },
     {
-      month: 'December 2025',
+      month: 'December 2024',
       events: [
         { date: '28', title: 'Resume Buildiing Workshop' },
       ]
