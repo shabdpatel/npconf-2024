@@ -101,12 +101,12 @@ body {
   }
 }
 
-#Socialwall {
+#Events {
   height: 170vh;
 }
 
 @media (max-width: 768px) {
-  #Socialwall {
+  #Events {
     height: 120vh;
     /* Adjust this value as needed for mobile view */
   }

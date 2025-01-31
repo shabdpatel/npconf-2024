@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './Socialwall.css';
+import './Events.css';
 import escape_room from '../../assets/events/escape_room.png'
 import physics_carnival from '../../assets/events/physics_carnival.jpg'
 import guest_lecture_ranjan_chopra from '../../assets/events/guest_lecture_ranjan_chopra.jpg'
@@ -12,7 +12,7 @@ import carnival from '../../assets/events/carnival.jpg'
 import escape from '../../assets/events/escape.jpg'
 
 
-const Socialwallcard = () => {
+const Eventscard = () => {
     const [flippedCards, setFlippedCards] = useState({});
     const [isAnimated, setIsAnimated] = useState(false);
     const [activeTab, setActiveTab] = useState('workshops');
@@ -181,4 +181,4 @@ const Socialwallcard = () => {
     );
 };
 
-export default Socialwallcard;
+export default Eventscard;

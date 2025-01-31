@@ -51,11 +51,11 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/#About' },
         { name: 'Projects', path: '/#Projects' },
-        { name: 'Social Wall', path: '/#Socialwall' },
+        { name: 'Events', path: '/#Events' },
         { name: 'Gallery', path: '/Gallery' },
-        { name: 'Sponsors', path: '/#Sponsors' },
+        { name: 'Timeline', path: '/#Timeline' },
         { name: 'Team', path: '/Team' },
-        { name: 'FAQ', path: '/#FAQ' }
+        { name: 'Contact', path: '/#Contact' }
     ];
 
     return (

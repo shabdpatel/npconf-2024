@@ -4,10 +4,10 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import emailjs from 'emailjs-com';
-import faqsData from './faqs.json';
+import ContactsData from './Contacts.json';
 
-const FAQ = () => {
-    const [faqs] = useState(faqsData);
+const Contact = () => {
+    const [Contacts] = useState(ContactsData);
     const [activeIndex, setActiveIndex] = useState(null);
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true });
@@ -18,7 +18,7 @@ const FAQ = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const toggleFAQ = (index) => {
+    const toggleContact = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
@@ -157,4 +157,4 @@ const FAQ = () => {
     );
 };
 
-export default FAQ;
+export default Contact;

@@ -19,12 +19,12 @@ const Footer = () => {
                         <li><a href="/#" className="hover:underline">Home</a></li>
                         <li><a href="/#About" className="hover:underline">About</a></li>
                         <li><a href="/#Projects" className="hover:underline">Projects</a></li>
-                        <li><a href="/#Socialwall" className="hover:underline">Social Wall</a></li>
+                        <li><a href="/#Events" className="hover:underline">Events</a></li>
                         <li><a href="/Gallery" className="hover:underline">Gallery</a></li>
-                        <li><a href="/#Sponsors" className="hover:underline">Sponsors</a></li>
+                        <li><a href="/#Timeline" className="hover:underline">Timeline</a></li>
                         <li><a href="/Team" className="hover:underline">Team</a></li>
-                        <li><a href="/#FAQ" className="hover:underline">FAQ</a></li>
-                        <li><a href="/#FAQ" className="hover:underline">Contact</a></li>
+                        <li><a href="/#Contact" className="hover:underline">Contact</a></li>
+                        <li><a href="/#Contact" className="hover:underline">Contact</a></li>
                     </ul>
                 </div>
                 <div>

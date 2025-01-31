@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Socialwallcard from './Socialwallcard';
+import Eventscard from './Eventscard';
 import { motion } from 'framer-motion';
 
-const Socialwall = () => {
+const Events = () => {
     // Animation variants for container
     const containerVariants = {
         hidden: { 
@@ -60,10 +60,10 @@ const Socialwall = () => {
             <motion.div
                 variants={itemVariants}
             >
-                <Socialwallcard />
+                <Eventscard />
             </motion.div>
         </motion.div>
     );
 };
 
-export default Socialwall;
+export default Events;

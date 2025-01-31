@@ -3,15 +3,15 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
-import FAQ from './components/faq/Faq';
+import Contact from './components/Contact/Contact';
 import Starfield from './components/star/Starfield';
 import Project from './components/Project/Project';
-import Sponsor from './components/sponsor/Sponsor';
+import Sponsor from './components/Timeline/Timeline';
 import Team from './components/team/Team';
 import About from './components/about/About';
 import Gallery from './components/Gallery/Gallery';
 import Footer from './components/footer/Footer';
-import Socialwall from './components/socialwall/Socialwall';
+import Events from './components/Events/Events';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -58,14 +58,14 @@ function App() {
               <section id='Projects' className='sm:mt-30 mt-20 md:mt-0'>
                 <Project />
               </section>
-              <section id='Socialwall'>
-                <Socialwall />
+              <section id='Events'>
+                <Events />
               </section>
-              <section id='Sponsors' className='sm-mt-0 mt-[36rem]'>
+              <section id='Timeline' className='sm-mt-0 mt-[36rem]'>
                 <Sponsor />
               </section>
-              <section id='FAQ' className=''>
-                <FAQ />
+              <section id='Contact' className=''>
+                <Contact />
               </section>
               <section id='Footer' >
                 <Footer />
