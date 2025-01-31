@@ -10,14 +10,15 @@ const Projects = () => {
     const { ref, inView } = useInView({ triggerOnce: true });
 
     const containerVariants = {
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 100 },  // Increased y value to start further from bottom
         visible: {
             opacity: 1,
             y: 0,
             transition: {
                 type: 'spring',
                 stiffness: 50,
-                delay: 0.5,
+                delayChildren: 0.3,  // Delay children animation slightly
+                staggerChildren: 0.2  // Stagger the children animations
             }
         }
     };
@@ -25,7 +26,7 @@ const Projects = () => {
     const cardVariants = {
         hidden: { 
             opacity: 0, 
-            y: 50,
+            y: 100,  // Start further from bottom
         },
         visible: { 
             opacity: 1, 
@@ -41,6 +42,15 @@ const Projects = () => {
         hover: {
             scale: 1.05,
             boxShadow: '0 0 25px rgba(138, 43, 226, 0.6)',
+        },
+        hidden: { opacity: 0, y: 100 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { 
+                type: 'spring', 
+                stiffness: 50,
+            } 
         }
     };
 
@@ -70,18 +80,27 @@ const Projects = () => {
             animate={inView ? "visible" : "hidden"}
             variants={containerVariants}
         >
-            <motion.h1 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-14 text-left md:text-center" variants={cardVariants}>
+            <motion.h1 
+                className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-14 text-left md:text-center" 
+                variants={cardVariants}
+            >
                 Our{" "} 
                 <span className="bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text">
                     Projects
                 </span>
             </motion.h1>
             
-            <motion.p className="text-left md:text-center text-gray-300 text-base md:text-xl mb-4 md:mb-10" variants={cardVariants}>
+            <motion.p 
+                className="text-left md:text-center text-gray-300 text-base md:text-xl mb-4 md:mb-10" 
+                variants={cardVariants}
+            >
                 Check out our great projects from the last few years.
             </motion.p>
 
-            <motion.div className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12" variants={cardVariants}>
+            <motion.div 
+                className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12" 
+                variants={cardVariants}
+            >
                 <motion.button
                     onClick={() => setSelectedYear('all')}
                     variants={buttonVariants}
@@ -117,8 +136,9 @@ const Projects = () => {
                         <div className="flex gap-4 md:gap-6 pb-4">
                             <div className="flex gap-4 md:gap-6 snap-x snap-mandatory">
                                 {filteredData.map((project, index) => (
-                                    <div 
+                                    <motion.div 
                                         key={`${selectedYear}-${index}`}
+                                        variants={cardVariants}
                                         className="snap-start flex-shrink-0 first:pl-0 last:pr-4
                                             w-[calc(100vw-32px)] 
                                             md:w-[calc(50vw-48px)] 
@@ -130,7 +150,7 @@ const Projects = () => {
                                             position={project.position}
                                             description={project.description}
                                         />
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>

@@ -19,12 +19,12 @@ const IntroAnimation = ({ onComplete }) => {
     // Stage 3 (4-6 seconds): Prepare to land on landing page
     const fadeTimer = setTimeout(() => {       
       setFadeOut(true);     
-    }, 4500);      
+    }, 4000);      
 
     // Complete animation and transition to landing page
     const completeTimer = setTimeout(() => {       
       onComplete();     
-    }, 6000);      
+    }, 5000);      
 
     return () => {       
       clearTimeout(initialStageTimer);
