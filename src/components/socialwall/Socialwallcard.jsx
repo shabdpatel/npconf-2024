@@ -133,7 +133,7 @@ const Socialwallcard = () => {
 
     return (
         <motion.div 
-            className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-8 px-4"
+            className="min-h-screen bg-gradient-to-b  from-slate-900 via-slate-800 to-black py-8 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}

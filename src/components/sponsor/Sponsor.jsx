@@ -8,16 +8,16 @@ const TimelineEvent = ({ date, events }) => {
   });
 
   return (
-    <div ref={ref} className="relative w-full md:w-1/2 lg:w-1/3 xl:w-1/6 px-4 mb-12">
+    <div ref={ref} className="relative w-full md:w-1/2 lg:w-1/3 xl:w-1/6 px-4 mb-12 pl-8">
       <div className={`transform transition-all duration-1000 ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        <div className="text-lg font-bold mb-14 text-gray-200 text-center">
+        <div className="text-lg font-bold mb-14 text-gray-200">
           {date}
         </div>
 
         {/* Timeline Line with Moving Dot */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-px bg-transparent top-0 mt-10 overflow-hidden h-full">
+        <div className="absolute left-4 w-px bg-transparent top-0 mt-10 overflow-hidden h-full">
           <div className={`w-px bg-gray-600 h-full transform origin-top transition-transform duration-1000 ${
             inView ? 'scale-y-100' : 'scale-y-0'
           }`} />
