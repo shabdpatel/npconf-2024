@@ -53,8 +53,8 @@ const IntroAnimation = ({ onComplete }) => {
           }}         
         >           
           <p 
-            className="text-3xl md:text-3xl font-bold font-serif text-white
-              tracking-widest font-mono"           
+            className="text-3xl md:text-3xl font-bold font-mono text-white
+              tracking-widest "           
           >             
             Just a moment
           </p>         
