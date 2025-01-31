@@ -97,7 +97,7 @@ const Eventscard = () => {
 
     const renderCards = (cardsData) => {
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-3/4 max-w-7xl mx-auto px-4">
                 {cardsData.map((card) => (
                     <motion.div
                         key={card.id}
@@ -171,7 +171,7 @@ const Eventscard = () => {
 
     return (
         <motion.div 
-            className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-8 px-4"
+            className="h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-8 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
