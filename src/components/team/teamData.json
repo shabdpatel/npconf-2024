@@ -91,6 +91,33 @@
             }
         },
         {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800315/24BPH019_-_HARSH_K_jzvxzx.jpg",
+            "name": "Harsh",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/harsh-xd-5363ab349",
+                "instagram": "https://www.instagram.com/itsharsh4433"
+            }
+        },
+        {
+            "photo": "",
+            "name": "Harshit Tiwari",
+            "social": {
+                "github": "",
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "photo": "",
+            "name": "Kashish Kapoor",
+            "social": {
+                "github": "",
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
             "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800309/Neha_._-_NEHA_DEVI_rc9l6c.jpg",
             "name": "Neha",
             "social": {
@@ -100,23 +127,104 @@
             }
         },
         {
-            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800306/IMG-20241208-WA0007_-_Rohan_Kumar_rk0eor.jpg",
-            "name": "Rohan Mishra",
-            "social": {
-                "github": "",
-                "linkedin": "https://www.linkedin.com/in/rohanmishra29_",
-                "instagram": "https://www.instagram.com/rohanmishra29_"
-            }
-        },
-        {
-            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800321/IMG-20241110-WA0021_-_VIKENDRA_KASHYAP_kuldch.jpg",
-            "name": "Vikendra Kashyap",
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800309/24BPH049_-_Om_Parmar_gkvln9.jpg",
+            "name": "Om Parmar",
             "social": {
                 "github": "",
                 "linkedin": "",
-                "instagram": ""
+                "instagram": "https://www.instagram.com/parmarom32145"
             }
-        }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800307/Pragati_Verma_24bcs082_-_PRAGATI_VERMA_jgydop.jpg",
+            "name": "Pragati Verma",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/pragati-verma-772427334",
+                "instagram": "https://www.instagram.com/pr.agati1166"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800320/IMG_0207_-_Prasmeta_Behera_zxku4l.jpg",
+            "name": "Prashmeta Prasaeta Behera",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/prasmeta-behera-11582b2a7",
+                "instagram": "https://www.instagram.com/medu_vada_69"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800318/IMG-20241111-WA0025_-_Prieyal_Rathour_pekbkn.jpg",
+            "name": "Periyal Rathour",
+            "social": {
+                "github": "https://github.com/fujiikunn",
+                "linkedin": "https://www.linkedin.com/in/prieyal-rathour-675024344",
+                "instagram": "https://www.instagram.com/moon.child.031"
+            }
+        },
+        {
+            "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800317/1732595016199_-_PRIYANSHU_BHUSHAN_jrpxa4.jpg",
+            "name": "Priyanshu Bhushan",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/priyanshu-bhushan-639b86325",
+                "instagram": "https://www.instagram.com/_priyanshu_385"
+            }
+        },
+            {
+                "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800306/IMG-20241208-WA0007_-_Rohan_Kumar_rk0eor.jpg",
+                "name": "Rohan Mishra",
+                "social": {
+                    "github": "",
+                    "linkedin": "https://www.instagram.com/rohanmishra29_?igsh=MXMzem1renY3dHYzcw==",
+                    "instagram": "https://www.instagram.com/rohanmishra29_?igsh=MXMzem1renY3dHYzcw=="
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800311/Untitled-10_1_-_SAI_YEESHU_oxlsnk.jpg",
+                "name": "Sai Yeeshu",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": ""
+                }
+            },
+            {
+                "photo": "",
+                "name": "Saurav Sharma",
+                "social": {
+                    "github": "",
+                    "linkedin": "https://www.linkedin.com/in/saurav-sharma-b55870325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    "instagram": "https://www.instagram.com/aaryavartian"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800317/Shweta_-_SHWETA_SHARMA_qvotxb.jpg",
+                "name": "Shweta Sharma",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": "https://www.instagram.com/snowflalez045"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800319/photo_0_-_TEJAS_LALIT_SHARDUL_zp3ql1.jpg",
+                "name": "Tejas Lalit Shardul",
+                "social": {
+                    "github": "",
+                    "linkedin": "https://www.linkedin.com/in/tejas-shardul-163bb7343",
+                    "instagram": "https://www.instagram.com/@astrophile_7791"
+                }
+            },
+            {
+                "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800321/IMG-20241110-WA0021_-_VIKENDRA_KASHYAP_kuldch.jpg",
+                "name": "Vikendra Kashyap",
+                "social": {
+                    "github": "",
+                    "linkedin": "",
+                    "instagram": ""
+                }
+            }
     ],
     "Executives": [
         {
