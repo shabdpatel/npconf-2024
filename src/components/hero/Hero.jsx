@@ -73,7 +73,7 @@ const Hero = () => {
                             className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-center w-full"
                         >
                             <div className="inline-block">
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-800 transition-all duration-300">
                                     TEAM ABRAXAS
                                 </h2>
                                 <div className="h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 mt-2"></div>

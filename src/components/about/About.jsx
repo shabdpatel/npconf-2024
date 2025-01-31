@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import CountUp from 'react-countup';
+import RoverCanvas from './Rover';
 
 const About = () => {
     const { scrollY } = useViewportScroll();
@@ -19,22 +20,16 @@ const About = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
                     {/* Text Section */}
                     <div className="flex flex-col w-full lg:w-1/2">
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text mb-4 sm:mb-6">
-                            Who are we
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-normal font-bold font-sans bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text mb-4 sm:mb-6">
+                            Who we are
                         </h1>
-                        <p className="text-sm sm:text-base lg:text-lg font-sans max-w-prose text-gray-300 leading-relaxed">
+                        <p className="text-sm sm:text-base lg:text-lg  max-w-prose tracking-normal text-gray-300 leading-relaxed">
                             Team Abraxas is the engineering physics branch's departmental club - a vibrant community driven by passion for technology and discovery. We explore diverse physics disciplines from quantum computing to particle physics, creating technological innovations while unraveling universal mysteries. As physics enthusiasts, we've built a space where curiosity thrives and knowledge grows. Through engaging discussions, demonstrations, and groundbreaking discoveries, we're building a legacy that combines scientific exploration with practical innovation, inviting fellow enthusiasts to join us in pushing the boundaries of what's possible.
                         </p>
                     </div>
 
                     {/* Image Section */}
-                    <div className="w-full lg:w-1/2 flex justify-center items-start lg:items-center">
-                        <div className="w-1/3 sm:w-1/3 lg:w-full max-w-sm">
-                            <div className="aspect-square w-full bg-gray-700 rounded-lg flex items-center justify-center shadow-lg">
-                                <span className="text-gray-400 text-lg">Rover Canvas</span>
-                            </div>
-                        </div>
-                    </div>
+                    {/* <RoverCanvas/> */}
                 </div>
 
                 {/* CountUp Section */}

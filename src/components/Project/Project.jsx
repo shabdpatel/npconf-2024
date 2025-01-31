@@ -2,23 +2,22 @@ import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import projectsData from './Projectslist'; // Ensure the correct file extension
-// Make sure to import your projects data
+import projectsData from './Projectslist';
 
 const Projects = () => {
     const [selectedYear, setSelectedYear] = useState('all');
     const { ref, inView } = useInView({ triggerOnce: true });
 
     const containerVariants = {
-        hidden: { opacity: 0, y: 100 },  // Increased y value to start further from bottom
+        hidden: { opacity: 0, y: 100 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
                 type: 'spring',
                 stiffness: 50,
-                delayChildren: 0.3,  // Delay children animation slightly
-                staggerChildren: 0.2  // Stagger the children animations
+                delayChildren: 0.3,
+                staggerChildren: 0.2
             }
         }
     };
@@ -26,7 +25,7 @@ const Projects = () => {
     const cardVariants = {
         hidden: {
             opacity: 0,
-            y: 100,  // Start further from bottom
+            y: 100,
         },
         visible: {
             opacity: 1,
@@ -54,23 +53,52 @@ const Projects = () => {
         }
     };
 
-    // Group projects by year
+    // Modified grouping logic with different card counts per year
     const groupedData = projectsData.reduce((acc, project) => {
         if (!acc[project.year]) {
             acc[project.year] = [];
         }
-        acc[project.year].push(project);
+        const maxCards = project.year === '2025' ? 5 : 7;
+        if (acc[project.year].length < maxCards) {
+            acc[project.year].push(project);
+        }
         return acc;
     }, {});
 
-    const allYearsData = ['2023', '2024', '2025'].reduce((acc, year) => {
-        const yearData = groupedData[year] || [];
-        return [...acc, ...yearData.slice(0, 7)];
-    }, []);
+    // Ensure each year has the correct number of projects
+    ['2023', '2024', '2025'].forEach(year => {
+        if (!groupedData[year]) {
+            groupedData[year] = [];
+        }
+        const maxCards = year === '2025' ? 5 : 7;
+        while (groupedData[year].length < maxCards) {
+            groupedData[year].push({
+                name: `Project ${groupedData[year].length + 1}`,
+                position: 'Coming Soon',
+                description: 'Future project placeholder',
+                photo: '/placeholder-image.jpg',
+                year: year
+            });
+        }
+    });
 
-    const filteredData = selectedYear === 'all'
-        ? allYearsData
-        : (groupedData[selectedYear] || []).slice(0, 7);
+    // Modified filtering logic with sorting for 'all' view
+    const getDisplayedProjects = () => {
+        if (selectedYear === 'all') {
+            // Combine all projects and sort by year in ascending order
+            return Object.entries(groupedData)
+                .reduce((acc, [year, projects]) => {
+                    return [...acc, ...projects.map(project => ({
+                        ...project,
+                        year: year
+                    }))];
+                }, [])
+                .sort((a, b) => a.year.localeCompare(b.year));
+        }
+        return groupedData[selectedYear] || [];
+    };
+
+    const filteredData = getDisplayedProjects();
 
     return (
         <motion.div
@@ -149,6 +177,7 @@ const Projects = () => {
                                             name={project.name}
                                             position={project.position}
                                             description={project.description}
+                                            year={project.year}
                                         />
                                     </motion.div>
                                 ))}

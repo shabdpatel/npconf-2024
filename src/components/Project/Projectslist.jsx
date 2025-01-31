@@ -106,6 +106,41 @@ const projectsData = [
         "position": "2024 Project",
         "description": "Experience quantum computing through a treasure hunt game featuring Grover's algorithm. An interactive tool that entertains and educates.",
         "year": "2024"
+    },
+    {
+        "photo": "",
+        "name": "SR Hub",
+        "position": "2025 Project",
+        "description": "",
+        "year": "2025"
+    },
+    {
+        "photo": "",
+        "name": "Opti-Core",
+        "position": "2025 Project",
+        "description": "The objective of this project is to design and implement logic gates using light-based technologies to demonstrate the functionality of basic digital circuits.",
+        "year": "2025"
+    },
+    {
+        "photo": "",
+        "name": "Metal 3-D Printing",
+        "position": "2025 Project",
+        "description": "",
+        "year": "2025"
+    },
+    {
+        "photo": "",
+        "name": "Anti-Hailstorm Protection System",
+        "position": "2025 Project",
+        "description": "Traditional netting systems for hailstorms offer protection but are cumbersome to manage and come with several limitations. Our solution introduces an automated, cost-effective anti-hailstorm pillar that integrates machine learning (ML) predictions and mechanical net deployment. This system minimizes the duration nets are deployed, ensuring healthy crop growth while preventing hail damage.",
+        "year": "2025"
+    },
+    {
+        "photo": "",
+        "name": "Photoacoustic Imaging System",
+        "position": "2025 Project",
+        "description": "Develop a Photoacoustic Imaging System that uses laser-induced acoustic waves to map underwater objects with the added functionality of modulating the acoustic waves in the 1-50 kHz frequency range. This will enable the capture of specific acoustic signals to generate high-resolution images of underwater features.",
+        "year": "2025"
     }
 ]
 
