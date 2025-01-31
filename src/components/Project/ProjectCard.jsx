@@ -39,7 +39,7 @@ const ProjectCard = ({ photo, name, position, description }) => {
                         onError={(e) => (e.target.src = "https://placehold.co/400x300/black/grey")}
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-700">
+                    <div className="w-full h-full flex items-center justify-center">
                         {photo} {/* Renders React component if photo is JSX */}
                     </div>
                 )}
