@@ -87,47 +87,41 @@ const TimelineEvent = ({ date, events }) => {
 const Timeline = () => {
   const timelineData = [
     {
-      month: 'November 2024',
+      month: 'November 2025',
       events: [
-        { date: '09 & 10', title: 'Sophomore Interviews' },
+        { date: '16', title: 'Sophomore Interviews' },
+      ]
+    },
+    {
+      month: 'December 2025',
+      events: [
+        { date: '28', title: 'Resume Buildiing Workshop' },
+      ]
+    },
+    {
+      month: 'January 2025',
+      events: [
         { date: '17', title: 'Nimbus Orientation', subtitle: 'Introducing Abraxas to Freshmen' },
         { date: '18 & 19', title: 'Freshmen Interviews' }
       ]
     },
     {
-      month: 'December 2024',
+      month: 'February 2025',
       events: [
-        { date: '09 & 10', title: 'Sophomore Interviews' },
-        { date: '17', title: 'Nimbus Orientation', subtitle: 'Introducing Abraxas to Freshmen' },
-        { date: '18 & 19', title: 'Freshmen Interviews' }
+        { date: '13', title: 'Workshop', subtitle: 'title release soon' },
+        { date: '15', title: 'Innovision' }
       ]
     },
     {
-      month: 'January 2024',
+      month: 'March 2025',
       events: [
-        { date: '09 & 10', title: 'Sophomore Interviews' },
-        { date: '17', title: 'Nimbus Orientation', subtitle: 'Introducing Abraxas to Freshmen' },
-        { date: '18 & 19', title: 'Freshmen Interviews' }
+        { date: '22', title: 'Physics Carnival', subtitle:'coming soon ' }
       ]
     },
     {
-      month: 'February 2024',
+      month: 'April 2025',
       events: [
-        { date: '13', title: 'Print Hub', subtitle: '3D-Printing Workshop' },
-        { date: '18', title: 'Innovision' }
-      ]
-    },
-    {
-      month: 'March 2024',
-      events: [
-        { date: '08', title: 'Samvardhan', subtitle: 'Empowering with sustainable technology' },
-        { date: '22', title: 'Physics Carnival' }
-      ]
-    },
-    {
-      month: 'April 2024',
-      events: [
-        { date: '04', title: 'Guest Lecture', subtitle: 'by Influencer and educator Rajan Chopra' },
+        { date: '04', title: 'Guest Lecture', subtitle: 'by ...' },
         { date: '11', title: 'Locked In Time' },
         { date: '12', title: 'Möbius', subtitle: 'An infinite continuum' },
         { date: '13', title: 'Physics Arena' }
