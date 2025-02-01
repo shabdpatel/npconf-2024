@@ -62,7 +62,7 @@ function App() {
                   <section id='About'>
                     <About />
                   </section>
-                  <section id='Projects' className='sm:mt-30 mt-20 md:mt-0'>
+                  <section id='Projects' className='sm:mt-30 mt-44 md:mt-0'>
                     <Projects />
                   </section>
                   <section id='Events' className=' mt-20 md:mt-72'>
