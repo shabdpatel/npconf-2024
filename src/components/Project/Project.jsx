@@ -85,7 +85,6 @@ const Projects = () => {
     // Modified filtering logic with sorting for 'all' view
     const getDisplayedProjects = () => {
         if (selectedYear === 'all') {
-            // Combine all projects and sort by year in ascending order
             return Object.entries(groupedData)
                 .reduce((acc, [year, projects]) => {
                     return [...acc, ...projects.map(project => ({
@@ -126,14 +125,14 @@ const Projects = () => {
             </motion.p>
 
             <motion.div
-                className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-12"
+                className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-12 w-full"
                 variants={cardVariants}
             >
                 <motion.button
                     onClick={() => setSelectedYear('all')}
                     variants={buttonVariants}
                     whileHover="hover"
-                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
+                    className={`px-4 md:px-8 py-2 md:py-3 rounded-xl text-sm md:text-lg font-medium transition-all duration-500 w-[calc(50%-4px)] md:w-auto
                         ${selectedYear === 'all'
                             ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform'
                             : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
@@ -147,7 +146,7 @@ const Projects = () => {
                         onClick={() => setSelectedYear(year)}
                         variants={buttonVariants}
                         whileHover="hover"
-                        className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
+                        className={`px-4 md:px-8 py-2 md:py-3 rounded-xl text-sm md:text-lg font-medium transition-all duration-500 w-[calc(50%-4px)] md:w-auto
                             ${selectedYear === year
                                 ? "bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform"
                                 : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'
