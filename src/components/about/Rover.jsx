@@ -4,8 +4,8 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "./Loader";
 
-const Rover = ({ isMobile }) => {
-  const rover = useGLTF("./Perseverance.gltf");
+const RoverCanvas = ({ isMobile }) => {
+  const rover = useGLTF("./result.gltf");
 
   return (
     <mesh>
@@ -29,7 +29,7 @@ const Rover = ({ isMobile }) => {
   );
 };
 
-const RoverCanvas = () => {
+const Rover = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

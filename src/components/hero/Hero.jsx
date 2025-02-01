@@ -6,15 +6,15 @@ import Atom from '../hero/Atom';
 
 const fadeInUp = {
     initial: {
-        y: 50,
+        y: 100,
         opacity: 0
     },
     animate: {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 0.8,
-            ease: "easeOut"
+            duration: 2.5,
+            ease: [0.6, 0.05, 0.01, 0.9]
         }
     }
 };
@@ -22,11 +22,65 @@ const fadeInUp = {
 const staggerChildren = {
     animate: {
         transition: {
-            staggerChildren: 0.2
+            delayChildren: 0.8,
+            staggerChildren: 1.2
         }
     }
 };
 
+// Slower animation for Atom
+const atomAnimation = {
+    initial: {
+        y: 100,
+        scale: 0.8,
+        opacity: 0
+    },
+    animate: {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: 2.8,
+            ease: [0.6, 0.05, 0.01, 0.9]
+        }
+    }
+};
+
+// Slower animation for team name
+const teamNameAnimation = {
+    initial: {
+        y: 100,
+        opacity: 0
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 2.8,
+            ease: [0.6, 0.05, 0.01, 0.9],
+            delay: 1.6
+        }
+    }
+};
+
+// Slower animation for content
+const contentAnimation = {
+    initial: {
+        y: 100,
+        opacity: 0
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 2.8,
+            ease: [0.6, 0.05, 0.01, 0.9],
+            delay: 2.8
+        }
+    }
+};
+
+// Rest of the component remains the same
 const Hero = () => {
     const controls = useAnimation();
     const [scrollY, setScrollY] = useState(0);
@@ -45,12 +99,10 @@ const Hero = () => {
 
     return (
         <div className="relative min-h-screen bg-black text-white overflow-hidden">
-            {/* Animated stars background */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="stars"></div>
             </div>
 
-            {/* Main content */}
             <motion.div 
                 variants={staggerChildren}
                 initial="initial"
@@ -61,15 +113,15 @@ const Hero = () => {
                     <div className="flex flex-col items-center">
                         {/* Atom Animation */}
                         <motion.div 
-                            variants={fadeInUp} 
-                            className=" max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] mb-4 sm:mb-6 md:mb-8 lg:mb-10"
+                            variants={atomAnimation}
+                            className="max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] mb-4 sm:mb-6 md:mb-8 lg:mb-10"
                         >
                             <Atom />
                         </motion.div>
 
                         {/* Team Name */}
                         <motion.div 
-                            variants={fadeInUp} 
+                            variants={teamNameAnimation}
                             className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-center w-full"
                         >
                             <div className="inline-block">
@@ -82,13 +134,11 @@ const Hero = () => {
 
                         {/* Main Content */}
                         <motion.div 
-                            variants={fadeInUp}
+                            variants={contentAnimation}
                             className="text-center w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl px-4"
                         >
-                        <p className="mb-10">"Life, much like physics,full of forces acting on you. It’s not about avoiding them, but learning how to balance and use them to propel yourself forward.”</p>
+                            <p className="mb-10">"Life, much like physics, full of forces acting on you. It's not about avoiding them, but learning how to balance and use them to propel yourself forward."</p>
 
-
-                            {/* Social Media Icons */}
                             <div className="flex justify-center space-x-6 sm:space-x-8 md:space-x-10">
                                 <motion.a
                                     href="https://www.instagram.com/team_abraxas"
@@ -116,7 +166,6 @@ const Hero = () => {
                 </div>
             </motion.div>
 
-            {/* Animated bottom strip */}
             <motion.div
                 className="absolute bottom-0 left-0 w-full h-8 sm:h-12 md:h-16 lg:h-20 overflow-hidden"
                 style={{
@@ -132,7 +181,6 @@ const Hero = () => {
                 </motion.div>
             </motion.div>
 
-            {/* Stars background with responsive count */}
             <style jsx>{`
                 @keyframes animStar {
                     from { transform: translateY(0); }
@@ -163,7 +211,6 @@ const Hero = () => {
     );
 };
 
-// Helper function to generate random star positions
 function generateStars(count) {
     let stars = '';
     for (let i = 0; i < count; i++) {
