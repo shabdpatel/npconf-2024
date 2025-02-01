@@ -111,7 +111,7 @@ const projectsData = [
         "photo": "",
         "name": "SR Hub",
         "position": "2025 Project",
-        "description": "",
+        "description": "This project is an innovative web-based platform that empowers users to define target locations, receive real-time notifications for Landsat satellite passes, and access corresponding Surface Reflectance (SR) data. By enabling seamless comparison between ground-based spectral observations and satellite data, SR Hub promotes advanced environmental analysis and interdisciplinary research.",
         "year": "2025"
     },
     {
