@@ -41,7 +41,7 @@ const About = () => {
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 bg-gradient-to-r from-blue-400 to-slate-900 rounded-xl">
                         <div className="text-center">
                             <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2">
-                                <CountUp end={15} duration={5} />
+                                <CountUp end={19} duration={5} />
                             </h3>
                             <p className="text-sm sm:text-base lg:text-xl font-medium text-gray-200">Projects</p>
                         </div>
