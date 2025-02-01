@@ -41,7 +41,7 @@ function App() {
       {showIntro ? (
         <IntroAnimation onComplete={() => setShowIntro(false)} />
       ) : (
-        <div className='md:w-[100vw] w-[26rem] sm:w-[52rem] sm:h-full h-max '>
+        <div className='md:w-[100vw] w-[26rem] sm:w-[44rem] sm:h-full h-max '>
           <Router>
             <ScrollToTop />
             <section id='Navbar'>
@@ -59,10 +59,10 @@ function App() {
                   <section id='Home'>
                     <Hero />
                   </section>
-                  <section id='About'>
+                  <section id='About' className='md:mt-3' >
                     <About />
                   </section>
-                  <section id='Projects' className='sm:mt-30 mt-44 md:mt-0'>
+                  <section id='Projects' className='sm:mt-52 mt-52 md:mt-72 '>
                     <Projects />
                   </section>
                   <section id='Events' className=' mt-20 md:mt-72'>
