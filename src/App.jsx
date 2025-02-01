@@ -41,7 +41,7 @@ function App() {
       {showIntro ? (
         <IntroAnimation onComplete={() => setShowIntro(false)} />
       ) : (
-        <div className='md:w-[100vw] w-[27rem] sm:w-[52rem] sm:h-full h-max '>
+        <div className='md:w-[100vw] w-[26rem] sm:w-[52rem] sm:h-full h-max '>
           <Router>
             <ScrollToTop />
             <section id='Navbar'>
