@@ -1,10 +1,12 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../../../components/about/Loader";
 
 const RADIOTELESCOPE = ({ isMobile }) => {
     const radiotelescope = useGLTF("./RadioTelescope.gltf");
+    const meshRef = useRef();
+    const [isHovered, setIsHovered] = useState(false);
 
     // Apply gradient material to all meshes
     useEffect(() => {
@@ -21,11 +23,22 @@ const RADIOTELESCOPE = ({ isMobile }) => {
         });
     }, [radiotelescope]);
 
+    // Continuous rotation animation that pauses on hover
+    useFrame((state, delta) => {
+        if (!isHovered && meshRef.current) {
+            meshRef.current.rotation.y += delta * 0.2;
+        }
+    });
+
     return (
-        <mesh>
+        <mesh
+            ref={meshRef}
+            onPointerOver={() => setIsHovered(true)}
+            onPointerOut={() => setIsHovered(false)}
+        >
             {/* Gradient lighting setup */}
             <ambientLight intensity={0.6} color="#ffffff" />
-            <hemisphereLight 
+            <hemisphereLight
                 intensity={1.0}
                 groundColor='#4a4a4a'
                 color='#ffffff'
@@ -79,11 +92,11 @@ const RadioTelescope = () => {
 
     return (
         <Canvas
-            frameloop='demand'
+            frameloop='always'  // Changed from 'demand' to 'always' for continuous animation
             shadows
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{ 
+            gl={{
                 preserveDrawingBuffer: true,
                 toneMappingExposure: 1.5  // Enhanced exposure for metallic effect
             }}
