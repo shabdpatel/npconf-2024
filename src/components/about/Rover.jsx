@@ -38,28 +38,28 @@ const RoverModel = ({ isMobile }) => {
       
       {/* Main bright light */}
       <directionalLight 
-        position={[-20, 50, 10]} 
+        position={[-20, 50, 10]}
         intensity={2.5}
         color="#FFFFFF"
       />
 
       {/* Warm accent light for gold */}
       <pointLight 
-        position={[10, -10, -10]} 
+        position={[10, -10, -10]}
         intensity={1.2}
         color="#FFE5B4"  // Warm light for gold
       />
 
       {/* Cool light for white parts */}
       <pointLight 
-        position={[-10, 0, 10]} 
+        position={[-10, 0, 10]}
         intensity={0.8}
         color="#E6F0FF"  // Slightly blue-tinted
       />
 
       {/* Ground fill light */}
       <pointLight 
-        position={[0, -5, 0]} 
+        position={[0, -5, 0]}
         intensity={0.6}
         color="#FFFFFF"
       />
@@ -95,13 +95,14 @@ const RoverCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: true,
         toneMapping: 3,
         outputEncoding: 3,
+        alpha: true, // Enable alpha channel
       }}
     >
-      <color attach="background" args={['#000000']} /> {/* Pure black background */}
+      {/* Removed the background color setting to make it transparent */}
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
