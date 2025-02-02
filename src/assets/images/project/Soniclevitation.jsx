@@ -25,7 +25,7 @@ const Sonic = ({ isMobile }) => {
     // Add continuous rotation with hover pause
     useFrame((state, delta) => {
         if (!isHovered && meshRef.current) {
-            meshRef.current.rotation.y += delta * 0.2; // Using same speed as Ramjet
+            meshRef.current.rotation.y += delta * 0.8; // Using same speed as Ramjet
         }
     });
 

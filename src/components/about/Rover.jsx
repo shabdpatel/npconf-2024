@@ -108,7 +108,7 @@ const RoverCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={10}
         />
         <RoverModel isMobile={isMobile} />
       </Suspense>

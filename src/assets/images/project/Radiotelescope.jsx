@@ -26,7 +26,7 @@ const RADIOTELESCOPE = ({ isMobile }) => {
     // Continuous rotation animation that pauses on hover
     useFrame((state, delta) => {
         if (!isHovered && meshRef.current) {
-            meshRef.current.rotation.y += delta * 0.2;
+            meshRef.current.rotation.y += delta * 0.8;
         }
     });
 

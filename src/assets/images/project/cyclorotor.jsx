@@ -22,10 +22,10 @@ const Cyclorotor = ({ isMobile }) => {
     });
   }, [cyclorotor]);
 
-  // Continuous rotation animation
+  // Continuous rotation animation - SPEED INCREASED HERE
   useFrame((state, delta) => {
     if (!isHovered && cyclorotorRef.current) {
-      cyclorotorRef.current.rotation.y += delta * 0.2; // Slow, continuous rotation
+      cyclorotorRef.current.rotation.y += delta * 0.8; // Changed from 0.2 to 0.8 for faster rotation
     }
   });
 
@@ -101,7 +101,7 @@ const Cyclorotormodel = () => {
 
   return (
     <Canvas
-      frameloop='always' // Changed from 'demand' to 'always' for continuous animation
+      frameloop='always'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}

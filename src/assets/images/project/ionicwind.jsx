@@ -25,7 +25,7 @@ const IONICWIND = ({ isMobile }) => {
   // Continuous rotation animation that pauses on hover
   useFrame((state, delta) => {
     if (!isHovered && meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.2; // Matching the same rotation speed
+      meshRef.current.rotation.y += delta * 0.8; // Matching the same rotation speed
     }
   });
 

@@ -25,7 +25,7 @@ const Thruster = ({ isMobile }) => {
   // Continuous rotation animation
   useFrame((state, delta) => {
     if (!isHovered && thrusterRef.current) {
-      thrusterRef.current.rotation.y += delta * 0.2; // Slow, continuous rotation
+      thrusterRef.current.rotation.y += delta * 0.8; // Slow, continuous rotation
     }
   });
 
