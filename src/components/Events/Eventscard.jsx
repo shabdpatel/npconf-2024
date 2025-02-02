@@ -5,16 +5,11 @@ import escape_room from '../../assets/events/escape_room.png';
 import physics_carnival from '../../assets/events/physics_carnival.jpg';
 import guest_lecture_ranjan_chopra from '../../assets/events/guest_lecture_ranjan_chopra.jpg';
 import threed_printing from '../../assets/events/threed_printing.jpg';
-import threed from '../../assets/events/threed.jpg';
-import guest from '../../assets/events/guest.jpg';
-import carnival from '../../assets/events/carnival.jpg';
-import escape from '../../assets/events/escape.jpg';
 
 const Eventscard = () => {
     const [flippedCards, setFlippedCards] = useState({});
     const [isAnimated, setIsAnimated] = useState(false);
     const [activeTab, setActiveTab] = useState('workshops');
-    const [hoveredCard, setHoveredCard] = useState(null);
 
     function handleFlip(cardId) {
         if (!isAnimated) {
@@ -30,12 +25,14 @@ const Eventscard = () => {
         {
             id: 'workshop1',
             front: physics_carnival,
-            back: carnival,
+            title: "Physics Carnival",
+            description: "An interactive workshop showcasing various physics experiments and demonstrations. Students get hands-on experience with practical applications of physics concepts in an engaging carnival atmosphere."
         },
         {
             id: 'workshop2',
             front: escape_room,
-            back: escape,
+            title: "Physics Escape Room",
+            description: "A unique problem-solving experience where participants use physics concepts to solve puzzles and escape the room. Perfect blend of entertainment and education."
         }
     ];
 
@@ -43,38 +40,40 @@ const Eventscard = () => {
         {
             id: 'event1',
             front: threed_printing,
-            back: threed,
+            title: "3D Printing Workshop",
+            description: "Learn the fundamentals of 3D printing technology, from design to execution. Participants will understand the principles behind additive manufacturing and its applications."
         },
         {
             id: 'event2',
             front: guest_lecture_ranjan_chopra,
-            back: guest,
+            title: "Guest Lecture Series",
+            description: "Distinguished speakers share their expertise and experiences in physics and related fields. An opportunity to learn from industry experts and academic leaders."
         }
     ];
 
     const containerVariants = {
         hidden: { 
             opacity: 0,
-            y: 100  // Start from below
+            y: 50
         },
         visible: {
             opacity: 1,
-            y: 0,    // Move to original position
+            y: 0,
             transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 15,
+                stiffness: 150,
+                damping: 20,
                 mass: 1,
-                staggerChildren: 0.2
+                staggerChildren: 0.15
             }
         },
         exit: {
             opacity: 0,
-            y: -100,  // Exit towards top
+            y: -50,
             transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 15,
+                stiffness: 150,
+                damping: 20,
                 mass: 1,
                 staggerChildren: 0.1
             }
@@ -84,46 +83,50 @@ const Eventscard = () => {
     const cardVariants = {
         hidden: { 
             opacity: 0,
-            y: 100,
-            rotateX: -15
+            scale: 0.8,
+            rotateX: -25,
+            y: 50
         },
         visible: {
             opacity: 1,
-            y: 0,
+            scale: 1,
             rotateX: 0,
+            y: 0,
             transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 15,
+                stiffness: 150,
+                damping: 20,
                 mass: 1,
-                duration: 0.8,
+                duration: 0.5,
             }
         },
         exit: {
             opacity: 0,
-            y: -100,
-            rotateX: 15,
+            scale: 0.8,
+            rotateX: 25,
+            y: -50,
             transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 15,
+                stiffness: 150,
+                damping: 20,
                 mass: 1,
-                duration: 0.6
+                duration: 0.4
             }
         },
         hover: {
-            scale: 1.02,
+            scale: 1.05,
             rotateX: 5,
             rotateY: 5,
             transition: {
-                duration: 0.3
+                duration: 0.2,
+                ease: "easeOut"
             }
         }
     };
 
     const renderCards = (cardsData) => {
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-3/4 max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-11/12 max-w-6xl mx-auto">
                 {cardsData.map((card, index) => (
                     <motion.div
                         key={card.id}
@@ -133,9 +136,7 @@ const Eventscard = () => {
                         exit="exit"
                         whileHover="hover"
                         custom={index}
-                        onHoverStart={() => setHoveredCard(card.id)}
-                        onHoverEnd={() => setHoveredCard(null)}
-                        className="flip-card w-full aspect-[3/4] rounded-lg cursor-pointer perspective-1000"
+                        className="flip-card aspect-[4/5] rounded-xl cursor-pointer perspective-1000 transform-gpu"
                         onClick={() => handleFlip(card.id)}
                     >
                         <motion.div
@@ -143,52 +144,39 @@ const Eventscard = () => {
                             initial={false}
                             animate={{ 
                                 rotateY: flippedCards[card.id] ? 180 : 0,
-                                scale: flippedCards[card.id] ? 1.02 : 1,
-                                z: hoveredCard === card.id ? 50 : 0
-                            }}
-                            transition={{ 
-                                duration: 0.7,
-                                type: "spring",
-                                stiffness: 260,
-                                damping: 20
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 70,
+                                    damping: 12,
+                                    duration: 0.8
+                                }
                             }}
                             onAnimationComplete={() => setIsAnimated(false)}
                         >
                             {/* Card Front */}
                             <div
-                                className="flip-card-front absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden overflow-hidden"
+                                className="flip-card-front absolute w-full h-full bg-cover bg-center text-white rounded-xl shadow-2xl backface-hidden overflow-hidden"
                                 style={{ 
                                     backgroundImage: `url(${card.front})`,
                                     transform: 'rotateY(0deg)',
                                 }}
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 mix-blend-overlay" />
-                                
-                                {hoveredCard === card.id && !flippedCards[card.id] && (
-                                    <motion.div
-                                        className="absolute inset-0 flex items-center justify-center"
-                                        initial={{ scale: 0 }}
-                                        animate={{ scale: 1 }}
-                                        exit={{ scale: 0 }}
-                                    >
-                                        <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                                            <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center">
-                                                <div className="w-4 h-4 rounded-full bg-white" />
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </div>
+                            />
 
                             {/* Card Back */}
                             <div
-                                className="flip-card-back absolute w-full h-full bg-cover bg-center text-white rounded-lg shadow-2xl backface-hidden overflow-hidden"
+                                className="flip-card-back absolute w-full h-full bg-slate-900 text-white rounded-xl shadow-2xl backface-hidden overflow-hidden"
                                 style={{ 
-                                    backgroundImage: `url(${card.back})`,
                                     transform: 'rotateY(180deg)',
                                 }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 mix-blend-overlay" />
+                                <div className="flex flex-col h-full justify-center items-center text-center p-8 space-y-6">
+                                    <h3 className="text-3xl font-bold text-white">
+                                        {card.title}
+                                    </h3>
+                                    <p className="text-lg text-gray-200 leading-relaxed">
+                                        {card.description}
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -199,20 +187,20 @@ const Eventscard = () => {
 
     return (
         <motion.div 
-            className="h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-8 px-4"
+            className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black py-16 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
         >
             <motion.div 
-                className="flex flex-col sm:flex-row justify-center gap-4 mb-8 px-4"
-                initial={{ y: -50, opacity: 0 }}
+                className="flex flex-col sm:flex-row justify-center gap-8 mb-20 px-4"
+                initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
             >
                 <button
                     onClick={() => setActiveTab('workshops')}
-                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
+                    className={`px-10 py-4 rounded-xl text-lg font-medium transition-all duration-300
                         ${activeTab === 'workshops' 
                         ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
                         : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'}`}
@@ -221,7 +209,7 @@ const Eventscard = () => {
                 </button>
                 <button
                     onClick={() => setActiveTab('events')}
-                    className={`px-8 py-3 rounded-xl text-lg font-medium transition-all duration-500
+                    className={`px-10 py-4 rounded-xl text-lg font-medium transition-all duration-300
                         ${activeTab === 'events' 
                         ? 'bg-gradient-to-r from-purple-900 to-blue-700 shadow-lg shadow-purple-500/25 scale-105 transform' 
                         : 'bg-gray-800/50 hover:bg-gray-700/50 hover:scale-105 transform'}`}
