@@ -11,7 +11,7 @@ import RadioTelescope from '../../assets/images/project/Radiotelescope';
 const projectsData = [
     {
         "photo": <Ionicthruster />,
-        "name": "Ionic Thruster",
+        "name": "Ionic Thrusters",
         "position": "2023 Project",
         "description": "Ionic thrusters propel spacecraft by accelerating ions using electromagnetic fields. They promise efficient, high-performance propulsion, revolutionizing space exploration with enhanced efficiency and extended capabilities. Ionic thrusters represent a pioneering propulsion technology revolutionizing space exploration. These thrusters utilize electromagnetic fields to accelerate ions, providing spacecraft with propulsion. By expelling ions at high velocities, they generate thrust, enabling efficient and high-performance propulsion systems. Compared to traditional chemical rockets, ionic thrusters offer significant advantages in terms of fuel efficiency and mission duration. Their precise control and long operational lifetimes make them ideal for extended missions to distant destinations within the solar system and beyond. Additionally, ionic thrusters contribute to reducing the overall mass of spacecraft, allowing for larger payloads or smaller, more cost-effective missions. As the demand for exploration beyond Earth's orbit continues to grow, ionic thrusters are poised to play a crucial role in enabling ambitious missions to explore new frontiers and expand humanity's understanding of the universe.",
         "year": "2023"
