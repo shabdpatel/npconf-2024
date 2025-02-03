@@ -50,7 +50,7 @@ const EventsCard = () => {
 
     return (
       <motion.div 
-        className="relative w-[360px] h-[470px] perspective-1000 mx-auto"
+        className="relative md:w-[360px] md:h-[470px] w-[300px] h-[400px] perspective-1000 mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
