@@ -1,36 +1,48 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../../../components/about/Loader";
 
 const Cyclorotor = ({ isMobile }) => {
   const cyclorotor = useGLTF("./cyclorotor.gltf");
+  const cyclorotorRef = useRef();
+  const [isHovered, setIsHovered] = useState(false);
 
   // Apply gradient material to all meshes
   useEffect(() => {
     cyclorotor.scene.traverse((child) => {
       if (child.isMesh) {
-        // Create a material that transitions from white to gray
-        child.material.color.set('#ffffff');    // Base white color
-        child.material.metalness = 0.6;         // Increased metalness for metallic look
-        child.material.roughness = 0.3;         // Slightly rougher for industrial feel
-        child.material.envMapIntensity = 2.0;   // Enhanced environment reflections
-        child.material.emissive.set('#808080'); // Gray emission
-        child.material.emissiveIntensity = 0.4; // Subtle emission for gradient
+        child.material.color.set('#ffffff');
+        child.material.metalness = 0.6;
+        child.material.roughness = 0.3;
+        child.material.envMapIntensity = 2.0;
+        child.material.emissive.set('#808080');
+        child.material.emissiveIntensity = 0.4;
       }
     });
   }, [cyclorotor]);
 
+  // Continuous rotation animation - SPEED INCREASED HERE
+  useFrame((state, delta) => {
+    if (!isHovered && cyclorotorRef.current) {
+      cyclorotorRef.current.rotation.y += delta * 0.8; // Changed from 0.2 to 0.8 for faster rotation
+    }
+  });
+
   return (
-    <mesh>
+    <mesh
+      ref={cyclorotorRef}
+      onPointerOver={() => setIsHovered(true)}
+      onPointerOut={() => setIsHovered(false)}
+    >
       {/* Base ambient light */}
       <ambientLight intensity={0.6} color="#ffffff" />
       
       {/* Gradient hemisphere light - white to gray */}
-      <hemisphereLight 
+      <hemisphereLight
         intensity={1.0}
-        groundColor='#4a4a4a'    // Dark gray for bottom
-        color='#ffffff'          // White for top
+        groundColor='#4a4a4a'
+        color='#ffffff'
       />
       
       {/* Main top light */}
@@ -89,13 +101,13 @@ const Cyclorotormodel = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      frameloop='always'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: true,
-        toneMappingExposure: 1.5  // Adjusted exposure for metallic look
+        toneMappingExposure: 1.5
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -106,7 +118,6 @@ const Cyclorotormodel = () => {
         />
         <Cyclorotor isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

@@ -1,10 +1,12 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../../../components/about/Loader";
 
 const Sonic = ({ isMobile }) => {
     const sonic = useGLTF("./Soniclevitation.gltf");
+    const meshRef = useRef();
+    const [isHovered, setIsHovered] = useState(false);
 
     // Apply metallic gradient material
     useEffect(() => {
@@ -20,8 +22,19 @@ const Sonic = ({ isMobile }) => {
         });
     }, [sonic]);
 
+    // Add continuous rotation with hover pause
+    useFrame((state, delta) => {
+        if (!isHovered && meshRef.current) {
+            meshRef.current.rotation.y += delta * 0.8; // Using same speed as Ramjet
+        }
+    });
+
     return (
-        <mesh>
+        <mesh 
+            ref={meshRef}
+            onPointerOver={() => setIsHovered(true)}
+            onPointerOut={() => setIsHovered(false)}
+        >
             {/* Enhanced lighting system */}
             <ambientLight intensity={0.7} color="#f0f0f0" />
             <hemisphereLight 
@@ -78,13 +91,13 @@ const Soniclevitation = () => {
 
     return (
         <Canvas
-            frameloop='demand'
+            frameloop='always'  // Changed from 'demand' to 'always' for continuous animation
             shadows
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{ 
+            gl={{
                 preserveDrawingBuffer: true,
-                toneMappingExposure: 1.6  // Enhanced for metallic surfaces
+                toneMappingExposure: 1.6
             }}
         >
             <Suspense fallback={<CanvasLoader />}>
