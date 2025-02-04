@@ -10,6 +10,7 @@ import { ArrowLeft } from 'lucide-react';
 const EventsCard = () => {
   const [activeTab, setActiveTab] = useState('workshops');
 
+  // Previous card data remains unchanged...
   const workshopCards = [
     {
       id: 'workshop1',
@@ -50,17 +51,17 @@ const EventsCard = () => {
 
     return (
       <motion.div 
-        className="relative md:w-[360px] md:h-[470px] w-[300px] h-[400px] perspective-1000 mx-auto"
+        className="relative md:w-[360px] md:h-[470px] w-[300px] h-[400px] perspective-1000 mx-auto mb-12 md:mb-0"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="w-full h-full relative preserve-3d "
+          className="w-full h-full relative preserve-3d"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.6, type: "spring", damping: 20 }}
         >
-          {/* Front of card */}
+          {/* Card front and back remain unchanged... */}
           <div 
             className="absolute w-full h-full backface-hidden rounded-2xl overflow-hidden"
             style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8))' }}
@@ -82,7 +83,6 @@ const EventsCard = () => {
             </div>
           </div>
 
-          {/* Back of card */}
           <div 
             className="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-900/95 rounded-2xl p-4"
           >
@@ -105,7 +105,6 @@ const EventsCard = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0B1A] relative py-12 px-6 overflow-hidden">
-      {/* Starry background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0" 
           style={{
@@ -118,9 +117,7 @@ const EventsCard = () => {
         />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Tabs */}
         <div className="flex justify-center gap-6 mb-10">
           <button
             onClick={() => setActiveTab('workshops')}
@@ -142,7 +139,6 @@ const EventsCard = () => {
           </button>
         </div>
 
-        {/* Cards Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -150,7 +146,7 @@ const EventsCard = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-0"
+            className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8"
           >
             {(activeTab === 'workshops' ? workshopCards : eventCards).map(card => (
               <Card key={card.id} card={card} />
