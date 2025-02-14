@@ -34,7 +34,7 @@ const TeamCard = ({ photo, name, social }) => {
                 {/* Social Links */}
                 <div className="flex justify-center space-x-6">
                     {[
-                        { icon: FaTwitter, link: social.twitter, color: "hover:text-blue-400" },
+                        
                         { icon: FaLinkedin, link: social.linkedin, color: "hover:text-blue-600" },
                         { icon: FaGithub, link: social.github, color: "hover:text-purple-400" },
                         { icon: FaInstagram, link: social.instagram, color: "hover:text-pink-500" }
