@@ -1,10 +1,12 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../../../components/about/Loader";
 
 const Leveraging = ({ isMobile }) => {
     const leveraging = useGLTF("./LeveragingLight.gltf");
+    const meshRef = useRef();
+    const [isHovered, setIsHovered] = useState(false);
 
     // Apply gradient material to all meshes
     useEffect(() => {
@@ -21,13 +23,24 @@ const Leveraging = ({ isMobile }) => {
         });
     }, [leveraging]);
 
+    // Continuous rotation animation that pauses on hover
+    useFrame((state, delta) => {
+        if (!isHovered && meshRef.current) {
+            meshRef.current.rotation.y += delta * 0.8;
+        }
+    });
+
     return (
-        <mesh>
+        <mesh
+            ref={meshRef}
+            onPointerOver={() => setIsHovered(true)}
+            onPointerOut={() => setIsHovered(false)}
+        >
             {/* Base ambient light */}
             <ambientLight intensity={0.6} color="#ffffff" />
             
             {/* Gradient hemisphere light - white to gray */}
-            <hemisphereLight 
+            <hemisphereLight
                 intensity={1.0}
                 groundColor='#4a4a4a'    // Dark gray for bottom
                 color='#ffffff'          // White for top
@@ -89,11 +102,11 @@ const LeveragingLight = () => {
 
     return (
         <Canvas
-            frameloop='demand'
+            frameloop='always'  // Changed from 'demand' to 'always' for continuous animation
             shadows
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{ 
+            gl={{
                 preserveDrawingBuffer: true,
                 toneMappingExposure: 1.5  // Adjusted exposure for metallic look
             }}

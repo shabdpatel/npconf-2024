@@ -3,7 +3,6 @@ import Eventscard from './Eventscard';
 import { motion } from 'framer-motion';
 
 const Events = () => {
-    // Comprehensive animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -15,19 +14,18 @@ const Events = () => {
         }
     };
 
-    // Enhanced bottom-to-top reveal variants
     const itemVariants = {
-        hidden: { 
+        hidden: {
             opacity: 0,
-            y: 100  // Start further down for more pronounced effect
+            y: 100
         },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
-                type: "spring",  // Adds a slight bounce effect
-                stiffness: 50,   // Controls spring intensity
-                damping: 10,     // Controls bounce
+                type: "spring",
+                stiffness: 50,
+                damping: 10,
                 duration: 0.8
             }
         }
@@ -35,14 +33,14 @@ const Events = () => {
 
     return (
         <motion.div 
-            className="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 lg:px-8"
+            className="max-w-screen-xl mx-auto pt-20 pb-4 px-4 sm:px-6 lg:px-8 mt-16 md:mt-20"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
         >
             <motion.h2
-                className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-5 text-center"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 md:mb-5 text-center px-4"
                 variants={itemVariants}
             >
                 Our{" "}
@@ -52,7 +50,7 @@ const Events = () => {
             </motion.h2>
 
             <motion.p
-                className="text-center text-gray-300 text-xl md:text-2xl mb-6 md:mb-8"
+                className="text-center text-gray-300 text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 px-4"
                 variants={itemVariants}
             >
                 Get updated on our latest events and workshops
@@ -60,6 +58,7 @@ const Events = () => {
 
             <motion.div
                 variants={itemVariants}
+                className="w-full"
             >
                 <Eventscard />
             </motion.div>

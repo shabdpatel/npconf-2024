@@ -1,27 +1,15 @@
 .perspective-1000 {
     perspective: 1000px;
-}
-
-.transform-style-3d {
+  }
+  
+  .preserve-3d {
     transform-style: preserve-3d;
-}
-
-.backface-hidden {
+  }
+  
+  .backface-hidden {
     backface-visibility: hidden;
-}
-
-.flip-card-front::before,
-.flip-card-back::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
