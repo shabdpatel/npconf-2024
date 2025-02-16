@@ -155,7 +155,7 @@
         },
         {
             "photo": "https://res.cloudinary.com/dwgblczck/image/upload/v1737800318/IMG-20241111-WA0025_-_Prieyal_Rathour_pekbkn.jpg",
-            "name": "Periyal Rathour",
+            "name": "Prieyal Rathour",
             "social": {
                 "github": "https://github.com/fujiikunn",
                 "linkedin": "https://www.linkedin.com/in/prieyal-rathour-675024344",
@@ -237,16 +237,7 @@
                 "instagram": "https://www.instagram.com/1_aaru.12?igsh=ZWxlOHBxeXZ1cTU4"
             }
         },
-            {
-                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787496/Picsart_23-02-14_16-40-55-903_-_aditya_kumar_kolesh_hyypzz.jpg",
-                "name": "Aditya Kumar",
-                "social": {
-                    "github": "https://github.com/codewithAdi04",
-                    "linkedin": "https://www.linkedin.com/in/aditya-kumar-993544305/",
-                    "instagram": "https://www.instagram.com/__adityakumarrr__/"
-                }
-            },
-            {
+         {
                 "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787462/image_-_Aditya_Verma_xdzn5g.jpg",
                 "name": "Aditya Verma",
                 "social": {
@@ -262,15 +253,6 @@
                     "github": "http://github.com/AdditiveInstrr",
                     "linkedin": "http://linkedin.com/in/akshays4124",
                     "instagram": "https://www.instagram.com/akshuusss"
-                }
-            },
-            {
-                "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712824996/Batch2024/nmq7dxklsvoprlszpyxm.jpg",
-                "name": "Ankush Thakur",
-                "social": {
-                    "github": "",
-                    "linkedin": "",
-                    "instagram": "https://www.instagram.com/ankushthakur__12?igsh=Zmo3Ynh0cHByNWZy"
                 }
             },
             {
@@ -298,15 +280,6 @@
                     "github": "https://github.com/Peeyushphy",
                     "linkedin": "",
                     "instagram": "https://www.instagram.com/peeyush.sharma.1/"
-                }
-            },
-            {
-                "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737825786/IMG_20240105_063359_-_RAHUL_SHARMA_fj6n3o.jpg",
-                "name": "Rahul",
-                "social": {
-                    "github": "",
-                    "linkedin": "",
-                    "instagram": ""
                 }
             },
             {
@@ -338,15 +311,6 @@
             }
         ],
     "Coordinators": [
-        {
-            "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712825003/Batch2024/qlxmt9yy57v0tuhxavrd.jpg",
-            "name": "Ajay Mokta",
-            "social": {
-                "github": "",
-                "linkedin": "https://www.linkedin.com/in/ajay-mokta-ab9b28247",
-                "instagram": "https://www.instagram.com/ajay.mokta?igsh=bGZmc3RzanFram9s"
-            }
-        },
         {
             "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712824994/Batch2024/jt7glbap61cd1hzhbvy5.jpg",
             "name": "Akanksha Verma",
@@ -411,6 +375,15 @@
             }
         },
         {
+            "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1739559287/IMG_0082_jneigq.jpg",
+            "name": "Pradeep Kumar",
+            "social": {
+                "github": "",
+                "linkedin": "https://www.linkedin.com/in/pradeep-kumar-29a37027a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/pradeep.k.001?igsh=MWxibXEwdm9jN2E4eA=="
+            }
+        },
+        {
             "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1737787494/IMG_20250107_222343_779_-_Sahil_choudhary_jvrvqm.webp",
             "name": "Sahil",
             "social": {
@@ -435,15 +408,6 @@
                 "github": "https://github.com/shabdpatel",
                 "linkedin": "https://www.linkedin.com/in/shabdpatel8757",
                 "instagram": "https://instagram.com/shabd_patel_?igshid=ZDdkNTZiNTM="
-            }
-        },
-        {
-            "photo": "https://res.cloudinary.com/dyq1mioyr/image/upload/v1712825006/Batch2024/i9lapz5m631riuu1wscf.jpg",
-            "name": "Sudharson",
-            "social": {
-                "github": "",
-                "linkedin": "https://www.linkedin.com/in/sudharson-s-899751130",
-                "instagram": "https://www.instagram.com/sudharson_05?igsh=MWdyd2dlcGJ1amsycg=="
             }
         },
         {
