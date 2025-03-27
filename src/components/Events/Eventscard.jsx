@@ -36,7 +36,7 @@ const EventsCard = () => {
       id: 'event2',
       title: "Guest Lecture Series",
       image: guest_lecture,
-      description: "Embark on an enlightening journey through NIMBUS 2K24's guest lecture series, where Team Abraxas, in collaboration with Physteo, presents a captivating blend of physics education and content creation!✨️We are delighted to extend our warm invitation to you for an enlightening session featuring the esteemed Mr. Rajan Chopra. With his expertise in blending entertainment and education, Mr. Chopra captivates audiences with his unique approach to teaching physics. He excels in simplifying complex concepts, making them accessible to a wider audience. Let's delve into the integration of social community with modern education in what promises to be a fascinating discussion.Mark your calendars for April 4th at 2pm in the Mini Audi. We look forward to see you there!"
+      description: "⚡ Ever wondered how ancient minds cracked the code of the universe? 🏺✨ From celestial calculations to groundbreaking physics, their wisdom still echoes today! 🌌📜Team Abraxas invites you to a fascinating session with Dr. R.C. Verma 👨‍🏫, former professor at Panjab University, Chandigarh. A renowned physicist and educator, Dr. Verma has dedicated his career to unraveling the mysteries of physics and exploring the scientific marvels of ancient civilizations. His work bridges the gap between modern science and the deep-rooted knowledge of our ancestors, making complex concepts accessible and intriguing."
     }
   ];
 
