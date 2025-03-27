@@ -1,43 +1,42 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Events.css';
-import escape_room from '../../assets/events/escape_room.png';
-import physics_carnival from '../../assets/events/physics_carnival.jpg';
-import guest_lecture_ranjan_chopra from '../../assets/events/guest_lecture_ranjan_chopra.jpg';
-import threed_printing from '../../assets/events/threed_printing.jpg';
+import coming_soon_banner from '../../assets/events/comming_soon_banner.jpeg';
+import Abraxas_day from '../../assets/events/Abraxas_day.jpg';
+import guest_lecture from '../../assets/events/guest_lecture.jpg';
+import AI_workshop from '../../assets/events/AI_workshop.png';
 import { ArrowLeft } from 'lucide-react';
 
 const EventsCard = () => {
   const [activeTab, setActiveTab] = useState('workshops');
 
-  // Previous card data remains unchanged...
   const workshopCards = [
     {
       id: 'workshop1',
       title: "Physics Carnival",
-      image: physics_carnival,
-      description: "As the sun dipped below the horizon, casting a golden glow everywhere, Team Abraxas stood with pride, celebrating a remarkable milestone: one year of unwavering dedication to the enigmatic world of engineering physics. From the inception of the club, their mission had been clear—to bridge the gap between theoretical concepts and practical applications, fostering a community of passionate innovators. 🌅 With hearts brimming with this achievement, we are organizing a Physics Carnival, a spectacle where science and wonder would intertwine, echoing the club's triumphant journey through the halls of academia. 🎪 Team Abraxas had not just marked a year of existence but had ignited a spark of curiosity and innovation that illuminated the path towards boundless exploration in the realm of engineering physics. 🔥🔭✨"
+      image: Abraxas_day,
+      description: "Remember, physics isn't just about memorizing formulas. It's about understanding how the world works. It's about asking 'what if?' and then finding the answer.✨ Two years of 'What if?' answered! ✨ Team Abraxas celebrates its anniversary with a Physics Carnival explosion! 🎉⚡ Join us at the Students' Park for an anniversary bash full of physics fun, games, and demos! 🧪🔬🎯Come celebrate our journey—it's gonna be a blast! 🚀 See you there! 😃"
     },
     {
       id: 'workshop2',
       title: "Physics Escape Room",
-      image: escape_room,
-      description: "Dive into a world where science meets excitement at Nimbus 2k24! 🚀 Team Abraxas is thrilled to present an exhilarating physics-based escape room extravaganza on Day 0! 🎉 Join us for an unforgettable experience that will challenge your intellect and ignite your sense of adventure! 💡Embark on a journey of discovery as you unravel cryptic puzzles, decode hidden messages, and unlock the secrets of the universe! 🌌 Gather your friends, gather your wits, and prepare to race against the clock in a pulse-pounding quest for scientific enlightenment! 🕰️Whether you're a seasoned escape room aficionado or a curious novice, our immersive adventure promises thrills, laughter, and unforgettable memories! 💫 Don't miss out on the chance to be part of the action – reserve your spot now and prepare to unleash your inner scientist! 🌟 #Nimbus2k24 #TeamAbraxas #EscapeRoomExtravaganza #ScienceMeetsAdventure 🔬✨"
+      image: coming_soon_banner,
+      description: ""
     }
   ];
 
   const eventCards = [
     {
       id: 'event1',
-      title: "3D Printing Workshop",
-      image: threed_printing,
-      description: "magine a world where your wildest creations materialize before your eyes at the mere touch of a button. Team Abraxas presents to you PRINTHUB- 3D Printing workshop.Delve into the mesmerising process of transforming digital designs into physical reality, where creativity knows no bounds. Whether you're a seasoned creator or a curious novice, join us on a journey where creativity meets technology and innovation meets fabrication. This workshop offers an unparalleled opportunity to explore the limitless possibilities of 3D printing technology. Unleash your imagination and revolutionize the way you bring ideas to life. Don't let this extraordinary opportunity pass you by—step into the future of fabrication and sculpt your dreams into existence!"
+      title: "AI Workshop",
+      image: AI_workshop,
+      description: "🚀 Hands-on AI Workshop | Team Abraxas 🤖Ever wondered how AI generates text, creates stunning artwork, or even holds human-like conversations? How does it actually work? If you've ever been curious about the magic of AI, now's your chance to explore it allTeam Abraxas invites you to an immersive AI workshop—a journey into the heart of artificial intelligence. Dive into the fascinating process of how AI learns, interprets, and generates outputs, from recognizing patterns to crafting meaningful and creative responses. Through hands-on activities, you'll get to explore its capabilities, and even challenge them to think beyond their programmed boundaries!Whether you're an absolute beginner or a seasoned tech enthusiast, this workshop is designed to spark your creativity and enhance your problem-solving skills like never before."
     },
     {
       id: 'event2',
       title: "Guest Lecture Series",
-      image: guest_lecture_ranjan_chopra,
-      description: "Embark on an enlightening journey through NIMBUS 2K24's guest lecture series, where Team Abraxas, in collaboration with Physteo, presents a captivating blend of physics education and content creation!✨️We are delighted to extend our warm invitation to you for an enlightening session featuring the esteemed Mr. Rajan Chopra. With his expertise in blending entertainment and education, Mr. Chopra captivates audiences with his unique approach to teaching physics. He excels in simplifying complex concepts, making them accessible to a wider audience. Let's delve into the integration of social community with modern education in what promises to be a fascinating discussion.Mark your calendars for April 4th at 2pm in the Mini Audi. We look forward to see you there!"
+      image: guest_lecture,
+      description: "⚡ Ever wondered how ancient minds cracked the code of the universe? 🏺✨ From celestial calculations to groundbreaking physics, their wisdom still echoes today! 🌌📜Team Abraxas invites you to a fascinating session with Dr. R.C. Verma 👨‍🏫, former professor at Panjab University, Chandigarh. A renowned physicist and educator, Dr. Verma has dedicated his career to unraveling the mysteries of physics and exploring the scientific marvels of ancient civilizations. His work bridges the gap between modern science and the deep-rooted knowledge of our ancestors, making complex concepts accessible and intriguing."
     }
   ];
 
@@ -61,7 +60,6 @@ const EventsCard = () => {
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.6, type: "spring", damping: 20 }}
         >
-          {/* Card front and back remain unchanged... */}
           <div 
             className="absolute w-full h-full backface-hidden rounded-2xl overflow-hidden"
             style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8))' }}
@@ -69,7 +67,7 @@ const EventsCard = () => {
             <img
               src={card.image}
               alt={card.title}
-              className="absolute w-full h-full object-cover object-center -z-10"
+              className="absolute w-full h-full object-contain" // Changed from object-cover to object-contain
             />
             <div className="absolute bottom-0 w-full p-4 text-white">
               <h2 className="text-xl font-bold mb-2">{card.title}</h2>
