@@ -95,7 +95,7 @@ const Timeline = () => {
     {
       month: 'December 2024',
       events: [
-        { date: '28', title: 'Resume Buildiing Workshop' },
+        { date: '28', title: 'Resume Buildiing Internal Workshop' },
       ]
     },
     {
@@ -108,22 +108,23 @@ const Timeline = () => {
     {
       month: 'February 2025',
       events: [
-        { date: '13', title: 'Workshop', subtitle: 'title release soon' },
         { date: '15', title: 'Innovision' }
       ]
     },
     {
       month: 'March 2025',
       events: [
-        { date: '22', title: 'Physics Carnival', subtitle:'coming soon ' }
+        { date: '10', title: 'National Science Day',subtitle: 'Departmental Celebration' },
+        { date: '18', title: 'INSIDE AI: Workshop' },
+        { date: '22', title: 'Physics Carnival',subtitle:'Abraxas Day' },
+        { date: '24', title: 'Guest Lecture', subtitle: 'by Dr. R.C.Verma' }
       ]
     },
     {
       month: 'April 2025',
       events: [
-        { date: '04', title: 'Guest Lecture', subtitle: 'by ...' },
         { date: '11', title: 'Locked In Time' },
-        { date: '12', title: 'Möbius', subtitle: 'An infinite continuum' },
+        { date: '12', title: 'Aurora', subtitle: 'Archway To Future ' },
         { date: '13', title: 'Physics Arena' }
       ]
     }
