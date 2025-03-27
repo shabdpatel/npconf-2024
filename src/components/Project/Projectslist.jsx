@@ -108,35 +108,35 @@ const projectsData = [
         "year": "2024"
     },
     {
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1743090077/WhatsApp_Image_2025-03-27_at_20.03.35_sa9ilq.jpg",
         "name": "SR Hub",
         "position": "2025 Project",
         "description": "This project is an innovative web-based platform that empowers users to define target locations, receive real-time notifications for Landsat satellite passes, and access corresponding Surface Reflectance (SR) data. By enabling seamless comparison between ground-based spectral observations and satellite data, SR Hub promotes advanced environmental analysis and interdisciplinary research.",
         "year": "2025"
     },
     {
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1743090077/opti-core_mopux2.jpg",
         "name": "Opti-Core",
         "position": "2025 Project",
         "description": "This project will explore the use of optical components such as lasers, mirrors, and photodetectors to create logic gates. The goal is to understand the principles of optical computing and how light can be used to represent binary logic, providing a novel approach to digital circuit design and potentially advancing the field of photonics in computing.",
         "year": "2025"
     },
     {
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1743086074/WhatsApp_Image_2025-03-27_at_19.59.56_ttjo9h.jpg",
         "name": "Metal 3-D Printing",
         "position": "2025 Project",
         "description": "Expensive, high-strength metallic materials, which can be designed and created with minimal material waste during the layer-upon-layer addition process. The development of new products has already made great use of AM technology for prototyping. Today, components created by AM are used directly in the finished product, and in some instances, AM components are used as spare parts across numerous industries. However, the cost of currently available metal additive manufacturing (AM) machines for metals based on selective laser melting and the cost of part manufacture is very high. Furthermore, the processes used by these technologies produce waste metal powder, creating an adverse effect on the environment. As a result, there is an increasing demand for new techniques with environmental friendliness, high mass production rates, and low production costs. In light of this, extrusion-based metal AM techniques, which utilize the fused filament fabrication (FFF) approach, are a great alternative to the current laser-based metal AM solutions. The extrusion-based metal printing technique uses customized filaments with metal particles distributed in a sacrificial polymeric binder. A FFF printer is utilized to 3D print the green part. The polymeric binder is removed from the printed parts using a catalytic solvent or de-binder (depending on the step). The final metallic parts are obtained after the sintering stage. This article thoroughly discusses all aspects of filament fabrication, AM of green parts, de-binding, sintering, and post-processing of green and sintered parts in extrusion-based metal AM",
         "year": "2025"
     },
     {
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1743090196/WhatsApp_Image_2025-03-27_at_20.20.19_xqlvse.jpg",
         "name": "Anti-Hailstorm Protection System",
         "position": "2025 Project",
         "description": "Hailstorms pose a significant threat to apple orchards, leading to severe crop damage and financial losses for farmers. Traditional netting systems offer protection but are cumbersome to manage and come with several limitations, including reduced sunlight exposure and difficulty in applying pesticides. Our solution introduces an automated, cost-effective anti-hailstorm pillar that integrates machine learning (ML) predictions and mechanical net deployment. This system minimizes the duration nets are deployed, ensuring healthy crop growth while preventing hail damage.",
         "year": "2025"
     },
     {
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dlw2rmxyi/image/upload/v1743090195/WhatsApp_Image_2025-03-27_at_20.05.00_n7xip0.jpg",
         "name": "Photoacoustic Imaging System",
         "position": "2025 Project",
         "description": "Develop a Photoacoustic Imaging System that uses laser-induced acoustic waves to map underwater objects with the added functionality of modulating the acoustic waves in the 1-50 kHz frequency range. This will enable the capture of specific acoustic signals to generate high-resolution images of underwater features.",
