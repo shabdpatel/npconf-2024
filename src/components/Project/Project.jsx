@@ -66,7 +66,7 @@ const Projects = () => {
     }, {});
 
     // Ensure each year has the correct number of projects
-    ['2023', '2024', '2025'].forEach(year => {
+    ['2025', '2024', '2023'].forEach(year => {
         if (!groupedData[year]) {
             groupedData[year] = [];
         }
@@ -92,7 +92,7 @@ const Projects = () => {
                         year: year
                     }))];
                 }, [])
-                .sort((a, b) => a.year.localeCompare(b.year));
+                .sort((a, b) => b.year.localeCompare(a.year));
         }
         return groupedData[selectedYear] || [];
     };
