@@ -123,7 +123,7 @@ const Timeline = () => {
     {
       month: 'April 2025',
       events: [
-        { date: '11', title: 'Locked In Time' },
+        { date: '11', title: 'Locked In Time', subtitle: 'Physics Escape Room' },
         { date: '12', title: 'Aurora', subtitle: 'Archway To Future ' },
         { date: '13', title: 'Physics Arena' }
       ]
