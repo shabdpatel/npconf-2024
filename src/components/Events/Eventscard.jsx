@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Events.css';
-import coming_soon_banner from '../../assets/events/comming_soon_banner.jpeg';
+import Escape_room from '../../assets/events/Escape_room.png';
 import Abraxas_day from '../../assets/events/Abraxas_day.jpg';
 import guest_lecture from '../../assets/events/guest_lecture.jpg';
 import AI_workshop from '../../assets/events/AI_workshop.png';
@@ -20,8 +20,8 @@ const EventsCard = () => {
     {
       id: 'workshop2',
       title: "Physics Escape Room",
-      image: coming_soon_banner,
-      description: ""
+      image: Escape_room,
+      description: "🔬✨Surrounded by puzzles and wicked clues.The silence hums with questions of a mystery.This isn’t just a game — it’s a Scientific Showdown! ⚡Team Abraxas brings you the 🧩 Escape Room Extravaganza!🧠 A physics-fueled adventure at Nimbus 2025📍 On Ground | 🗓 11th April (Day 1)💰 Price Pool - ₹5000 cash!Get ready to decode riddles and crack a cryptic case, and escape the room in a race againsttime⏳!Science buffs to thrill-seekers, the lab awaits your next move💥Are you fast enough? Smart enough? Brave enough?Let’s find out. 🔍"
     }
   ];
 

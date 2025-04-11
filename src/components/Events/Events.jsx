@@ -13,7 +13,7 @@ const Events = () => {
             }
         }
     };
-
+    
     const itemVariants = {
         hidden: {
             opacity: 0,
@@ -30,17 +30,17 @@ const Events = () => {
             }
         }
     };
-
+    
     return (
         <motion.div 
-            className="max-w-screen-xl mx-auto pt-20 pb-4 px-4 sm:px-6 lg:px-8 mt-16 md:mt-20"
+            className="max-w-screen-xl mx-auto pt-10 pb-4 px-4 sm:px-6 lg:px-8 mt-0 md:mt-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
         >
             <motion.h2
-                className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 md:mb-5 text-center px-4"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 md:mb-3 text-center px-4"
                 variants={itemVariants}
             >
                 Our{" "}
@@ -48,14 +48,14 @@ const Events = () => {
                     Events and Workshops
                 </span>
             </motion.h2>
-
+            
             <motion.p
-                className="text-center text-gray-300 text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 px-4"
+                className="text-center text-gray-300 text-lg sm:text-xl md:text-2xl mb-4 md:mb-6 px-4"
                 variants={itemVariants}
             >
                 Get updated on our latest events and workshops
             </motion.p>
-
+            
             <motion.div
                 variants={itemVariants}
                 className="w-full"
